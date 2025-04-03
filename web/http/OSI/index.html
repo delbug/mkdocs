@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：如何理解OSI七层模型? - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u5982\u4f55\u7406\u89e3OSI\u4e03\u5c42\u6a21\u578b?";
+        var mkdocs_page_input_path = "web\\http\\OSI.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：如何理解OSI七层模型?</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="osi">面试官：如何理解OSI七层模型?</h1>
+<p><img alt="" src="https://static.vue-js.com/e2e1b910-b61e-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_1">一、是什么</h2>
+<p>OSI （Open System Interconnect）模型全称为开放式通信系统互连参考模型，是国际标准化组织 ( ISO ) 提出的一个试图使各种计算机在世界范围内互连为网络的标准框架</p>
+<p><code>OSI</code>将计算机网络体系结构划分为七层，每一层实现各自的功能和协议，并完成与相邻层的接口通信。即每一层扮演固定的角色，互不打扰</p>
+<h2 id="_2">二、划分</h2>
+<p><code>OSI</code>主要划分了七层，如下图所示：</p>
+<p><img alt="" src="https://static.vue-js.com/eb1b2170-b61e-11eb-ab90-d9ae814b240d.png" /></p>
+<h3 id="_3">应用层</h3>
+<p>应用层位于 OSI 参考模型的第七层，其作用是通过应用程序间的交互来完成特定的网络应用</p>
+<p>该层协议定义了应用进程之间的交互规则，通过不同的应用层协议为不同的网络应用提供服务。例如域名系统 <code>DNS</code>，支持万维网应用的 <code>HTTP</code> 协议，电子邮件系统采用的 <code>SMTP</code>协议等</p>
+<p>在应用层交互的数据单元我们称之为报文</p>
+<h3 id="_4">表示层</h3>
+<p>表示层的作用是使通信的应用程序能够解释交换数据的含义，其位于 <code>OSI</code>参考模型的第六层，向上为应用层提供服务，向下接收来自会话层的服务</p>
+<p>该层提供的服务主要包括数据压缩，数据加密以及数据描述，使应用程序不必担心在各台计算机中表示和存储的内部格式差异</p>
+<h3 id="_5">会话层</h3>
+<p>会话层就是负责建立、管理和终止表示层实体之间的通信会话</p>
+<p>该层提供了数据交换的定界和同步功能，包括了建立检查点和恢复方案的方法</p>
+<h3 id="_6">传输层</h3>
+<p>传输层的主要任务是为两台主机进程之间的通信提供服务，处理数据包错误、数据包次序，以及其他一些关键传输问题</p>
+<p>传输层向高层屏蔽了下层数据通信的细节。因此，它是计算机通信体系结构中关键的一层</p>
+<p>其中，主要的传输层协议是<code>TCP</code>和<code>UDP</code></p>
+<h3 id="_7">网络层</h3>
+<p>两台计算机之间传送数据时其通信链路往往不止一条，所传输的信息甚至可能经过很多通信子网</p>
+<p>网络层的主要任务就是选择合适的网间路由和交换节点，确保数据按时成功传送</p>
+<p>在发送数据时，网络层把传输层产生的报文或用户数据报封装成分组和包，向下传输到数据链路层</p>
+<p>在网络层使用的协议是无连接的网际协议（Internet Protocol）和许多路由协议，因此我们通常把该层简单地称为 IP 层</p>
+<h3 id="_8">数据链路层</h3>
+<p>数据链路层通常也叫做链路层，在物理层和网络层之间。两台主机之间的数据传输，总是在一段一段的链路上传送的，这就需要使用专门的链路层协议</p>
+<p>在两个相邻节点之间传送数据时，数据链路层将网络层交下来的 <code>IP</code>数据报组装成帧，在两个相邻节点间的链路上传送帧</p>
+<p>每一帧的数据可以分成：报头<code>head</code>和数据<code>data</code>两部分:</p>
+<ul>
+<li>head 标明数据发送者、接受者、数据类型，如 MAC地址</li>
+<li>data 存储了计算机之间交互的数据</li>
+</ul>
+<p>通过控制信息我们可以知道一个帧的起止比特位置，此外，也能使接收端检测出所收到的帧有无差错，如果发现差错，数据链路层能够简单的丢弃掉这个帧，以避免继续占用网络资源</p>
+<h3 id="_9">物理层</h3>
+<p>作为<code>OSI</code> 参考模型中最低的一层，物理层的作用是实现计算机节点之间比特流的透明传送</p>
+<p>该层的主要任务是确定与传输媒体的接口的一些特性（机械特性、电气特性、功能特性，过程特性）</p>
+<p>该层主要是和硬件有关，与软件关系不大</p>
+<h2 id="_10">三、传输过程</h2>
+<p>数据在各层之间的传输如下图所示：</p>
+<p><img alt="" src="https://static.vue-js.com/f3a89d40-b61e-11eb-85f6-6fac77c0c9b3.png" /></p>
+<ul>
+<li>应用层报文被传送到运输层</li>
+<li>在最简单的情况下，运输层收取到报文并附上附加信息，该首部将被接收端的运输层使用</li>
+<li>应用层报文和运输层首部信息一道构成了运输层报文段。附加的信息可能包括：允许接收端运输层向上向适当的应用程序交付报文的信息以及差错检测位信息。该信息让接收端能够判断报文中的比特是否在途中已被改变</li>
+<li>运输层则向网络层传递该报文段，网络层增加了如源和目的端系统地址等网络层首部信息，生成了网络层数据报</li>
+<li>网络层数据报接下来被传递给链路层，在数据链路层数据包添加发送端 MAC 地址和接收端 MAC 地址后被封装成数据帧</li>
+<li>在物理层数据帧被封装成比特流，之后通过传输介质传送到对端</li>
+<li>对端再一步步解开封装，获取到传送的数据</li>
+</ul>
+<h2 id="_11">参考文献</h2>
+<ul>
+<li>https://zh.wikipedia.org/wiki/OSI%E6%A8%A1%E5%9E%8B</li>
+<li>https://zhuanlan.zhihu.com/p/32059190</li>
+<li>https://leetcode-cn.com/leetbook/detail/networks-interview-highlights/</li>
+<li>https://vue3js.cn/interview</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：说说React的事件机制？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u8bf4\u8bf4React\u7684\u4e8b\u4ef6\u673a\u5236\uff1f";
+        var mkdocs_page_input_path = "web\\React\\SyntheticEvent.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：说说React的事件机制？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="react">面试官：说说React的事件机制？</h1>
+<p><img alt="" src="https://static.vue-js.com/f054f080-d86f-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_1">一、是什么</h2>
+<p><code>React</code>基于浏览器的事件机制自身实现了一套事件机制，包括事件注册、事件的合成、事件冒泡、事件派发等</p>
+<p>在<code>React</code>中这套事件机制被称之为合成事件</p>
+<h4 id="syntheticevent">合成事件（SyntheticEvent）</h4>
+<p>合成事件是 <code>React</code>模拟原生 <code>DOM</code>事件所有能力的一个事件对象，即浏览器原生事件的跨浏览器包装器</p>
+<p>根据 <code>W3C</code>规范来定义合成事件，兼容所有浏览器，拥有与浏览器原生事件相同的接口，例如：</p>
+<pre><code class="language-jsx">const button = &lt;button onClick={handleClick}&gt;按钮&lt;/button&gt;
+</code></pre>
+<p>如果想要获得原生<code>DOM</code>事件，可以通过<code>e.nativeEvent</code>属性获取</p>
+<pre><code class="language-js">const handleClick = (e) =&gt; console.log(e.nativeEvent);;
+const button = &lt;button onClick={handleClick}&gt;按钮&lt;/button&gt;
+</code></pre>
+<p>从上面可以看到<code>React</code>事件和原生事件也非常的相似，但也有一定的区别：</p>
+<ul>
+<li>事件名称命名方式不同</li>
+</ul>
+<pre><code class="language-jsx">// 原生事件绑定方式
+&lt;button onclick=&quot;handleClick()&quot;&gt;按钮命名&lt;/button&gt;
+
+// React 合成事件绑定方式
+const button = &lt;button onClick={handleClick}&gt;按钮命名&lt;/button&gt;
+</code></pre>
+<ul>
+<li>事件处理函数书写不同</li>
+</ul>
+<pre><code class="language-jsx">// 原生事件 事件处理函数写法
+&lt;button onclick=&quot;handleClick()&quot;&gt;按钮命名&lt;/button&gt;
+
+// React 合成事件 事件处理函数写法
+const button = &lt;button onClick={handleClick}&gt;按钮命名&lt;/button&gt;
+</code></pre>
+<p>虽然<code>onclick</code>看似绑定到<code>DOM</code>元素上，但实际并不会把事件代理函数直接绑定到真实的节点上，而是把所有的事件绑定到结构的最外层，使用一个统一的事件去监听</p>
+<p>这个事件监听器上维持了一个映射来保存所有组件内部的事件监听和处理函数。当组件挂载或卸载时，只是在这个统一的事件监听器上插入或删除一些对象</p>
+<p>当事件发生时，首先被这个统一的事件监听器处理，然后在映射里找到真正的事件处理函数并调用。这样做简化了事件处理和回收机制，效率也有很大提升</p>
+<h2 id="_2">二、执行顺序</h2>
+<p>关于<code>React</code>合成事件与原生事件执行顺序，可以看看下面一个例子：</p>
+<pre><code class="language-jsx">import  React  from 'react';
+class App extends React.Component{
+
+  constructor(props) {
+    super(props);
+    this.parentRef = React.createRef();
+    this.childRef = React.createRef();
+  }
+  componentDidMount() {
+    console.log(&quot;React componentDidMount！&quot;);
+    this.parentRef.current?.addEventListener(&quot;click&quot;, () =&gt; {
+      console.log(&quot;原生事件：父元素 DOM 事件监听！&quot;);
+    });
+    this.childRef.current?.addEventListener(&quot;click&quot;, () =&gt; {
+      console.log(&quot;原生事件：子元素 DOM 事件监听！&quot;);
+    });
+    document.addEventListener(&quot;click&quot;, (e) =&gt; {
+      console.log(&quot;原生事件：document DOM 事件监听！&quot;);
+    });
+  }
+  parentClickFun = () =&gt; {
+    console.log(&quot;React 事件：父元素事件监听！&quot;);
+  };
+  childClickFun = () =&gt; {
+    console.log(&quot;React 事件：子元素事件监听！&quot;);
+  };
+  render() {
+    return (
+      &lt;div ref={this.parentRef} onClick={this.parentClickFun}&gt;
+        &lt;div ref={this.childRef} onClick={this.childClickFun}&gt;
+          分析事件执行顺序
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+export default App;
+</code></pre>
+<p>输出顺序为：</p>
+<pre><code class="language-tex">原生事件：子元素 DOM 事件监听！ 
+原生事件：父元素 DOM 事件监听！ 
+React 事件：子元素事件监听！ 
+React 事件：父元素事件监听！ 
+原生事件：document DOM 事件监听！ 
+</code></pre>
+<p>可以得出以下结论：</p>
+<ul>
+<li>React 所有事件都挂载在 document 对象上</li>
+<li>当真实 DOM 元素触发事件，会冒泡到 document 对象后，再处理 React 事件</li>
+<li>所以会先执行原生事件，然后处理 React 事件</li>
+<li>最后真正执行 document 上挂载的事件</li>
+</ul>
+<p>对应过程如图所示：</p>
+<p><img alt="" src="https://static.vue-js.com/08e22ff0-d870-11eb-ab90-d9ae814b240d.png" /></p>
+<p>所以想要阻止不同时间段的冒泡行为，对应使用不同的方法，对应如下：</p>
+<ul>
+<li>阻止合成事件间的冒泡，用e.stopPropagation()</li>
+<li>
+<p>阻止合成事件与最外层 document 上的事件间的冒泡，用e.nativeEvent.stopImmediatePropagation()</p>
+</li>
+<li>
+<p>阻止合成事件与除最外层document上的原生事件上的冒泡，通过判断e.target来避免</p>
+</li>
+</ul>
+<pre><code class="language-js">document.body.addEventListener('click', e =&gt; {   
+    if (e.target &amp;&amp; e.target.matches('div.code')) {  
+        return;    
+    }    
+    this.setState({   active: false,    });   }); 
+}
+</code></pre>
+<h2 id="_3">三、总结</h2>
+<p><code>React</code>事件机制总结如下：</p>
+<ul>
+<li>React 上注册的事件最终会绑定在document这个 DOM 上，而不是 React 组件对应的 DOM(减少内存开销就是因为所有的事件都绑定在 document 上，其他节点没有绑定事件)</li>
+<li>React 自身实现了一套事件冒泡机制，所以这也就是为什么我们 event.stopPropagation()无效的原因。</li>
+<li>React 通过队列的形式，从触发的组件向父组件回溯，然后调用他们 JSX 中定义的 callback</li>
+<li>React 有一套自己的合成事件 SyntheticEvent</li>
+</ul>
+<h2 id="_4">参考文献</h2>
+<ul>
+<li>https://zh-hans.reactjs.org/docs/events.html</li>
+<li>https://segmentfault.com/a/1190000015725214?utm_source=sf-similar-article</li>
+<li>https://segmentfault.com/a/1190000038251163</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

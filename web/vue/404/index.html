@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：vue项目本地开发完成后部署到服务器后报404是什么原因呢？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1avue\u9879\u76ee\u672c\u5730\u5f00\u53d1\u5b8c\u6210\u540e\u90e8\u7f72\u5230\u670d\u52a1\u5668\u540e\u62a5404\u662f\u4ec0\u4e48\u539f\u56e0\u5462\uff1f";
+        var mkdocs_page_input_path = "web\\vue\\404.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：vue项目本地开发完成后部署到服务器后报404是什么原因呢？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vue404">面试官：vue项目本地开发完成后部署到服务器后报404是什么原因呢？</h1>
+<p><img alt="image.png" src="https://static.vue-js.com/002c9320-4f3e-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_1">一、如何部署</h2>
+<p>前后端分离开发模式下，前后端是独立布署的，前端只需要将最后的构建物上传至目标服务器的<code>web</code>容器指定的静态目录下即可</p>
+<p>我们知道<code>vue</code>项目在构建后，是生成一系列的静态文件</p>
+<p><img alt="" src="https://imgkr2.cn-bj.ufileos.com/b9d13e56-f859-4b4b-a9da-a703a34c2f5d.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;Signature=m1qDXRSFHrfXlnAtAlVhjoLKP70%253D&amp;Expires=1609927181" /></p>
+<p>常规布署我们只需要将这个目录上传至目标服务器即可</p>
+<pre><code class="language-bash">// scp 上传 user为主机登录用户，host为主机外网ip, xx为web容器静态资源路径
+scp dist.zip user@host:/xx/xx/xx
+</code></pre>
+<p>让<code>web</code>容器跑起来，以<code>nginx</code>为例</p>
+<pre><code class="language-bash">server {
+  listen  80;
+  server_name  www.xxx.com;
+
+  location / {
+    index  /data/dist/index.html;
+  }
+}
+</code></pre>
+<p>配置完成记得重启<code>nginx</code></p>
+<pre><code class="language-bash">// 检查配置是否正确
+nginx -t 
+
+// 平滑重启
+nginx -s reload
+</code></pre>
+<p>操作完后就可以在浏览器输入域名进行访问了</p>
+<p>当然上面只是提到最简单也是最直接的一种布署方式</p>
+<p>什么自动化，镜像，容器，流水线布署，本质也是将这套逻辑抽象，隔离，用程序来代替重复性的劳动，本文不展开</p>
+<h2 id="404">二、404问题</h2>
+<p>这是一个经典的问题，相信很多同学都有遇到过，那么你知道其真正的原因吗？</p>
+<p>我们先还原一下场景：</p>
+<ul>
+<li><code>vue</code>项目在本地时运行正常，但部署到服务器中，刷新页面，出现了404错误</li>
+</ul>
+<p>先定位一下，HTTP 404 错误意味着链接指向的资源不存在</p>
+<p>问题在于为什么不存在？且为什么只有<code>history</code>模式下会出现这个问题？</p>
+<h3 id="history">为什么history模式下有问题</h3>
+<p><code>Vue</code>是属于单页应用（single-page application）</p>
+<p>而<code>SPA</code>是一种网络应用程序或网站的模型，所有用户交互是通过动态重写当前页面，前面我们也看到了，不管我们应用有多少页面，构建物都只会产出一个<code>index.html</code></p>
+<p>现在，我们回头来看一下我们的<code>nginx</code>配置</p>
+<pre><code class="language-js">server {
+  listen  80;
+  server_name  www.xxx.com;
+
+  location / {
+    index  /data/dist/index.html;
+  }
+}
+</code></pre>
+<p>可以根据 <code>nginx</code> 配置得出，当我们在地址栏输入 <code>www.xxx.com</code> 时，这时会打开我们 <code>dist</code> 目录下的 <code>index.html</code> 文件，然后我们在跳转路由进入到 <code>www.xxx.com/login</code></p>
+<p>关键在这里，当我们在 <code>website.com/login</code> 页执行刷新操作，<code>nginx location</code> 是没有相关配置的，所以就会出现 404 的情况</p>
+<h3 id="hash">为什么hash模式下没有问题</h3>
+<p><code>router hash</code> 模式我们都知道是用符号#表示的，如  <code>website.com/#/login</code>, <code>hash</code> 的值为 <code>#/login</code></p>
+<p>它的特点在于：<code>hash</code> 虽然出现在 <code>URL</code> 中，但不会被包括在 <code>HTTP</code> 请求中，对服务端完全没有影响，因此改变 <code>hash</code> 不会重新加载页面</p>
+<p><code>hash</code> 模式下，仅 <code>hash</code> 符号之前的内容会被包含在请求中，如 <code>website.com/#/login</code> 只有 <code>website.com</code> 会被包含在请求中 ，因此对于服务端来说，即使没有配置<code>location</code>，也不会返回404错误</p>
+<h2 id="_2">解决方案</h2>
+<p>看到这里我相信大部分同学都能想到怎么解决问题了，</p>
+<p>产生问题的本质是因为我们的路由是通过JS来执行视图切换的，</p>
+<p>当我们进入到子路由时刷新页面，<code>web</code>容器没有相对应的页面此时会出现404</p>
+<p>所以我们只需要配置将任意页面都重定向到 <code>index.html</code>，把路由交由前端处理</p>
+<p>对<code>nginx</code>配置文件<code>.conf</code>修改，添加<code>try_files $uri $uri/ /index.html;</code></p>
+<pre><code class="language-bash">server {
+  listen  80;
+  server_name  www.xxx.com;
+
+  location / {
+    index  /data/dist/index.html;
+    try_files $uri $uri/ /index.html;
+  }
+}
+</code></pre>
+<p>修改完配置文件后记得配置的更新</p>
+<pre><code class="language-bash">nginx -s reload
+</code></pre>
+<p>这么做以后，你的服务器就不再返回 404 错误页面，因为对于所有路径都会返回 <code>index.html</code> 文件</p>
+<p>为了避免这种情况，你应该在 <code>Vue</code> 应用里面覆盖所有的路由情况，然后在给出一个 404 页面</p>
+<pre><code class="language-js">const router = new VueRouter({
+  mode: 'history',
+  routes: [
+    { path: '*', component: NotFoundComponent }
+  ]
+})
+</code></pre>
+<p>关于后端配置方案还有：<code>Apache</code>、<code>nodejs</code>等，思想是一致的，这里就不展开述说了</p>
+<h2 id="_3">参考文献</h2>
+<ul>
+<li>https://juejin.cn/post/6844903872637632525</li>
+<li>https://vue-js.com/topic/5f8cf91d96b2cb0032c385c0</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

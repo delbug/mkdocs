@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：说说地址栏输入 URL 敲下回车后发生了什么? - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u8bf4\u8bf4\u5730\u5740\u680f\u8f93\u5165 URL \u6572\u4e0b\u56de\u8f66\u540e\u53d1\u751f\u4e86\u4ec0\u4e48?";
+        var mkdocs_page_input_path = "web\\http\\after_url.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：说说地址栏输入 URL 敲下回车后发生了什么?</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="url">面试官：说说地址栏输入 URL 敲下回车后发生了什么?</h1>
+<p><img alt="" src="https://static.vue-js.com/11bf1f20-bdf4-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h2 id="_1">一、简单分析</h2>
+<p>简单的分析，从输入 <code>URL</code>到回车后发生的行为如下：</p>
+<ul>
+<li>URL解析</li>
+<li>DNS 查询</li>
+<li>TCP 连接</li>
+<li>HTTP 请求</li>
+<li>响应请求</li>
+<li>页面渲染</li>
+</ul>
+<h2 id="_2">二、详细分析</h2>
+<h3 id="url_1">URL解析</h3>
+<p>首先判断你输入的是一个合法的<code>URL</code> 还是一个待搜索的关键词，并且根据你输入的内容进行对应操作</p>
+<p><code>URL</code>的解析第过程中的第一步，一个<code>url</code>的结构解析如下：</p>
+<p><img alt="" src="https://static.vue-js.com/27a0c690-bdf4-11eb-ab90-d9ae814b240d.png" /></p>
+<h3 id="dns">DNS查询</h3>
+<p>在之前文章中讲过<code>DNS</code>的查询，这里就不再讲述了</p>
+<p>整个查询过程如下图所示：</p>
+<p><img alt="" src="https://static.vue-js.com/330fb770-bdf4-11eb-85f6-6fac77c0c9b3.png" /></p>
+<p>最终，获取到了域名对应的目标服务器<code>IP</code>地址</p>
+<h3 id="tcp">TCP连接</h3>
+<p>在之前文章中，了解到<code>tcp</code>是一种面向有连接的传输层协议</p>
+<p>在确定目标服务器服务器的<code>IP</code>地址后，则经历三次握手建立<code>TCP</code>连接，流程如下：</p>
+<p><img alt="" src="https://static.vue-js.com/ad750790-bdf4-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h3 id="http">发送 http 请求</h3>
+<p>当建立<code>tcp</code>连接之后，就可以在这基础上进行通信，浏览器发送 <code>http</code> 请求到目标服务器</p>
+<p>请求的内容包括：</p>
+<ul>
+<li>请求行</li>
+<li>请求头</li>
+<li>请求主体</li>
+</ul>
+<p><img alt="" src="https://static.vue-js.com/bbcb60f0-bdf4-11eb-ab90-d9ae814b240d.png" /></p>
+<h3 id="_3">响应请求</h3>
+<p>当服务器接收到浏览器的请求之后，就会进行逻辑操作，处理完成之后返回一个<code>HTTP</code>响应消息，包括：</p>
+<ul>
+<li>状态行</li>
+<li>响应头</li>
+<li>响应正文</li>
+</ul>
+<p><img alt="" src="https://static.vue-js.com/c5fe0140-bdf4-11eb-ab90-d9ae814b240d.png" /></p>
+<p>在服务器响应之后，由于现在<code>http</code>默认开始长连接<code>keep-alive</code>，当页面关闭之后，<code>tcp</code>链接则会经过四次挥手完成断开</p>
+<h3 id="_4">页面渲染</h3>
+<p>当浏览器接收到服务器响应的资源后，首先会对资源进行解析：</p>
+<ul>
+<li>查看响应头的信息，根据不同的指示做对应处理，比如重定向，存储cookie，解压gzip，缓存资源等等</li>
+<li>查看响应头的 Content-Type的值，根据不同的资源类型采用不同的解析方式</li>
+</ul>
+<p>关于页面的渲染过程如下：</p>
+<ul>
+<li>解析HTML，构建 DOM 树</li>
+<li>解析 CSS ，生成 CSS 规则树</li>
+<li>合并 DOM 树和 CSS 规则，生成 render 树</li>
+<li>布局 render 树（ Layout / reflow ），负责各元素尺寸、位置的计算</li>
+<li>绘制 render 树（ paint ），绘制页面像素信息</li>
+<li>浏览器会将各层的信息发送给 GPU，GPU 会将各层合成（ composite ），显示在屏幕上</li>
+</ul>
+<p><img alt="" src="https://static.vue-js.com/db7bddd0-bdf4-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h2 id="_5">参考文献</h2>
+<ul>
+<li>https://github.com/febobo/web-interview/issues/141</li>
+<li>https://zhuanlan.zhihu.com/p/80551769</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

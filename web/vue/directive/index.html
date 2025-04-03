@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：你有写过自定义指令吗？自定义指令的应用场景有哪些？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u4f60\u6709\u5199\u8fc7\u81ea\u5b9a\u4e49\u6307\u4ee4\u5417\uff1f\u81ea\u5b9a\u4e49\u6307\u4ee4\u7684\u5e94\u7528\u573a\u666f\u6709\u54ea\u4e9b\uff1f";
+        var mkdocs_page_input_path = "web\\vue\\directive.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：你有写过自定义指令吗？自定义指令的应用场景有哪些？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">面试官：你有写过自定义指令吗？自定义指令的应用场景有哪些？</h1>
+<p><img alt="" src="https://static.vue-js.com/bd85a970-4345-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h2 id="_2">一、什么是指令</h2>
+<p>开始之前我们先学习一下指令系统这个词</p>
+<p><strong>指令系统</strong>是计算机硬件的语言系统，也叫机器语言，它是系统程序员看到的计算机的主要属性。因此指令系统表征了计算机的基本功能决定了机器所要求的能力</p>
+<p>在<code>vue</code>中提供了一套为数据驱动视图更为方便的操作，这些操作被称为指令系统</p>
+<p>我们看到的<code>v-</code>开头的行内属性，都是指令，不同的指令可以完成或实现不同的功能</p>
+<p>除了核心功能默认内置的指令 (<code>v-model</code> 和 <code>v-show</code>)，<code>Vue</code> 也允许注册自定义指令</p>
+<p>指令使用的几种方式：</p>
+<pre><code class="language-js">//会实例化一个指令，但这个指令没有参数 
+`v-xxx`
+
+// -- 将值传到指令中
+`v-xxx=&quot;value&quot;`  
+
+// -- 将字符串传入到指令中，如`v-html=&quot;'&lt;p&gt;内容&lt;/p&gt;'&quot;`
+`v-xxx=&quot;'string'&quot;` 
+
+// -- 传参数（`arg`），如`v-bind:class=&quot;className&quot;`
+`v-xxx:arg=&quot;value&quot;` 
+
+// -- 使用修饰符（`modifier`）
+`v-xxx:arg.modifier=&quot;value&quot;` 
+</code></pre>
+<h3 id="_3">二、如何实现</h3>
+<p>注册一个自定义指令有全局注册与局部注册</p>
+<p>全局注册主要是通过<code>Vue.directive</code>方法进行注册</p>
+<p><code>Vue.directive</code>第一个参数是指令的名字（不需要写上<code>v-</code>前缀），第二个参数可以是对象数据，也可以是一个指令函数</p>
+<pre><code class="language-js">// 注册一个全局自定义指令 `v-focus`
+Vue.directive('focus', {
+  // 当被绑定的元素插入到 DOM 中时……
+  inserted: function (el) {
+    // 聚焦元素
+    el.focus()  // 页面加载完成之后自动让输入框获取到焦点的小功能
+  }
+})
+</code></pre>
+<p>局部注册通过在组件<code>options</code>选项中设置<code>directive</code>属性</p>
+<pre><code class="language-js">directives: {
+  focus: {
+    // 指令的定义
+    inserted: function (el) {
+      el.focus() // 页面加载完成之后自动让输入框获取到焦点的小功能
+    }
+  }
+}
+</code></pre>
+<p>然后你可以在模板中任何元素上使用新的 <code>v-focus</code> property，如下：</p>
+<pre><code class="language-js">&lt;input v-focus /&gt;
+</code></pre>
+<p>自定义指令也像组件那样存在钩子函数：</p>
+<ul>
+<li><code>bind</code>：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置</li>
+<li><code>inserted</code>：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)</li>
+<li>
+<p><code>update</code>：所在组件的 <code>VNode</code> 更新时调用，但是可能发生在其子 <code>VNode</code> 更新之前。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新</p>
+</li>
+<li>
+<p><code>componentUpdated</code>：指令所在组件的 <code>VNode</code> 及其子 <code>VNode</code> 全部更新后调用</p>
+</li>
+<li><code>unbind</code>：只调用一次，指令与元素解绑时调用</li>
+</ul>
+<p>所有的钩子函数的参数都有以下：</p>
+<ul>
+<li><code>el</code>：指令所绑定的元素，可以用来直接操作 <code>DOM</code></li>
+<li><code>binding</code>：一个对象，包含以下 <code>property</code>：<ul>
+<li><code>name</code>：指令名，不包括 <code>v-</code> 前缀。</li>
+<li><code>value</code>：指令的绑定值，例如：<code>v-my-directive="1 + 1"</code> 中，绑定值为 <code>2</code>。</li>
+<li><code>oldValue</code>：指令绑定的前一个值，仅在 <code>update</code> 和 <code>componentUpdated</code> 钩子中可用。无论值是否改变都可用。</li>
+<li><code>expression</code>：字符串形式的指令表达式。例如 <code>v-my-directive="1 + 1"</code> 中，表达式为 <code>"1 + 1"</code>。</li>
+<li><code>arg</code>：传给指令的参数，可选。例如 <code>v-my-directive:foo</code> 中，参数为 <code>"foo"</code>。</li>
+<li><code>modifiers</code>：一个包含修饰符的对象。例如：<code>v-my-directive.foo.bar</code> 中，修饰符对象为 <code>{ foo: true, bar: true }</code></li>
+</ul>
+</li>
+<li><code>vnode</code>：<code>Vue</code> 编译生成的虚拟节点</li>
+<li><code>oldVnode</code>：上一个虚拟节点，仅在 <code>update</code> 和 <code>componentUpdated</code> 钩子中可用</li>
+</ul>
+<blockquote>
+<p>除了 <code>el</code> 之外，其它参数都应该是只读的，切勿进行修改。如果需要在钩子之间共享数据，建议通过元素的 <code>dataset</code> 来进行</p>
+</blockquote>
+<p>举个例子：</p>
+<pre><code class="language-html">&lt;div v-demo=&quot;{ color: 'white', text: 'hello!' }&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    Vue.directive('demo', function (el, binding) {
+    console.log(binding.value.color) // &quot;white&quot;
+    console.log(binding.value.text)  // &quot;hello!&quot;
+    })
+&lt;/script&gt;
+</code></pre>
+<h2 id="_4">三、应用场景</h2>
+<p>使用自定义指令可以满足我们日常一些场景，这里给出几个自定义指令的案例：</p>
+<ul>
+<li>表单防止重复提交</li>
+<li>图片懒加载</li>
+<li>一键 Copy的功能</li>
+</ul>
+<h3 id="_5">表单防止重复提交</h3>
+<p>表单防止重复提交这种情况设置一个<code>v-throttle</code>自定义指令来实现</p>
+<p>举个例子：</p>
+<pre><code class="language-js">// 1.设置v-throttle自定义指令
+Vue.directive('throttle', {
+  bind: (el, binding) =&gt; {
+    let throttleTime = binding.value; // 节流时间
+    if (!throttleTime) { // 用户若不设置节流时间，则默认2s
+      throttleTime = 2000;
+    }
+    let cbFun;
+    el.addEventListener('click', event =&gt; {
+      if (!cbFun) { // 第一次执行
+        cbFun = setTimeout(() =&gt; {
+          cbFun = null;
+        }, throttleTime);
+      } else {
+        event &amp;&amp; event.stopImmediatePropagation();
+      }
+    }, true);
+  },
+});
+// 2.为button标签设置v-throttle自定义指令
+&lt;button @click=&quot;sayHello&quot; v-throttle&gt;提交&lt;/button&gt;
+</code></pre>
+<h3 id="_6">图片懒加载</h3>
+<p>设置一个<code>v-lazy</code>自定义指令完成图片懒加载</p>
+<pre><code class="language-js">const LazyLoad = {
+    // install方法
+    install(Vue,options){
+          // 代替图片的loading图
+        let defaultSrc = options.default;
+        Vue.directive('lazy',{
+            bind(el,binding){
+                LazyLoad.init(el,binding.value,defaultSrc);
+            },
+            inserted(el){
+                // 兼容处理
+                if('IntersectionObserver' in window){
+                    LazyLoad.observe(el);
+                }else{
+                    LazyLoad.listenerScroll(el);
+                }
+
+            },
+        })
+    },
+    // 初始化
+    init(el,val,def){
+        // data-src 储存真实src
+        el.setAttribute('data-src',val);
+        // 设置src为loading图
+        el.setAttribute('src',def);
+    },
+    // 利用IntersectionObserver监听el
+    observe(el){
+        let io = new IntersectionObserver(entries =&gt; {
+            let realSrc = el.dataset.src;
+            if(entries[0].isIntersecting){
+                if(realSrc){
+                    el.src = realSrc;
+                    el.removeAttribute('data-src');
+                }
+            }
+        });
+        io.observe(el);
+    },
+    // 监听scroll事件
+    listenerScroll(el){
+        let handler = LazyLoad.throttle(LazyLoad.load,300);
+        LazyLoad.load(el);
+        window.addEventListener('scroll',() =&gt; {
+            handler(el);
+        });
+    },
+    // 加载真实图片
+    load(el){
+        let windowHeight = document.documentElement.clientHeight
+        let elTop = el.getBoundingClientRect().top;
+        let elBtm = el.getBoundingClientRect().bottom;
+        let realSrc = el.dataset.src;
+        if(elTop - windowHeight&lt;0&amp;&amp;elBtm &gt; 0){
+            if(realSrc){
+                el.src = realSrc;
+                el.removeAttribute('data-src');
+            }
+        }
+    },
+    // 节流
+    throttle(fn,delay){
+        let timer; 
+        let prevTime;
+        return function(...args){
+            let currTime = Date.now();
+            let context = this;
+            if(!prevTime) prevTime = currTime;
+            clearTimeout(timer);
+
+            if(currTime - prevTime &gt; delay){
+                prevTime = currTime;
+                fn.apply(context,args);
+                clearTimeout(timer);
+                return;
+            }
+
+            timer = setTimeout(function(){
+                prevTime = Date.now();
+                timer = null;
+                fn.apply(context,args);
+            },delay);
+        }
+    }
+
+}
+export default LazyLoad;
+</code></pre>
+<h3 id="copy">一键 Copy的功能</h3>
+<pre><code class="language-js">import { Message } from 'ant-design-vue';
+
+const vCopy = { //
+  /*
+    bind 钩子函数，第一次绑定时调用，可以在这里做初始化设置
+    el: 作用的 dom 对象
+    value: 传给指令的值，也就是我们要 copy 的值
+  */
+  bind(el, { value }) {
+    el.$value = value; // 用一个全局属性来存传进来的值，因为这个值在别的钩子函数里还会用到
+    el.handler = () =&gt; {
+      if (!el.$value) {
+      // 值为空的时候，给出提示，我这里的提示是用的 ant-design-vue 的提示，你们随意
+        Message.warning('无复制内容');
+        return;
+      }
+      // 动态创建 textarea 标签
+      const textarea = document.createElement('textarea');
+      // 将该 textarea 设为 readonly 防止 iOS 下自动唤起键盘，同时将 textarea 移出可视区域
+      textarea.readOnly = 'readonly';
+      textarea.style.position = 'absolute';
+      textarea.style.left = '-9999px';
+      // 将要 copy 的值赋给 textarea 标签的 value 属性
+      textarea.value = el.$value;
+      // 将 textarea 插入到 body 中
+      document.body.appendChild(textarea);
+      // 选中值并复制
+      textarea.select();
+      // textarea.setSelectionRange(0, textarea.value.length);
+      const result = document.execCommand('Copy');
+      if (result) {
+        Message.success('复制成功');
+      }
+      document.body.removeChild(textarea);
+    };
+    // 绑定点击事件，就是所谓的一键 copy 啦
+    el.addEventListener('click', el.handler);
+  },
+  // 当传进来的值更新的时候触发
+  componentUpdated(el, { value }) {
+    el.$value = value;
+  },
+  // 指令与元素解绑的时候，移除事件绑定
+  unbind(el) {
+    el.removeEventListener('click', el.handler);
+  },
+};
+
+export default vCopy;
+</code></pre>
+<p>关于自定义指令还有很多应用场景，如：拖拽指令、页面水印、权限校验等等应用场景</p>
+<h2 id="_7">参考文献</h2>
+<ul>
+<li>https://vue3js.cn/docs/zh</li>
+<li>https://juejin.cn/post/6844904197448531975#heading-5</li>
+<li>https://www.cnblogs.com/chenwenhao/p/11924161.html#_label2</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

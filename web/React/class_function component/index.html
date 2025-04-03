@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：说说对React中类组件和函数组件的理解？有什么区别？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u8bf4\u8bf4\u5bf9React\u4e2d\u7c7b\u7ec4\u4ef6\u548c\u51fd\u6570\u7ec4\u4ef6\u7684\u7406\u89e3\uff1f\u6709\u4ec0\u4e48\u533a\u522b\uff1f";
+        var mkdocs_page_input_path = "web\\React\\class_function component.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：说说对React中类组件和函数组件的理解？有什么区别？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="react">面试官：说说对React中类组件和函数组件的理解？有什么区别？</h1>
+<p><img alt="" src="https://static.vue-js.com/6c196d80-de39-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h2 id="_1">一、类组件</h2>
+<p>类组件，顾名思义，也就是通过使用<code>ES6</code>类的编写形式去编写组件，该类必须继承<code>React.Component</code></p>
+<p>如果想要访问父组件传递过来的参数，可通过<code>this.props</code>的方式去访问</p>
+<p>在组件中必须实现<code>render</code>方法，在<code>return</code>中返回<code>React</code>对象，如下：</p>
+<pre><code class="language-jsx">class Welcome extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;
+  }
+}
+</code></pre>
+<h2 id="_2">二、函数组件</h2>
+<p>函数组件，顾名思义，就是通过函数编写的形式去实现一个<code>React</code>组件，是<code>React</code>中定义组件最简单的方式</p>
+<pre><code class="language-jsx">function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+</code></pre>
+<p>函数第一个参数为<code>props</code>用于接收父组件传递过来的参数</p>
+<h2 id="_3">三、区别</h2>
+<p>针对两种<code>React</code>组件，其区别主要分成以下几大方向：</p>
+<ul>
+<li>编写形式</li>
+<li>状态管理</li>
+<li>
+<p>生命周期</p>
+</li>
+<li>
+<p>调用方式</p>
+</li>
+<li>
+<p>获取渲染的值</p>
+</li>
+</ul>
+<h3 id="_4">编写形式</h3>
+<p>两者最明显的区别在于编写形式的不同，同一种功能的实现可以分别对应类组件和函数组件的编写形式</p>
+<p>函数组件：</p>
+<pre><code class="language-jsx">function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+</code></pre>
+<p>类组件：</p>
+<pre><code class="language-jsx">class Welcome extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;
+  }
+}
+</code></pre>
+<h3 id="_5">状态管理</h3>
+<p>在<code>hooks</code>出来之前，函数组件就是无状态组件，不能保管组件的状态，不像类组件中调用<code>setState</code></p>
+<p>如果想要管理<code>state</code>状态，可以使用<code>useState</code>，如下：</p>
+<pre><code class="language-jsx">const FunctionalComponent = () =&gt; {
+    const [count, setCount] = React.useState(0);
+
+    return (
+        &lt;div&gt;
+            &lt;p&gt;count: {count}&lt;/p &gt;
+            &lt;button onClick={() =&gt; setCount(count + 1)}&gt;Click&lt;/button&gt;
+        &lt;/div&gt;
+    );
+};
+
+</code></pre>
+<p>在使用<code>hooks</code>情况下，一般如果函数组件调用<code>state</code>，则需要创建一个类组件或者<code>state</code>提升到你的父组件中，然后通过<code>props</code>对象传递到子组件</p>
+<h3 id="_6">生命周期</h3>
+<p>在函数组件中，并不存在生命周期，这是因为这些生命周期钩子都来自于继承的<code>React.Component</code></p>
+<p>所以，如果用到生命周期，就只能使用类组件</p>
+<p>但是函数组件使用<code>useEffect</code>也能够完成替代生命周期的作用，这里给出一个简单的例子：</p>
+<pre><code class="language-jsx">const FunctionalComponent = () =&gt; {
+    useEffect(() =&gt; {
+        console.log(&quot;Hello&quot;);
+    }, []);
+    return &lt;h1&gt;Hello, World&lt;/h1&gt;;
+};
+</code></pre>
+<p>上述简单的例子对应类组件中的<code>componentDidMount</code>生命周期</p>
+<p>如果在<code>useEffect</code>回调函数中<code>return</code>一个函数，则<code>return</code>函数会在组件卸载的时候执行，正如<code>componentWillUnmount</code></p>
+<pre><code class="language-jsx">const FunctionalComponent = () =&gt; {
+ React.useEffect(() =&gt; {
+   return () =&gt; {
+     console.log(&quot;Bye&quot;);
+   };
+ }, []);
+ return &lt;h1&gt;Bye, World&lt;/h1&gt;;
+};
+
+</code></pre>
+<h3 id="_7">调用方式</h3>
+<p>如果是一个函数组件，调用则是执行函数即可：</p>
+<pre><code class="language-jsx">// 你的代码 
+function SayHi() { 
+    return &lt;p&gt;Hello, React&lt;/p &gt; 
+} 
+// React内部 
+const result = SayHi(props) // » &lt;p&gt;Hello, React&lt;/p &gt;
+</code></pre>
+<p>如果是一个类组件，则需要将组件进行实例化，然后调用实例对象的<code>render</code>方法：</p>
+<pre><code class="language-jsx">// 你的代码 
+class SayHi extends React.Component { 
+    render() { 
+        return &lt;p&gt;Hello, React&lt;/p &gt; 
+    } 
+} 
+// React内部 
+const instance = new SayHi(props) // » SayHi {} 
+const result = instance.render() // » &lt;p&gt;Hello, React&lt;/p &gt;
+</code></pre>
+<h3 id="_8">获取渲染的值</h3>
+<p>首先给出一个示例</p>
+<p>函数组件对应如下：</p>
+<pre><code class="language-jsx">function ProfilePage(props) {
+  const showMessage = () =&gt; {
+    alert('Followed ' + props.user);
+  }
+
+  const handleClick = () =&gt; {
+    setTimeout(showMessage, 3000);
+  }
+
+  return (
+    &lt;button onClick={handleClick}&gt;Follow&lt;/button&gt;
+  )
+}
+</code></pre>
+<p>类组件对应如下：</p>
+<pre><code class="language-jsx">class ProfilePage extends React.Component {
+  showMessage() {
+    alert('Followed ' + this.props.user);
+  }
+
+  handleClick() {
+    setTimeout(this.showMessage.bind(this), 3000);
+  }
+
+  render() {
+    return &lt;button onClick={this.handleClick.bind(this)}&gt;Follow&lt;/button&gt;
+  }
+}
+</code></pre>
+<p>两者看起来实现功能是一致的，但是在类组件中，输出<code>this.props.user</code>，<code>Props</code>在 <code>React</code>中是不可变的所以它永远不会改变，但是 <code>this</code> 总是可变的，以便您可以在 <code>render</code> 和生命周期函数中读取新版本</p>
+<p>因此，如果我们的组件在请求运行时更新。<code>this.props</code> 将会改变。<code>showMessage</code>方法从“最新”的 <code>props</code> 中读取 <code>user</code></p>
+<p>而函数组件，本身就不存在<code>this</code>，<code>props</code>并不发生改变，因此同样是点击，<code>alert</code>的内容仍旧是之前的内容</p>
+<h3 id="_9">小结</h3>
+<p>两种组件都有各自的优缺点</p>
+<p>函数组件语法更短、更简单，这使得它更容易开发、理解和测试</p>
+<p>而类组件也会因大量使用 <code>this</code>而让人感到困惑</p>
+<h2 id="_10">参考文献</h2>
+<ul>
+<li>https://zh-hans.reactjs.org/docs/components-and-props.html#function-and-class-components</li>
+<li>https://juejin.cn/post/6844903806140973069</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

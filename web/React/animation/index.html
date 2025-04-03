@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：在react中组件间过渡动画如何实现？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u5728react\u4e2d\u7ec4\u4ef6\u95f4\u8fc7\u6e21\u52a8\u753b\u5982\u4f55\u5b9e\u73b0\uff1f";
+        var mkdocs_page_input_path = "web\\React\\animation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：在react中组件间过渡动画如何实现？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="react">面试官：在react中组件间过渡动画如何实现？</h1>
+<p><img alt="" src="https://static.vue-js.com/294f1e00-e4b0-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_1">一、是什么</h2>
+<p>在日常开发中，页面切换时的转场动画是比较基础的一个场景</p>
+<p>当一个组件在显示与消失过程中存在过渡动画，可以很好的增加用户的体验</p>
+<p>在<code>react</code>中实现过渡动画效果会有很多种选择，如<code>react-transition-group</code>，<code>react-motion</code>，<code>Animated</code>，以及原生的<code>CSS</code>都能完成切换动画</p>
+<h2 id="_2">二、如何实现</h2>
+<p>在<code>react</code>中，<code>react-transition-group</code>是一种很好的解决方案，其为元素添加<code>enter</code>，<code>enter-active</code>，<code>exit</code>，<code>exit-active</code>这一系列勾子</p>
+<p>可以帮助我们方便的实现组件的入场和离场动画</p>
+<p>其主要提供了三个主要的组件：</p>
+<ul>
+<li>CSSTransition：在前端开发中，结合 CSS 来完成过渡动画效果</li>
+<li>SwitchTransition：两个组件显示和隐藏切换时，使用该组件</li>
+<li>TransitionGroup：将多个动画组件包裹在其中，一般用于列表中元素的动画</li>
+</ul>
+<h3 id="csstransition">CSSTransition</h3>
+<p>其实现动画的原理在于，当<code>CSSTransition</code>的<code>in</code>属性置为<code>true</code>时，<code>CSSTransition</code>首先会给其子组件加上<code>xxx-enter</code>、<code>xxx-enter-active</code>的<code>class</code>执行动画</p>
+<p>当动画执行结束后，会移除两个<code>class</code>，并且添加<code>-enter-done</code>的<code>class</code></p>
+<p>所以可以利用这一点，通过<code>css</code>的<code>transition</code>属性，让元素在两个状态之间平滑过渡，从而得到相应的动画效果</p>
+<p>当<code>in</code>属性置为<code>false</code>时，<code>CSSTransition</code>会给子组件加上<code>xxx-exit</code>和<code>xxx-exit-active</code>的<code>class</code>，然后开始执行动画，当动画结束后，移除两个<code>class</code>，然后添加<code>-enter-done</code>的<code>class</code></p>
+<p>如下例子：</p>
+<pre><code class="language-jsx">export default class App2 extends React.PureComponent {
+
+  state = {show: true};
+
+  onToggle = () =&gt; this.setState({show: !this.state.show});
+
+  render() {
+    const {show} = this.state;
+    return (
+      &lt;div className={'container'}&gt;
+        &lt;div className={'square-wrapper'}&gt;
+          &lt;CSSTransition
+            in={show}
+            timeout={500}
+            classNames={'fade'}
+            unmountOnExit={true}
+          &gt;
+            &lt;div className={'square'} /&gt;
+          &lt;/CSSTransition&gt;
+        &lt;/div&gt;
+        &lt;Button onClick={this.onToggle}&gt;toggle&lt;/Button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<p>对应<code>css</code>样式如下：</p>
+<pre><code class="language-css">.fade-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 500ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 500ms;
+}
+</code></pre>
+<h3 id="switchtransition">SwitchTransition</h3>
+<p><code>SwitchTransition</code>可以完成两个组件之间切换的炫酷动画</p>
+<p>比如有一个按钮需要在<code>on</code>和<code>off</code>之间切换，我们希望看到<code>on</code>先从左侧退出，<code>off</code>再从右侧进入</p>
+<p><code>SwitchTransition</code>中主要有一个属性<code>mode</code>，对应两个值：</p>
+<ul>
+<li>in-out：表示新组件先进入，旧组件再移除；</li>
+<li>out-in：表示就组件先移除，新组建再进入</li>
+</ul>
+<p><code>SwitchTransition</code>组件里面要有<code>CSSTransition</code>，不能直接包裹你想要切换的组件</p>
+<p>里面的<code>CSSTransition</code>组件不再像以前那样接受<code>in</code>属性来判断元素是何种状态，取而代之的是<code>key</code>属性</p>
+<p>下面给出一个按钮入场和出场的示例，如下：</p>
+<pre><code class="language-jsx">import { SwitchTransition, CSSTransition } from &quot;react-transition-group&quot;;
+
+export default class SwitchAnimation extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOn: true
+    }
+  }
+
+  render() {
+    const {isOn} = this.state;
+
+    return (
+      &lt;SwitchTransition mode=&quot;out-in&quot;&gt;
+        &lt;CSSTransition classNames=&quot;btn&quot;
+                       timeout={500}
+                       key={isOn ? &quot;on&quot; : &quot;off&quot;}&gt;
+          {
+          &lt;button onClick={this.btnClick.bind(this)}&gt;
+            {isOn ? &quot;on&quot;: &quot;off&quot;}
+          &lt;/button&gt;
+        }
+        &lt;/CSSTransition&gt;
+      &lt;/SwitchTransition&gt;
+    )
+  }
+
+  btnClick() {
+    this.setState({isOn: !this.state.isOn})
+  }
+}
+</code></pre>
+<p><code>css</code>文件对应如下：</p>
+<pre><code class="language-css">.btn-enter {
+  transform: translate(100%, 0);
+  opacity: 0;
+}
+
+.btn-enter-active {
+  transform: translate(0, 0);
+  opacity: 1;
+  transition: all 500ms;
+}
+
+.btn-exit {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.btn-exit-active {
+  transform: translate(-100%, 0);
+  opacity: 0;
+  transition: all 500ms;
+}
+</code></pre>
+<h3 id="transitiongroup">TransitionGroup</h3>
+<p>当有一组动画的时候，就可将这些<code>CSSTransition</code>放入到一个<code>TransitionGroup</code>中来完成动画</p>
+<p>同样<code>CSSTransition</code>里面没有<code>in</code>属性，用到了<code>key</code>属性</p>
+<p><code>TransitionGroup</code>在感知<code>children</code>发生变化的时候，先保存移除的节点，当动画结束后才真正移除</p>
+<p>其处理方式如下：</p>
+<ul>
+<li>
+<p>插入的节点，先渲染dom，然后再做动画</p>
+</li>
+<li>
+<p>删除的节点，先做动画，然后再删除dom</p>
+</li>
+</ul>
+<p>如下：</p>
+<pre><code class="language-jsx">import React, { PureComponent } from 'react'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
+export default class GroupAnimation extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      friends: []
+    }
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;TransitionGroup&gt;
+          {
+            this.state.friends.map((item, index) =&gt; {
+              return (
+                &lt;CSSTransition classNames=&quot;friend&quot; timeout={300} key={index}&gt;
+                  &lt;div&gt;{item}&lt;/div&gt;
+                &lt;/CSSTransition&gt;
+              )
+            })
+          }
+        &lt;/TransitionGroup&gt;
+        &lt;button onClick={e =&gt; this.addFriend()}&gt;+friend&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+
+  addFriend() {
+    this.setState({
+      friends: [...this.state.friends, &quot;coderwhy&quot;]
+    })
+  }
+}
+</code></pre>
+<p>对应<code>css</code>如下：</p>
+<pre><code class="language-css">.friend-enter {
+    transform: translate(100%, 0);
+    opacity: 0;
+}
+
+.friend-enter-active {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: all 500ms;
+}
+
+.friend-exit {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.friend-exit-active {
+    transform: translate(-100%, 0);
+    opacity: 0;
+    transition: all 500ms;
+}
+</code></pre>
+<h2 id="_3">参考文献</h2>
+<ul>
+<li>https://segmentfault.com/a/1190000018861018</li>
+<li>https://mp.weixin.qq.com/s/14HneI7SpfrRHKtqgosIiA</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

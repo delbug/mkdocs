@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：说说你对React Router的理解？常用的Router组件有哪些？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u8bf4\u8bf4\u4f60\u5bf9React Router\u7684\u7406\u89e3\uff1f\u5e38\u7528\u7684Router\u7ec4\u4ef6\u6709\u54ea\u4e9b\uff1f";
+        var mkdocs_page_input_path = "web\\React\\React Router.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：说说你对React Router的理解？常用的Router组件有哪些？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="react-routerrouter">面试官：说说你对React Router的理解？常用的Router组件有哪些？</h1>
+<p><img alt="" src="https://static.vue-js.com/c6635670-e8ac-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h2 id="_1">一、是什么</h2>
+<p><code>react-router</code>等前端路由的原理大致相同，可以实现无刷新的条件下切换显示不同的页面</p>
+<p>路由的本质就是页面的<code>URL</code>发生改变时，页面的显示结果可以根据<code>URL</code>的变化而变化，但是页面不会刷新</p>
+<p>因此，可以通过前端路由可以实现单页(SPA)应用</p>
+<p><code>react-router</code>主要分成了几个不同的包：</p>
+<ul>
+<li>react-router: 实现了路由的核心功能</li>
+<li>react-router-dom： 基于 react-router，加入了在浏览器运行环境下的一些功能</li>
+<li>
+<p>react-router-native：基于 react-router，加入了 react-native 运行环境下的一些功能</p>
+</li>
+<li>
+<p>react-router-config: 用于配置静态路由的工具库</p>
+</li>
+</ul>
+<h2 id="_2">二、有哪些</h2>
+<p>这里主要讲述的是<code>react-router-dom</code>的常用<code>API</code>，主要是提供了一些组件：</p>
+<ul>
+<li>BrowserRouter、HashRouter</li>
+<li>Route</li>
+<li>Link、NavLink</li>
+<li>switch</li>
+<li>redirect</li>
+</ul>
+<h3 id="browserrouterhashrouter">BrowserRouter、HashRouter</h3>
+<p><code>Router</code>中包含了对路径改变的监听，并且会将相应的路径传递给子组件</p>
+<p><code>BrowserRouter</code>是<code>history</code>模式，<code>HashRouter</code>模式</p>
+<p>使用两者作为最顶层组件包裹其他组件</p>
+<pre><code class="language-jsx">import { BrowserRouter as Router } from &quot;react-router-dom&quot;;
+
+export default function App() {
+  return (
+    &lt;Router&gt;
+      &lt;main&gt;
+        &lt;nav&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+              &lt; a href=&quot; &quot;&gt;Home&lt;/ a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt; a href=&quot;/about&quot;&gt;About&lt;/ a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt; a href=&quot;/contact&quot;&gt;Contact&lt;/ a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+      &lt;/main&gt;
+    &lt;/Router&gt;
+  );
+}
+</code></pre>
+<h3 id="route">Route</h3>
+<p><code>Route</code>用于路径的匹配，然后进行组件的渲染，对应的属性如下：</p>
+<ul>
+<li>path 属性：用于设置匹配到的路径</li>
+<li>component 属性：设置匹配到路径后，渲染的组件</li>
+<li>render 属性：设置匹配到路径后，渲染的内容</li>
+<li>exact 属性：开启精准匹配，只有精准匹配到完全一致的路径，才会渲染对应的组件</li>
+</ul>
+<pre><code class="language-jsx">import { BrowserRouter as Router, Route } from &quot;react-router-dom&quot;;
+
+export default function App() {
+  return (
+    &lt;Router&gt;
+      &lt;main&gt;
+        &lt;nav&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+              &lt; a href=&quot;/&quot;&gt;Home&lt;/ a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt; a href=&quot;/about&quot;&gt;About&lt;/ a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt; a href=&quot;/contact&quot;&gt;Contact&lt;/ a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+        &lt;Route path=&quot;/&quot; render={() =&gt; &lt;h1&gt;Welcome!&lt;/h1&gt;} /&gt;
+      &lt;/main&gt;
+    &lt;/Router&gt;
+  );
+}
+</code></pre>
+<h3 id="linknavlink">Link、NavLink</h3>
+<p>通常路径的跳转是使用<code>Link</code>组件，最终会被渲染成<code>a</code>元素，其中属性<code>to</code>代替<code>a</code>标题的<code>href</code>属性</p>
+<p><code>NavLink</code>是在<code>Link</code>基础之上增加了一些样式属性，例如组件被选中时，发生样式变化，则可以设置<code>NavLink</code>的一下属性：</p>
+<ul>
+<li>activeStyle：活跃时（匹配时）的样式</li>
+<li>activeClassName：活跃时添加的class</li>
+</ul>
+<p>如下：</p>
+<pre><code class="language-js">&lt;NavLink to=&quot;/&quot; exact activeStyle={{color: &quot;red&quot;}}&gt;首页&lt;/NavLink&gt;
+&lt;NavLink to=&quot;/about&quot; activeStyle={{color: &quot;red&quot;}}&gt;关于&lt;/NavLink&gt;
+&lt;NavLink to=&quot;/profile&quot; activeStyle={{color: &quot;red&quot;}}&gt;我的&lt;/NavLink&gt;
+</code></pre>
+<p>如果需要实现<code>js</code>实现页面的跳转，那么可以通过下面的形式：</p>
+<p>通过<code>Route</code>作为顶层组件包裹其他组件后,页面组件就可以接收到一些路由相关的东西，比如<code>props.history</code></p>
+<pre><code class="language-jsx">const Contact = ({ history }) =&gt; (
+  &lt;Fragment&gt;
+    &lt;h1&gt;Contact&lt;/h1&gt;
+    &lt;button onClick={() =&gt; history.push(&quot;/&quot;)}&gt;Go to home&lt;/button&gt;
+    &lt;FakeText /&gt;
+  &lt;/Fragment&gt;
+);
+</code></pre>
+<p><code>props</code>中接收到的<code>history</code>对象具有一些方便的方法，如<code>goBack</code>，<code>goForward</code>,<code>push</code></p>
+<h3 id="redirect">redirect</h3>
+<p>用于路由的重定向，当这个组件出现时，就会执行跳转到对应的<code>to</code>路径中，如下例子：</p>
+<pre><code class="language-js">const About = ({
+  match: {
+    params: { name },
+  },
+}) =&gt; (
+  // props.match.params.name
+  &lt;Fragment&gt;
+    {name !== &quot;tom&quot; ? &lt;Redirect to=&quot;/&quot; /&gt; : null}
+    &lt;h1&gt;About {name}&lt;/h1&gt;
+    &lt;FakeText /&gt;
+  &lt;/Fragment&gt;
+)
+</code></pre>
+<p>上述组件当接收到的路由参数<code>name</code> 不等于 <code>tom</code> 的时候，将会自动重定向到首页</p>
+<h3 id="switch">switch</h3>
+<p><code>swich</code>组件的作用适用于当匹配到第一个组件的时候，后面的组件就不应该继续匹配</p>
+<p>如下例子：</p>
+<pre><code class="language-jsx">&lt;Switch&gt;
+  &lt;Route exact path=&quot;/&quot; component={Home} /&gt;
+  &lt;Route path=&quot;/about&quot; component={About} /&gt;
+  &lt;Route path=&quot;/profile&quot; component={Profile} /&gt;
+  &lt;Route path=&quot;/:userid&quot; component={User} /&gt;
+  &lt;Route component={NoMatch} /&gt;
+&lt;/Switch&gt;
+</code></pre>
+<p>如果不使用<code>switch</code>组件进行包裹</p>
+<p>除了一些路由相关的组件之外，<code>react-router</code>还提供一些<code>hooks</code>，如下：</p>
+<ul>
+<li>useHistory</li>
+<li>useParams</li>
+<li>useLocation</li>
+</ul>
+<h3 id="usehistory">useHistory</h3>
+<p><code>useHistory</code>可以让组件内部直接访问<code>history</code>，无须通过<code>props</code>获取</p>
+<pre><code class="language-js">import { useHistory } from &quot;react-router-dom&quot;;
+
+const Contact = () =&gt; {
+  const history = useHistory();
+  return (
+    &lt;Fragment&gt;
+      &lt;h1&gt;Contact&lt;/h1&gt;
+      &lt;button onClick={() =&gt; history.push(&quot;/&quot;)}&gt;Go to home&lt;/button&gt;
+    &lt;/Fragment&gt;
+  );
+};
+</code></pre>
+<h3 id="useparams">useParams</h3>
+<pre><code class="language-jsx">const About = () =&gt; {
+  const { name } = useParams();
+  return (
+    // props.match.params.name
+    &lt;Fragment&gt;
+      {name !== &quot;John Doe&quot; ? &lt;Redirect to=&quot;/&quot; /&gt; : null}
+      &lt;h1&gt;About {name}&lt;/h1&gt;
+      &lt;Route component={Contact} /&gt;
+    &lt;/Fragment&gt;
+  );
+};
+</code></pre>
+<h3 id="uselocation">useLocation</h3>
+<p><code>useLocation</code> 会返回当前 <code>URL</code>的 <code>location</code>对象</p>
+<pre><code class="language-jsx">import { useLocation } from &quot;react-router-dom&quot;;
+
+const Contact = () =&gt; {
+  const { pathname } = useLocation();
+
+  return (
+    &lt;Fragment&gt;
+      &lt;h1&gt;Contact&lt;/h1&gt;
+      &lt;p&gt;Current URL: {pathname}&lt;/p &gt;
+    &lt;/Fragment&gt;
+  );
+};
+</code></pre>
+<h2 id="_3">三、参数传递</h2>
+<p>这些路由传递参数主要分成了三种形式：</p>
+<ul>
+<li>动态路由的方式</li>
+<li>search传递参数</li>
+<li>to传入对象</li>
+</ul>
+<h3 id="_4">动态路由</h3>
+<p>动态路由的概念指的是路由中的路径并不会固定</p>
+<p>例如将<code>path</code>在<code>Route</code>匹配时写成<code>/detail/:id</code>，那么 <code>/detail/abc</code>、<code>/detail/123</code>都可以匹配到该<code>Route</code></p>
+<pre><code class="language-jsx">&lt;NavLink to=&quot;/detail/abc123&quot;&gt;详情&lt;/NavLink&gt;
+
+&lt;Switch&gt;
+    ... 其他Route
+    &lt;Route path=&quot;/detail/:id&quot; component={Detail}/&gt;
+    &lt;Route component={NoMatch} /&gt;
+&lt;/Switch&gt;
+</code></pre>
+<p>获取参数方式如下：</p>
+<pre><code class="language-jsx">console.log(props.match.params.xxx)
+</code></pre>
+<h3 id="search">search传递参数</h3>
+<p>在跳转的路径中添加了一些query参数；</p>
+<pre><code class="language-jsx">&lt;NavLink to=&quot;/detail2?name=why&amp;age=18&quot;&gt;详情2&lt;/NavLink&gt;
+
+&lt;Switch&gt;
+  &lt;Route path=&quot;/detail2&quot; component={Detail2}/&gt;
+&lt;/Switch&gt;
+</code></pre>
+<p>获取形式如下：</p>
+<pre><code class="language-js">console.log(props.location.search)
+</code></pre>
+<h3 id="to">to传入对象</h3>
+<p>传递方式如下：</p>
+<pre><code class="language-jsx">&lt;NavLink to={{
+    pathname: &quot;/detail2&quot;, 
+    query: {name: &quot;kobe&quot;, age: 30},
+    state: {height: 1.98, address: &quot;洛杉矶&quot;},
+    search: &quot;?apikey=123&quot;
+  }}&gt;
+  详情2
+&lt;/NavLink&gt;
+</code></pre>
+<p>获取参数的形式如下：</p>
+<pre><code class="language-js">console.log(props.location)
+</code></pre>
+<h2 id="_5">参考文献</h2>
+<ul>
+<li>http://react-guide.github.io/react-router-cn/docs/API.html#route</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

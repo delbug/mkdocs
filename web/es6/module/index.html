@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：你是怎么理解ES6中Module的？使用场景？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u4f60\u662f\u600e\u4e48\u7406\u89e3ES6\u4e2dModule\u7684\uff1f\u4f7f\u7528\u573a\u666f\uff1f";
+        var mkdocs_page_input_path = "web\\es6\\module.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：你是怎么理解ES6中Module的？使用场景？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="es6module">面试官：你是怎么理解ES6中Module的？使用场景？</h1>
+<p><img alt="" src="https://static.vue-js.com/b6d19be0-5adb-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_1">一、介绍</h2>
+<p>模块，（Module），是能够单独命名并独立地完成一定功能的程序语句的<strong>集合（即程序代码和数据结构的集合体）</strong>。</p>
+<p>两个基本的特征：外部特征和内部特征</p>
+<ul>
+<li>
+<p>外部特征是指模块跟外部环境联系的接口（即其他模块或程序调用该模块的方式，包括有输入输出参数、引用的全局变量）和模块的功能</p>
+</li>
+<li>
+<p>内部特征是指模块的内部环境具有的特点（即该模块的局部数据和程序代码）</p>
+</li>
+</ul>
+<h3 id="_2">为什么需要模块化</h3>
+<ul>
+<li>代码抽象</li>
+<li>代码封装</li>
+<li>代码复用</li>
+<li>依赖管理</li>
+</ul>
+<p>如果没有模块化，我们代码会怎样？</p>
+<ul>
+<li>变量和方法不容易维护，容易污染全局作用域</li>
+<li>加载资源的方式通过script标签从上到下。</li>
+<li>依赖的环境主观逻辑偏重，代码较多就会比较复杂。</li>
+<li>大型项目资源难以维护，特别是多人合作的情况下，资源的引入会让人奔溃</li>
+</ul>
+<p>因此，需要一种将<code>JavaScript</code>程序模块化的机制，如</p>
+<ul>
+<li>CommonJs (典型代表：node.js早期)</li>
+<li>AMD (典型代表：require.js)</li>
+<li>CMD (典型代表：sea.js)</li>
+</ul>
+<h3 id="amd">AMD</h3>
+<p><code>Asynchronous ModuleDefinition</code>（AMD），异步模块定义，采用异步方式加载模块。所有依赖模块的语句，都定义在一个回调函数中，等到模块加载完成之后，这个回调函数才会运行</p>
+<p>代表库为<code>require.js</code></p>
+<pre><code class="language-js">/** main.js 入口文件/主模块 **/
+// 首先用config()指定各模块路径和引用名
+require.config({
+  baseUrl: &quot;js/lib&quot;,
+  paths: {
+    &quot;jquery&quot;: &quot;jquery.min&quot;,  //实际路径为js/lib/jquery.min.js
+    &quot;underscore&quot;: &quot;underscore.min&quot;,
+  }
+});
+// 执行基本操作
+require([&quot;jquery&quot;,&quot;underscore&quot;],function($,_){
+  // some code here
+});
+</code></pre>
+<h3 id="commonjs">CommonJs</h3>
+<p><code>CommonJS</code> 是一套 <code>Javascript</code> 模块规范，用于服务端</p>
+<pre><code class="language-js">// a.js
+module.exports={ foo , bar}
+
+// b.js
+const { foo,bar } = require('./a.js')
+</code></pre>
+<p>其有如下特点：</p>
+<ul>
+<li>所有代码都运行在模块作用域，不会污染全局作用域</li>
+<li>模块是同步加载的，即只有加载完成，才能执行后面的操作</li>
+<li>模块在首次执行后就会缓存，再次加载只返回缓存结果，如果想要再次执行，可清除缓存</li>
+<li><code>require</code>返回的值是被输出的值的拷贝，模块内部的变化也不会影响这个值</li>
+</ul>
+<p>既然存在了<code>AMD</code>以及<code>CommonJs</code>机制，<code>ES6</code>的<code>Module</code>又有什么不一样？</p>
+<p>ES6 在语言标准的层面上，实现了<code>Module</code>，即模块功能，完全可以取代 <code>CommonJS</code>和 <code>AMD</code>规范，成为浏览器和服务器通用的模块解决方案</p>
+<p><code>CommonJS</code> 和<code>AMD</code> 模块，都只能在运行时确定这些东西。比如，<code>CommonJS</code>模块就是对象，输入时必须查找对象属性</p>
+<pre><code class="language-javascript">// CommonJS模块
+let { stat, exists, readfile } = require('fs');
+
+// 等同于
+let _fs = require('fs');
+let stat = _fs.stat;
+let exists = _fs.exists;
+let readfile = _fs.readfile;
+</code></pre>
+<p><code>ES6</code>设计思想是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量</p>
+<pre><code class="language-js">// ES6模块
+import { stat, exists, readFile } from 'fs';
+</code></pre>
+<p>上述代码，只加载3个方法，其他方法不加载，即 <code>ES6</code> 可以在编译时就完成模块加载</p>
+<p>由于编译加载，使得静态分析成为可能。包括现在流行的<code>typeScript</code>也是依靠静态分析实现功能</p>
+<h2 id="_3">二、使用</h2>
+<p><code>ES6</code>模块内部自动采用了严格模式，这里就不展开严格模式的限制，毕竟这是<code>ES5</code>之前就已经规定好</p>
+<p>模块功能主要由两个命令构成：</p>
+<ul>
+<li><code>export</code>：用于规定模块的对外接口</li>
+<li><code>import</code>：用于输入其他模块提供的功能</li>
+</ul>
+<h3 id="export">export</h3>
+<p>一个模块就是一个独立的文件，该文件内部的所有变量，外部无法获取。如果你希望外部能够读取模块内部的某个变量，就必须使用<code>export</code>关键字输出该变量</p>
+<pre><code class="language-javascript">// profile.js
+export var firstName = 'Michael';
+export var lastName = 'Jackson';
+export var year = 1958;
+
+或 
+// 建议使用下面写法，这样能瞬间确定输出了哪些变量
+var firstName = 'Michael';
+var lastName = 'Jackson';
+var year = 1958;
+
+export { firstName, lastName, year };
+</code></pre>
+<p>输出函数或类</p>
+<pre><code class="language-js">export function multiply(x, y) {
+  return x * y;
+};
+</code></pre>
+<p>通过<code>as</code>可以进行输出变量的重命名</p>
+<pre><code class="language-js">function v1() { ... }
+function v2() { ... }
+
+export {
+  v1 as streamV1,
+  v2 as streamV2,
+  v2 as streamLatestVersion
+};
+</code></pre>
+<h3 id="import">import</h3>
+<p>使用<code>export</code>命令定义了模块的对外接口以后，其他 JS 文件就可以通过<code>import</code>命令加载这个模块</p>
+<pre><code class="language-javascript">// main.js
+import { firstName, lastName, year } from './profile.js';
+
+function setName(element) {
+  element.textContent = firstName + ' ' + lastName;
+}
+</code></pre>
+<p>同样如果想要输入变量起别名，通过<code>as</code>关键字</p>
+<pre><code class="language-javascript">import { lastName as surname } from './profile.js';
+</code></pre>
+<p>当加载整个模块的时候，需要用到星号<code>*</code></p>
+<pre><code class="language-js">// circle.js
+export function area(radius) {
+  return Math.PI * radius * radius;
+}
+
+export function circumference(radius) {
+  return 2 * Math.PI * radius;
+}
+
+// main.js
+import * as circle from './circle';
+console.log(circle)   // {area:area,circumference:circumference}
+</code></pre>
+<p>输入的变量都是只读的，不允许修改，但是如果是对象，允许修改属性</p>
+<pre><code class="language-js">import {a} from './xxx.js'
+
+a.foo = 'hello'; // 合法操作
+a = {}; // Syntax Error : 'a' is read-only;
+</code></pre>
+<p>不过建议即使能修改，但我们不建议。因为修改之后，我们很难差错</p>
+<p><code>import</code>后面我们常接着<code>from</code>关键字，<code>from</code>指定模块文件的位置，可以是相对路径，也可以是绝对路径</p>
+<pre><code class="language-js">import { a } from './a';
+</code></pre>
+<p>如果只有一个模块名，需要有配置文件，告诉引擎模块的位置</p>
+<pre><code class="language-javascript">import { myMethod } from 'util';
+</code></pre>
+<p>在编译阶段，<code>import</code>会提升到整个模块的头部，首先执行</p>
+<pre><code class="language-javascript">foo();
+
+import { foo } from 'my_module';
+</code></pre>
+<p>多次重复执行同样的导入，只会执行一次</p>
+<pre><code class="language-js">import 'lodash';
+import 'lodash';
+</code></pre>
+<p>上面的情况，大家都能看到用户在导入模块的时候，需要知道加载的变量名和函数，否则无法加载</p>
+<p>如果不需要知道变量名或函数就完成加载，就要用到<code>export default</code>命令，为模块指定默认输出</p>
+<pre><code class="language-js">// export-default.js
+export default function () {
+    console.log('foo');
+}
+</code></pre>
+<p>加载该模块的时候，<code>import</code>命令可以为该函数指定任意名字</p>
+<pre><code class="language-js">// import-default.js
+import customName from './export-default';
+customName(); // 'foo'
+</code></pre>
+<h3 id="_4">动态加载</h3>
+<p>允许您仅在需要时动态加载模块，而不必预先加载所有模块，这存在明显的性能优势</p>
+<p>这个新功能允许您将<code>import()</code>作为函数调用，将其作为参数传递给模块的路径。 它返回一个 <code>promise</code>，它用一个模块对象来实现，让你可以访问该对象的导出</p>
+<pre><code class="language-js">import('/modules/myModule.mjs')
+  .then((module) =&gt; {
+    // Do something with the module.
+  });
+</code></pre>
+<h3 id="_5">复合写法</h3>
+<p>如果在一个模块之中，先输入后输出同一个模块，<code>import</code>语句可以与<code>export</code>语句写在一起</p>
+<pre><code class="language-javascript">export { foo, bar } from 'my_module';
+
+// 可以简单理解为
+import { foo, bar } from 'my_module';
+export { foo, bar };
+</code></pre>
+<p>同理能够搭配<code>as</code>、<code>*</code>搭配使用</p>
+<h2 id="_6">三、使用场景</h2>
+<p>如今，<code>ES6</code>模块化已经深入我们日常项目开发中，像<code>vue</code>、<code>react</code>项目搭建项目，组件化开发处处可见，其也是依赖模块化实现</p>
+<p><code>vue</code>组件</p>
+<pre><code class="language-js">&lt;template&gt;
+  &lt;div class=&quot;App&quot;&gt;
+      组件化开发 ---- 模块化
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: 'HelloWorld',
+  props: {
+    msg: String
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<p><code>react</code>组件</p>
+<pre><code class="language-js">function App() {
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+        组件化开发 ---- 模块化
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>包括完成一些复杂应用的时候，我们也可以拆分成各个模块</p>
+<h2 id="_7">参考文献</h2>
+<ul>
+<li>https://macsalvation.net/the-history-of-js-module/</li>
+<li>https://es6.ruanyifeng.com/#docs/module</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

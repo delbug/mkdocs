@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：说说Git常用的命令有哪些？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u8bf4\u8bf4Git\u5e38\u7528\u7684\u547d\u4ee4\u6709\u54ea\u4e9b\uff1f";
+        var mkdocs_page_input_path = "web\\git\\command.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：说说Git常用的命令有哪些？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="git">面试官：说说Git常用的命令有哪些？</h1>
+<p><img alt="" src="https://static.vue-js.com/f66b3290-f7af-11eb-bc6f-3f06e1491664.png" /></p>
+<h2 id="_1">一、前言</h2>
+<p><code>git</code>的操作可以通过命令的形式如执行，日常使用就如下图6个命令即可</p>
+<p><img alt="" src="https://static.vue-js.com/fe150520-f7af-11eb-991d-334fd31f0201.png" /></p>
+<p>实际上，如果想要熟练使用，超过60多个命令需要了解，下面则介绍下常见的的<code>git</code>命令</p>
+<h2 id="_2">二、有哪些</h2>
+<h2 id="_3">配置</h2>
+<p><code>Git</code>自带一个 <code>git config</code> 的工具来帮助设置控制 <code>Git</code>外观和行为的配置变量，在我们安装完<code>git</code>之后，第一件事就是设置你的用户名和邮件地址</p>
+<p>后续每一个提交都会使用这些信息，它们会写入到你的每一次提交中，不可更改</p>
+<p>设置提交代码时的用户信息命令如下：</p>
+<ul>
+<li>git config [--global] user.name "[name]" </li>
+<li>git config [--global] user.email "[email address]"</li>
+</ul>
+<h3 id="_4">启动</h3>
+<p>一个<code>git</code>项目的初始有两个途径，分别是：</p>
+<ul>
+<li>git init [project-name]：创建或在当前目录初始化一个git代码库</li>
+<li>git clone url：下载一个项目和它的整个代码历史</li>
+</ul>
+<h3 id="_5">日常基本操作</h3>
+<p>在日常工作中，代码常用的基本操作如下：</p>
+<ul>
+<li>git init 初始化仓库，默认为 master 分支</li>
+<li>git add . 提交全部文件修改到缓存区</li>
+<li>git add &lt;具体某个文件路径+全名&gt; 提交某些文件到缓存区</li>
+<li>git diff  查看当前代码 add后，会 add 哪些内容</li>
+<li>git diff --staged查看现在 commit 提交后，会提交哪些内容</li>
+<li>git status 查看当前分支状态</li>
+<li>git pull &lt;远程仓库名&gt; &lt;远程分支名&gt; 拉取远程仓库的分支与本地当前分支合并</li>
+<li>git pull &lt;远程仓库名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt; 拉取远程仓库的分支与本地某个分支合并</li>
+<li>git commit -m "&lt;注释&gt;" 提交代码到本地仓库，并写提交注释</li>
+<li>git commit -v 提交时显示所有diff信息</li>
+<li>git commit --amend [file1] [file2] 重做上一次commit，并包括指定文件的新变化</li>
+</ul>
+<p>关于提交信息的格式，可以遵循以下的规则：</p>
+<ul>
+<li>feat: 新特性，添加功能</li>
+<li>fix: 修改 bug</li>
+<li>refactor: 代码重构</li>
+<li>docs: 文档修改</li>
+<li>style: 代码格式修改, 注意不是 css 修改</li>
+<li>test: 测试用例修改</li>
+<li>chore: 其他修改, 比如构建流程, 依赖管理</li>
+</ul>
+<h3 id="_6">分支操作</h3>
+<ul>
+<li>git branch 查看本地所有分支</li>
+<li>git branch -r 查看远程所有分支</li>
+<li>git branch -a 查看本地和远程所有分支</li>
+<li>git merge &lt;分支名&gt; 合并分支</li>
+<li>git merge --abort 合并分支出现冲突时，取消合并，一切回到合并前的状态</li>
+<li>git branch &lt;新分支名&gt; 基于当前分支，新建一个分支</li>
+<li>git checkout --orphan &lt;新分支名&gt; 新建一个空分支（会保留之前分支的所有文件）</li>
+<li>git branch -D &lt;分支名&gt; 删除本地某个分支</li>
+<li>git push &lt;远程库名&gt; :&lt;分支名&gt; 删除远程某个分支</li>
+<li>git branch &lt;新分支名称&gt; &lt;提交ID&gt; 从提交历史恢复某个删掉的某个分支</li>
+<li>git branch -m &lt;原分支名&gt; &lt;新分支名&gt; 分支更名</li>
+<li>git checkout &lt;分支名&gt; 切换到本地某个分支</li>
+<li>git checkout &lt;远程库名&gt;/&lt;分支名&gt; 切换到线上某个分支</li>
+<li>git checkout -b &lt;新分支名&gt; 把基于当前分支新建分支，并切换为这个分支</li>
+</ul>
+<h3 id="_7">远程同步</h3>
+<p>远程操作常见的命令：</p>
+<ul>
+<li>git fetch [remote] 下载远程仓库的所有变动</li>
+<li>git remote -v 显示所有远程仓库</li>
+<li>git pull [remote] [branch] 拉取远程仓库的分支与本地当前分支合并</li>
+<li>git fetch 获取线上最新版信息记录，不合并</li>
+<li>git push [remote] [branch] 上传本地指定分支到远程仓库</li>
+<li>git push [remote] --force 强行推送当前分支到远程仓库，即使有冲突</li>
+<li>git push [remote] --all 推送所有分支到远程仓库</li>
+</ul>
+<h3 id="_8">撤销</h3>
+<ul>
+<li>git checkout [file] 恢复暂存区的指定文件到工作区</li>
+<li>git checkout [commit] [file]  恢复某个commit的指定文件到暂存区和工作区</li>
+<li>git checkout . 恢复暂存区的所有文件到工作区</li>
+<li>git reset [commit] 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</li>
+<li>git reset --hard 重置暂存区与工作区，与上一次commit保持一致</li>
+<li>
+<p>git reset [file] 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</p>
+</li>
+<li>
+<p>git revert [commit]  后者的所有变化都将被前者抵消，并且应用到当前分支</p>
+</li>
+</ul>
+<blockquote>
+<p><code>reset</code>：真实硬性回滚，目标版本后面的提交记录全部丢失了</p>
+<p><code>revert</code>：同样回滚，这个回滚操作相当于一个提价，目标版本后面的提交记录也全部都有</p>
+</blockquote>
+<h3 id="_9">存储操作</h3>
+<p>你正在进行项目中某一部分的工作，里面的东西处于一个比较杂乱的状态，而你想转到其他分支上进行一些工作，但又不想提交这些杂乱的代码，这时候可以将代码进行存储</p>
+<ul>
+<li>git stash 暂时将未提交的变化移除</li>
+<li>
+<p>git stash pop 取出储藏中最后存入的工作状态进行恢复，会删除储藏</p>
+</li>
+<li>
+<p>git stash list 查看所有储藏中的工作</p>
+</li>
+<li>git stash apply &lt;储藏的名称&gt;  取出储藏中对应的工作状态进行恢复，不会删除储藏</li>
+<li>git stash clear 清空所有储藏中的工作</li>
+<li>git stash drop &lt;储藏的名称&gt;  删除对应的某个储藏</li>
+</ul>
+<h2 id="_10">三、总结</h2>
+<p><code>git</code>常用命令速查表如下所示：</p>
+<p><img alt="" src="https://static.vue-js.com/0a10f3c0-f7b0-11eb-991d-334fd31f0201.png" /></p>
+<h2 id="_11">参考文献</h2>
+<ul>
+<li>
+<p>https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html</p>
+</li>
+<li>
+<p>https://segmentfault.com/a/1190000017875714</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

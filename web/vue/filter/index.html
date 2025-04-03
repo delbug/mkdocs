@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：Vue中的过滤器了解吗？过滤器的应用场景有哪些？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1aVue\u4e2d\u7684\u8fc7\u6ee4\u5668\u4e86\u89e3\u5417\uff1f\u8fc7\u6ee4\u5668\u7684\u5e94\u7528\u573a\u666f\u6709\u54ea\u4e9b\uff1f";
+        var mkdocs_page_input_path = "web\\vue\\filter.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：Vue中的过滤器了解吗？过滤器的应用场景有哪些？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vue">面试官：Vue中的过滤器了解吗？过滤器的应用场景有哪些？</h1>
+<p><img alt="" src="https://static.vue-js.com/fe68eea0-440f-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_1">一、是什么</h2>
+<p>过滤器（<code>filter</code>）是输送介质管道上不可缺少的一种装置</p>
+<p>大白话，就是把一些不必要的东西过滤掉</p>
+<p>过滤器实质不改变原始数据，只是对数据进行加工处理后返回过滤后的数据再进行调用处理，我们也可以理解其为一个纯函数</p>
+<p><code>Vue</code> 允许你自定义过滤器，可被用于一些常见的文本格式化</p>
+<p>ps: <code>Vue3</code>中已废弃<code>filter</code></p>
+<h2 id="_2">二、如何用</h2>
+<p><code>vue</code>中的过滤器可以用在两个地方：双花括号插值和 <code>v-bind</code> 表达式，过滤器应该被添加在 <code>JavaScript</code>表达式的尾部，由“管道”符号指示：</p>
+<pre><code class="language-js">&lt;!-- 在双花括号中 --&gt;
+{{ message | capitalize }}
+
+&lt;!-- 在 `v-bind` 中 --&gt;
+&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h3 id="filter">定义filter</h3>
+<p>在组件的选项中定义本地的过滤器</p>
+<pre><code class="language-js">filters: {
+  capitalize: function (value) {
+    if (!value) return ''
+    value = value.toString()
+    return value.charAt(0).toUpperCase() + value.slice(1)
+  }
+}
+</code></pre>
+<p>定义全局过滤器：</p>
+<pre><code class="language-js">Vue.filter('capitalize', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
+
+new Vue({
+  // ...
+})
+</code></pre>
+<p>注意：当全局过滤器和局部过滤器重名时，会采用局部过滤器</p>
+<p>过滤器函数总接收表达式的值 (之前的操作链的结果) 作为第一个参数。在上述例子中，<code>capitalize</code> 过滤器函数将会收到 <code>message</code> 的值作为第一个参数</p>
+<p>过滤器可以串联：</p>
+<pre><code>{{ message | filterA | filterB }}
+</code></pre>
+<p>在这个例子中，<code>filterA</code> 被定义为接收单个参数的过滤器函数，表达式 <code>message</code> 的值将作为参数传入到函数中。然后继续调用同样被定义为接收单个参数的过滤器函数 <code>filterB</code>，将 <code>filterA</code> 的结果传递到 <code>filterB</code> 中。</p>
+<p>过滤器是 <code>JavaScript</code>函数，因此可以接收参数：</p>
+<pre><code>{{ message | filterA('arg1', arg2) }}
+</code></pre>
+<p>这里，<code>filterA</code> 被定义为接收三个参数的过滤器函数。</p>
+<p>其中 <code>message</code> 的值作为第一个参数，普通字符串 <code>'arg1'</code> 作为第二个参数，表达式 <code>arg2</code> 的值作为第三个参数</p>
+<p>举个例子：</p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;{{ msg | msgFormat('疯狂','--')}}&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    // 定义一个 Vue 全局的过滤器，名字叫做  msgFormat
+    Vue.filter('msgFormat', function(msg, arg, arg2) {
+        // 字符串的  replace 方法，第一个参数，除了可写一个 字符串之外，还可以定义一个正则
+        return msg.replace(/单纯/g, arg+arg2)
+    })
+&lt;/script&gt;
+</code></pre>
+<h3 id="_3">小结：</h3>
+<ul>
+<li>部过滤器优先于全局过滤器被调用</li>
+<li>一个表达式可以使用多个过滤器。过滤器之间需要用管道符“|”隔开。其执行顺序从左往右</li>
+</ul>
+<h2 id="_4">三、应用场景</h2>
+<p>平时开发中，需要用到过滤器的地方有很多，比如单位转换、数字打点、文本格式化、时间格式化之类的等</p>
+<p>比如我们要实现将30000 =&gt; 30,000，这时候我们就需要使用过滤器</p>
+<pre><code class="language-js">Vue.filter('toThousandFilter', function (value) {
+     if (!value) return ''
+     value = value.toString()
+     return .replace(str.indexOf('.') &gt; -1 ? /(\d)(?=(\d{3})+\.)/g : /(\d)(?=(?:\d{3})+$)/g, '$1,')
+})
+</code></pre>
+<h2 id="_5">四、原理分析</h2>
+<p>使用过滤器</p>
+<pre><code class="language-js">{{ message | capitalize }}
+</code></pre>
+<p>在模板编译阶段过滤器表达式将会被编译为过滤器函数，主要是用过<code>parseFilters</code>，我们放到最后讲</p>
+<pre><code class="language-js">_s(_f('filterFormat')(message))
+</code></pre>
+<p>首先分析一下<code>_f</code>：</p>
+<p>_f 函数全名是：<code>resolveFilter</code>，这个函数的作用是从<code>this.$options.filters</code>中找出注册的过滤器并返回</p>
+<pre><code class="language-js">// 变为
+this.$options.filters['filterFormat'](message) // message为参数
+</code></pre>
+<p>关于<code>resolveFilter</code></p>
+<pre><code class="language-js">import { indentity,resolveAsset } from 'core/util/index' 
+
+export function resolveFilter(id){
+    return resolveAsset(this.$options,'filters',id,true) || identity
+}
+</code></pre>
+<p>内部直接调用<code>resolveAsset</code>，将<code>option</code>对象，类型，过滤器<code>id</code>，以及一个触发警告的标志作为参数传递，如果找到，则返回过滤器；</p>
+<p><code>resolveAsset</code>的代码如下：</p>
+<pre><code class="language-js">export function resolveAsset(options,type,id,warnMissing){ // 因为我们找的是过滤器，所以在 resolveFilter函数中调用时 type 的值直接给的 'filters',实际这个函数还可以拿到其他很多东西
+    if(typeof id !== 'string'){ // 判断传递的过滤器id 是不是字符串，不是则直接返回
+        return 
+    }
+    const assets = options[type]  // 将我们注册的所有过滤器保存在变量中
+    // 接下来的逻辑便是判断id是否在assets中存在，即进行匹配
+    if(hasOwn(assets,id)) return assets[id] // 如找到，直接返回过滤器
+    // 没有找到，代码继续执行
+    const camelizedId  = camelize(id) // 万一你是驼峰的呢
+    if(hasOwn(assets,camelizedId)) return assets[camelizedId]
+    // 没找到，继续执行
+    const PascalCaseId = capitalize(camelizedId) // 万一你是首字母大写的驼峰呢
+    if(hasOwn(assets,PascalCaseId)) return assets[PascalCaseId]
+    // 如果还是没找到，则检查原型链(即访问属性)
+    const result = assets[id] || assets[camelizedId] || assets[PascalCaseId]
+    // 如果依然没找到，则在非生产环境的控制台打印警告
+    if(process.env.NODE_ENV !== 'production' &amp;&amp; warnMissing &amp;&amp; !result){
+        warn('Failed to resolve ' + type.slice(0,-1) + ': ' + id, options)
+    }
+    // 无论是否找到，都返回查找结果
+    return result
+}
+</code></pre>
+<p>下面再来分析一下<code>_s</code>：</p>
+<p><code>_s</code> 函数的全称是 <code>toString</code>,过滤器处理后的结果会当作参数传递给 <code>toString</code>函数，最终 <code>toString</code>函数执行后的结果会保存到<code>Vnode</code>中的text属性中，渲染到视图中</p>
+<pre><code class="language-js">function toString(value){
+    return value == null
+    ? ''
+    : typeof value === 'object'
+      ? JSON.stringify(value,null,2)// JSON.stringify()第三个参数可用来控制字符串里面的间距
+      : String(value)
+}
+</code></pre>
+<p>最后，在分析下<code>parseFilters</code>，在模板编译阶段使用该函数阶段将模板过滤器解析为过滤器函数调用表达式</p>
+<pre><code class="language-js">function parseFilters (filter) {
+    let filters = filter.split('|')
+    let expression = filters.shift().trim() // shift()删除数组第一个元素并将其返回，该方法会更改原数组
+    let i
+    if (filters) {
+        for(i = 0;i &lt; filters.length;i++){
+            experssion = warpFilter(expression,filters[i].trim()) // 这里传进去的expression实际上是管道符号前面的字符串，即过滤器的第一个参数
+        }
+    }
+    return expression
+}
+// warpFilter函数实现
+function warpFilter(exp,filter){
+    // 首先判断过滤器是否有其他参数
+    const i = filter.indexof('(')
+    if(i&lt;0){ // 不含其他参数，直接进行过滤器表达式字符串的拼接
+        return `_f(&quot;${filter}&quot;)(${exp})`
+    }else{
+        const name = filter.slice(0,i) // 过滤器名称
+        const args = filter.slice(i+1) // 参数，但还多了 ‘)’
+        return `_f('${name}')(${exp},${args}` // 注意这一步少给了一个 ')'
+    }
+}
+</code></pre>
+<h3 id="_6">小结：</h3>
+<ul>
+<li>在编译阶段通过<code>parseFilters</code>将过滤器编译成函数调用（串联过滤器则是一个嵌套的函数调用，前一个过滤器执行的结果是后一个过滤器函数的参数）</li>
+<li>编译后通过调用<code>resolveFilter</code>函数找到对应过滤器并返回结果</li>
+<li>执行结果作为参数传递给<code>toString</code>函数，而<code>toString</code>执行后，其结果会保存在<code>Vnode</code>的<code>text</code>属性中，渲染到视图</li>
+</ul>
+<h2 id="_7">参考文献</h2>
+<ul>
+<li>https://cn.vuejs.org/v2/guide/filters.html#ad</li>
+<li>https://blog.csdn.net/weixin_42724176/article/details/105546684</li>
+<li>https://vue3js.cn</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

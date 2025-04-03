@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：vue3有了解过吗？能说说跟vue2的区别吗？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1avue3\u6709\u4e86\u89e3\u8fc7\u5417\uff1f\u80fd\u8bf4\u8bf4\u8ddfvue2\u7684\u533a\u522b\u5417\uff1f";
+        var mkdocs_page_input_path = "web\\vue\\vue3_vue2.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：vue3有了解过吗？能说说跟vue2的区别吗？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vue3vue2">面试官：vue3有了解过吗？能说说跟vue2的区别吗？</h1>
+<p><img alt="" src="https://static.vue-js.com/774b6950-5087-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h2 id="vue3">一、Vue3介绍</h2>
+<p>关于<code>vue3</code>的重构背景，尤大是这样说的：</p>
+<p>「Vue 新版本的理念成型于 2018 年末，当时 Vue 2 的代码库已经有两岁半了。比起通用软件的生命周期来这好像也没那么久，但在这段时期，前端世界已经今昔非比了</p>
+<p>在我们更新（和重写）Vue 的主要版本时，主要考虑两点因素：首先是新的 JavaScript 语言特性在主流浏览器中的受支持水平；其次是当前代码库中随时间推移而逐渐暴露出来的一些设计和架构问题」</p>
+<p>简要就是：
+- 利用新的语言特性(es6)
+- 解决架构问题</p>
+<h2 id="_1">哪些变化</h2>
+<p><img alt="" src="https://static.vue-js.com/9169a900-5087-11eb-85f6-6fac77c0c9b3.png" /></p>
+<p>从上图中，我们可以概览<code>Vue3</code>的新特性，如下：</p>
+<ul>
+<li>速度更快</li>
+<li>体积减少</li>
+<li>更易维护</li>
+<li>更接近原生</li>
+<li>更易使用</li>
+</ul>
+<h3 id="_2">速度更快</h3>
+<p><code>vue3</code>相比<code>vue2</code></p>
+<ul>
+<li>
+<p>重写了虚拟<code>Dom</code>实现</p>
+</li>
+<li>
+<p>编译模板的优化</p>
+</li>
+<li>
+<p>更高效的组件初始化</p>
+</li>
+<li>
+<p><code>undate</code>性能提高1.3~2倍</p>
+</li>
+<li>
+<p><code>SSR</code>速度提高了2~3倍</p>
+</li>
+</ul>
+<p><img alt="" src="https://static.vue-js.com/ac1d23d0-5087-11eb-ab90-d9ae814b240d.png" /></p>
+<h3 id="_3">体积更小</h3>
+<p>通过<code>webpack</code>的<code>tree-shaking</code>功能，可以将无用模块“剪辑”，仅打包需要的</p>
+<p>能够<code>tree-shaking</code>，有两大好处：</p>
+<ul>
+<li>
+<p>对开发人员，能够对<code>vue</code>实现更多其他的功能，而不必担忧整体体积过大</p>
+</li>
+<li>
+<p>对使用者，打包出来的包体积变小了</p>
+</li>
+</ul>
+<p><code>vue</code>可以开发出更多其他的功能，而不必担忧<code>vue</code>打包出来的整体体积过多</p>
+<p><img alt="" src="https://static.vue-js.com/c01af010-5087-11eb-85f6-6fac77c0c9b3.png" /> </p>
+<h3 id="_4">更易维护</h3>
+<h4 id="compositon-api">compositon Api</h4>
+<ul>
+<li>可与现有的<code>Options API</code>一起使用</li>
+<li>灵活的逻辑组合与复用</li>
+<li><code>Vue3</code>模块可以和其他框架搭配使用</li>
+</ul>
+<p><img alt="" src="https://static.vue-js.com/c5c919b0-5087-11eb-ab90-d9ae814b240d.png" /> </p>
+<h4 id="typescript">更好的Typescript支持</h4>
+<p><code>VUE3</code>是基于<code>typescipt</code>编写的，可以享受到自动的类型定义提示</p>
+<p><img alt="" src="https://static.vue-js.com/cc688120-5087-11eb-ab90-d9ae814b240d.png" /></p>
+<h4 id="_5">编译器重写</h4>
+<p><img alt="" src="https://static.vue-js.com/fcd33800-5087-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h3 id="_6">更接近原生</h3>
+<p>可以自定义渲染 API</p>
+<p><img alt="" src="https://static.vue-js.com/0c7d88a0-5088-11eb-ab90-d9ae814b240d.png" /></p>
+<h3 id="_7">更易使用</h3>
+<p>响应式 <code>Api</code> 暴露出来</p>
+<p><img alt="" src="https://static.vue-js.com/26070260-5088-11eb-ab90-d9ae814b240d.png" /></p>
+<p>轻松识别组件重新渲染原因</p>
+<p><img alt="" src="https://static.vue-js.com/43b2fcb0-5088-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="vue3_1">二、Vue3新增特性</h2>
+<p>Vue 3 中需要关注的一些新功能包括：</p>
+<ul>
+<li>framents</li>
+<li>Teleport</li>
+<li>composition Api</li>
+<li>createRenderer</li>
+</ul>
+<h3 id="framents">framents</h3>
+<p>在 <code>Vue3.x</code> 中，组件现在支持有多个根节点</p>
+<pre><code class="language-js">&lt;!-- Layout.vue --&gt;
+&lt;template&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main v-bind=&quot;$attrs&quot;&gt;...&lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/template&gt;
+</code></pre>
+<h3 id="teleport">Teleport</h3>
+<p><code>Teleport</code> 是一种能够将我们的模板移动到 <code>DOM</code> 中 <code>Vue app</code> 之外的其他位置的技术，就有点像哆啦A梦的“任意门”</p>
+<p>在<code>vue2</code>中，像 <code>modals</code>,<code>toast</code> 等这样的元素，如果我们嵌套在 <code>Vue</code> 的某个组件内部，那么处理嵌套组件的定位、<code>z-index</code> 和样式就会变得很困难</p>
+<p>通过<code>Teleport</code>，我们可以在组件的逻辑位置写模板代码，然后在 <code>Vue</code> 应用范围之外渲染它</p>
+<pre><code class="language-html">&lt;button @click=&quot;showToast&quot; class=&quot;btn&quot;&gt;打开 toast&lt;/button&gt;
+&lt;!-- to 属性就是目标位置 --&gt;
+&lt;teleport to=&quot;#teleport-target&quot;&gt;
+    &lt;div v-if=&quot;visible&quot; class=&quot;toast-wrap&quot;&gt;
+        &lt;div class=&quot;toast-msg&quot;&gt;我是一个 Toast 文案&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/teleport&gt;
+</code></pre>
+<h3 id="createrenderer">createRenderer</h3>
+<p>通过<code>createRenderer</code>，我们能够构建自定义渲染器，我们能够将 <code>vue</code> 的开发模型扩展到其他平台</p>
+<p>我们可以将其生成在<code>canvas</code>画布上</p>
+<p><img alt="" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/da4437845ec54eb3829313c92fc81afe~tplv-k3u1fbpfcp-watermark.image" /></p>
+<p>关于<code>createRenderer</code>，我们了解下基本使用，就不展开讲述了</p>
+<pre><code class="language-js">import { createRenderer } from '@vue/runtime-core'
+
+const { render, createApp } = createRenderer({
+  patchProp,
+  insert,
+  remove,
+  createElement,
+  // ...
+})
+
+export { render, createApp }
+
+export * from '@vue/runtime-core'
+</code></pre>
+<h3 id="composition-api">composition Api</h3>
+<p>composition Api，也就是组合式<code>api</code>，通过这种形式，我们能够更加容易维护我们的代码，将相同功能的变量进行一个集中式的管理</p>
+<p><img alt="" src="https://static.vue-js.com/5e0bfb70-5088-11eb-ab90-d9ae814b240d.png" /></p>
+<p>关于<code>compositon api</code>的使用，这里以下图展开</p>
+<p><img alt="" src="https://static.vue-js.com/6f67a590-5088-11eb-85f6-6fac77c0c9b3.png" /></p>
+<p>简单使用:</p>
+<pre><code class="language-js">export default {
+    setup() {
+        const count = ref(0)
+        const double = computed(() =&gt; count.value * 2)
+        function increment() {
+            count.value++
+        }
+        onMounted(() =&gt; console.log('component mounted!'))
+        return {
+            count,
+            double,
+            increment
+        }
+    }
+}
+</code></pre>
+<h3 id="_8">三、非兼容变更</h3>
+<h3 id="global-api">Global API</h3>
+<ul>
+<li>全局 <code>Vue API</code> 已更改为使用应用程序实例</li>
+<li>全局和内部 <code>API</code> 已经被重构为可 <code>tree-shakable</code></li>
+</ul>
+<h3 id="_9">模板指令</h3>
+<ul>
+<li>组件上 <code>v-model</code> 用法已更改</li>
+<li><code>&lt;template v-for&gt;</code>和 非 <code>v-for</code>节点上<code>key</code>用法已更改</li>
+<li>在同一元素上使用的 <code>v-if</code> 和 <code>v-for</code> 优先级已更改</li>
+<li><code>v-bind="object"</code> 现在排序敏感</li>
+<li><code>v-for</code> 中的 <code>ref</code> 不再注册 <code>ref</code> 数组</li>
+</ul>
+<h3 id="_10">组件</h3>
+<ul>
+<li>只能使用普通函数创建功能组件</li>
+<li><code>functional</code> 属性在单文件组件 <code>(SFC)</code></li>
+<li>异步组件现在需要 <code>defineAsyncComponent</code> 方法来创建</li>
+</ul>
+<h3 id="_11">渲染函数</h3>
+<ul>
+<li>渲染函数<code>API</code>改变</li>
+<li><code>$scopedSlots</code> property 已删除，所有插槽都通过 <code>$slots</code> 作为函数暴露</li>
+<li>自定义指令 API 已更改为与组件生命周期一致</li>
+<li>一些转换 <code>class</code> 被重命名了：</li>
+<li><code>v-enter</code> -&gt; <code>v-enter-from</code></li>
+<li><code>v-leave</code> -&gt; <code>v-leave-from</code></li>
+<li>组件 <code>watch</code> 选项和实例方法 <code>$watch</code>不再支持点分隔字符串路径，请改用计算函数作为参数</li>
+<li>在 <code>Vue 2.x</code> 中，应用根容器的 <code>outerHTML</code> 将替换为根组件模板 (如果根组件没有模板/渲染选项，则最终编译为模板)。<code>VUE3.x</code> 现在使用应用程序容器的 <code>innerHTML</code>。</li>
+</ul>
+<h3 id="_12">其他小改变</h3>
+<ul>
+<li><code>destroyed</code> 生命周期选项被重命名为 <code>unmounted</code></li>
+<li><code>beforeDestroy</code> 生命周期选项被重命名为 <code>beforeUnmount</code></li>
+<li><code>[prop default</code>工厂函数不再有权访问 <code>this</code> 是上下文</li>
+<li>自定义指令 API 已更改为与组件生命周期一致</li>
+<li><code>data</code> 应始终声明为函数</li>
+<li>来自 <code>mixin</code> 的 <code>data</code> 选项现在可简单地合并</li>
+<li><code>attribute</code> 强制策略已更改</li>
+<li>一些过渡 <code>class</code> 被重命名</li>
+<li>组建 watch 选项和实例方法 <code>$watch</code>不再支持以点分隔的字符串路径。请改用计算属性函数作为参数。</li>
+<li><code>&lt;template&gt;</code> 没有特殊指令的标记 (<code>v-if/else-if/else</code>、<code>v-for</code> 或 <code>v-slot</code>) 现在被视为普通元素，并将生成原生的 <code>&lt;template&gt;</code> 元素，而不是渲染其内部内容。</li>
+<li>在<code>Vue 2.x</code> 中，应用根容器的 <code>outerHTML</code> 将替换为根组件模板 (如果根组件没有模板/渲染选项，则最终编译为模板)。<code>Vue 3.x</code> 现在使用应用容器的 <code>innerHTML</code>，这意味着容器本身不再被视为模板的一部分。</li>
+</ul>
+<h3 id="api">移除 API</h3>
+<ul>
+<li><code>keyCode</code> 支持作为 <code>v-on</code> 的修饰符</li>
+<li><code>$on</code>，<code>$off</code>和<code>$once</code> 实例方法</li>
+<li>过滤<code>filter</code></li>
+<li>内联模板 <code>attribute</code></li>
+<li><code>$destroy</code> 实例方法。用户不应再手动管理单个<code>Vue</code> 组件的生命周期。</li>
+</ul>
+<h2 id="_13">参考文献</h2>
+<ul>
+<li>https://vue3js.cn/docs/zh/guide/migration/introduction.html#%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4</li>
+<li>https://composition-api.vuejs.org/zh/#api-%E4%BB%8B%E7%BB%8D</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

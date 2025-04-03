@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：ES6中数组新增了哪些扩展？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1aES6\u4e2d\u6570\u7ec4\u65b0\u589e\u4e86\u54ea\u4e9b\u6269\u5c55\uff1f";
+        var mkdocs_page_input_path = "web\\es6\\array.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：ES6中数组新增了哪些扩展？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="es6">面试官：ES6中数组新增了哪些扩展？</h1>
+<p><img alt="" src="https://static.vue-js.com/a156b8d0-53c5-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h2 id="_1">一、扩展运算符的应用</h2>
+<p>ES6通过扩展元素符<code>...</code>，好比 <code>rest</code> 参数的逆运算，将一个数组转为用逗号分隔的参数序列</p>
+<pre><code class="language-js">console.log(...[1, 2, 3])
+// 1 2 3
+
+console.log(1, ...[2, 3, 4], 5)
+// 1 2 3 4 5
+
+[...document.querySelectorAll('div')]
+// [&lt;div&gt;, &lt;div&gt;, &lt;div&gt;]
+</code></pre>
+<p>主要用于函数调用的时候，将一个数组变为参数序列</p>
+<pre><code class="language-js">function push(array, ...items) {
+  array.push(...items);
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+const numbers = [4, 38];
+add(...numbers) // 42
+</code></pre>
+<p>可以将某些数据结构转为数组</p>
+<pre><code class="language-js">[...document.querySelectorAll('div')]
+</code></pre>
+<p>能够更简单实现数组复制</p>
+<pre><code class="language-js">const a1 = [1, 2];
+const [...a2] = a1;
+// [1,2]
+</code></pre>
+<p>数组的合并也更为简洁了</p>
+<pre><code class="language-js">const arr1 = ['a', 'b'];
+const arr2 = ['c'];
+const arr3 = ['d', 'e'];
+[...arr1, ...arr2, ...arr3]
+// [ 'a', 'b', 'c', 'd', 'e' ]
+</code></pre>
+<p>注意：通过扩展运算符实现的是浅拷贝，修改了引用指向的值，会同步反映到新数组</p>
+<p>下面看个例子就清楚多了</p>
+<pre><code class="language-js">const arr1 = ['a', 'b',[1,2]];
+const arr2 = ['c'];
+const arr3  = [...arr1,...arr2]
+arr[1][0] = 9999 // 修改arr1里面数组成员值
+console.log(arr[3]) // 影响到arr3,['a','b',[9999,2],'c']
+</code></pre>
+<p>扩展运算符可以与解构赋值结合起来，用于生成数组</p>
+<pre><code class="language-js">const [first, ...rest] = [1, 2, 3, 4, 5];
+first // 1
+rest  // [2, 3, 4, 5]
+
+const [first, ...rest] = [];
+first // undefined
+rest  // []
+
+const [first, ...rest] = [&quot;foo&quot;];
+first  // &quot;foo&quot;
+rest   // []
+</code></pre>
+<p>如果将扩展运算符用于数组赋值，只能放在参数的最后一位，否则会报错</p>
+<pre><code class="language-js">const [...butLast, last] = [1, 2, 3, 4, 5];
+// 报错
+
+const [first, ...middle, last] = [1, 2, 3, 4, 5];
+// 报错
+</code></pre>
+<p>可以将字符串转为真正的数组</p>
+<pre><code class="language-javascript">[...'hello']
+// [ &quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot; ]
+</code></pre>
+<p>定义了遍历器（Iterator）接口的对象，都可以用扩展运算符转为真正的数组</p>
+<pre><code class="language-js">let nodeList = document.querySelectorAll('div');
+let array = [...nodeList];
+
+let map = new Map([
+  [1, 'one'],
+  [2, 'two'],
+  [3, 'three'],
+]);
+
+let arr = [...map.keys()]; // [1, 2, 3]
+</code></pre>
+<p>如果对没有 Iterator 接口的对象，使用扩展运算符，将会报错</p>
+<pre><code class="language-javascript">const obj = {a: 1, b: 2};
+let arr = [...obj]; // TypeError: Cannot spread non-iterable object
+</code></pre>
+<h2 id="_2">二、构造函数新增的方法</h2>
+<p>关于构造函数，数组新增的方法有如下：</p>
+<ul>
+<li>Array.from()</li>
+<li>Array.of()</li>
+</ul>
+<h3 id="arrayfrom">Array.from()</h3>
+<p>将两类对象转为真正的数组：类似数组的对象和可遍历<code>（iterable）</code>的对象（包括 <code>ES6</code> 新增的数据结构 <code>Set</code> 和 <code>Map</code>）</p>
+<pre><code class="language-js">let arrayLike = {
+    '0': 'a',
+    '1': 'b',
+    '2': 'c',
+    length: 3
+};
+let arr2 = Array.from(arrayLike); // ['a', 'b', 'c']
+</code></pre>
+<p>还可以接受第二个参数，用来对每个元素进行处理，将处理后的值放入返回的数组</p>
+<pre><code class="language-js">Array.from([1, 2, 3], (x) =&gt; x * x)
+// [1, 4, 9]
+</code></pre>
+<h3 id="arrayof">Array.of()</h3>
+<p>用于将一组值，转换为数组</p>
+<pre><code class="language-js">Array.of(3, 11, 8) // [3,11,8]
+</code></pre>
+<p>没有参数的时候，返回一个空数组</p>
+<p>当参数只有一个的时候，实际上是指定数组的长度</p>
+<p>参数个数不少于 2 个时，<code>Array()</code>才会返回由参数组成的新数组</p>
+<pre><code class="language-js">Array() // []
+Array(3) // [, , ,]
+Array(3, 11, 8) // [3, 11, 8]
+</code></pre>
+<h3 id="_3">三、实例对象新增的方法</h3>
+<p>关于数组实例对象新增的方法有如下：</p>
+<ul>
+<li>copyWithin()</li>
+<li>find()、findIndex()</li>
+<li>fill()</li>
+<li>entries()，keys()，values()</li>
+<li>includes()</li>
+<li>flat()，flatMap()</li>
+</ul>
+<h3 id="copywithin">copyWithin()</h3>
+<p>将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组</p>
+<p>参数如下：</p>
+<ul>
+<li>target（必需）：从该位置开始替换数据。如果为负值，表示倒数。</li>
+<li>start（可选）：从该位置开始读取数据，默认为 0。如果为负值，表示从末尾开始计算。</li>
+<li>end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示从末尾开始计算。</li>
+</ul>
+<pre><code class="language-js">[1, 2, 3, 4, 5].copyWithin(0, 3) // 将从 3 号位直到数组结束的成员（4 和 5），复制到从 0 号位开始的位置，结果覆盖了原来的 1 和 2
+// [4, 5, 3, 4, 5] 
+</code></pre>
+<h3 id="findfindindex">find()、findIndex()</h3>
+<p><code>find()</code>用于找出第一个符合条件的数组成员</p>
+<p>参数是一个回调函数，接受三个参数依次为当前的值、当前的位置和原数组</p>
+<pre><code class="language-js">[1, 5, 10, 15].find(function(value, index, arr) {
+  return value &gt; 9;
+}) // 10
+</code></pre>
+<p><code>findIndex</code>返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回<code>-1</code></p>
+<pre><code class="language-javascript">[1, 5, 10, 15].findIndex(function(value, index, arr) {
+  return value &gt; 9;
+}) // 2
+</code></pre>
+<p>这两个方法都可以接受第二个参数，用来绑定回调函数的<code>this</code>对象。</p>
+<pre><code class="language-js">function f(v){
+  return v &gt; this.age;
+}
+let person = {name: 'John', age: 20};
+[10, 12, 26, 15].find(f, person);    // 26
+</code></pre>
+<h3 id="fill">fill()</h3>
+<p>使用给定值，填充一个数组</p>
+<pre><code class="language-javascript">['a', 'b', 'c'].fill(7)
+// [7, 7, 7]
+
+new Array(3).fill(7)
+// [7, 7, 7]
+</code></pre>
+<p>还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置</p>
+<pre><code class="language-js">['a', 'b', 'c'].fill(7, 1, 2)
+// ['a', 7, 'c']
+</code></pre>
+<p>注意，如果填充的类型为对象，则是浅拷贝</p>
+<h3 id="entrieskeysvalues">entries()，keys()，values()</h3>
+<p><code>keys()</code>是对键名的遍历、<code>values()</code>是对键值的遍历，<code>entries()</code>是对键值对的遍历</p>
+<pre><code class="language-js">or (let index of ['a', 'b'].keys()) {
+  console.log(index);
+}
+// 0
+// 1
+
+for (let elem of ['a', 'b'].values()) {
+  console.log(elem);
+}
+// 'a'
+// 'b'
+
+for (let [index, elem] of ['a', 'b'].entries()) {
+  console.log(index, elem);
+}
+// 0 &quot;a&quot;
+</code></pre>
+<h3 id="includes">includes()</h3>
+<p>用于判断数组是否包含给定的值</p>
+<pre><code class="language-js">[1, 2, 3].includes(2)     // true
+[1, 2, 3].includes(4)     // false
+[1, 2, NaN].includes(NaN) // true
+</code></pre>
+<p>方法的第二个参数表示搜索的起始位置，默认为<code>0</code></p>
+<p>参数为负数则表示倒数的位置</p>
+<pre><code class="language-js">[1, 2, 3].includes(3, 3);  // false
+[1, 2, 3].includes(3, -1); // true
+</code></pre>
+<h3 id="flatflatmap">flat()，flatMap()</h3>
+<p>将数组扁平化处理，返回一个新数组，对原数据没有影响</p>
+<pre><code class="language-js">[1, 2, [3, 4]].flat()
+// [1, 2, 3, 4]
+</code></pre>
+<p><code>flat()</code>默认只会“拉平”一层，如果想要“拉平”多层的嵌套数组，可以将<code>flat()</code>方法的参数写成一个整数，表示想要拉平的层数，默认为1</p>
+<pre><code class="language-js">[1, 2, [3, [4, 5]]].flat()
+// [1, 2, 3, [4, 5]]
+
+[1, 2, [3, [4, 5]]].flat(2)
+// [1, 2, 3, 4, 5]
+</code></pre>
+<p><code>flatMap()</code>方法对原数组的每个成员执行一个函数相当于执行<code>Array.prototype.map()</code>，然后对返回值组成的数组执行<code>flat()</code>方法。该方法返回一个新数组，不改变原数组</p>
+<pre><code class="language-js">// 相当于 [[2, 4], [3, 6], [4, 8]].flat()
+[2, 3, 4].flatMap((x) =&gt; [x, x * 2])
+// [2, 4, 3, 6, 4, 8]
+</code></pre>
+<p><code>flatMap()</code>方法还可以有第二个参数，用来绑定遍历函数里面的<code>this</code></p>
+<h3 id="_4">四、数组的空位</h3>
+<p>数组的空位指，数组的某一个位置没有任何值</p>
+<p>ES6 则是明确将空位转为<code>undefined</code>，包括<code>Array.from</code>、扩展运算符、<code>copyWithin()</code>、<code>fill()</code>、<code>entries()</code>、<code>keys()</code>、<code>values()</code>、<code>find()</code>和<code>findIndex()</code></p>
+<p>建议大家在日常书写中，避免出现空位</p>
+<h3 id="_5">五、排序稳定性</h3>
+<p>将<code>sort()</code>默认设置为稳定的排序算法</p>
+<pre><code class="language-js">const arr = [
+  'peach',
+  'straw',
+  'apple',
+  'spork'
+];
+
+const stableSorting = (s1, s2) =&gt; {
+  if (s1[0] &lt; s2[0]) return -1;
+  return 1;
+};
+
+arr.sort(stableSorting)
+// [&quot;apple&quot;, &quot;peach&quot;, &quot;straw&quot;, &quot;spork&quot;]
+</code></pre>
+<p>排序结果中，<code>straw</code>在<code>spork</code>的前面，跟原始顺序一致</p>
+<h2 id="_6">参考文献</h2>
+<ul>
+<li>https://es6.ruanyifeng.com/#docs/array</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

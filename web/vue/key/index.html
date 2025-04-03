@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：你知道vue中key的原理吗？说说你对它的理解 - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u4f60\u77e5\u9053vue\u4e2dkey\u7684\u539f\u7406\u5417\uff1f\u8bf4\u8bf4\u4f60\u5bf9\u5b83\u7684\u7406\u89e3";
+        var mkdocs_page_input_path = "web\\vue\\key.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：你知道vue中key的原理吗？说说你对它的理解</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vuekey">面试官：你知道vue中key的原理吗？说说你对它的理解</h1>
+<p><img alt="" src="https://static.vue-js.com/bc6e9540-3f41-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h2 id="key">一、Key是什么</h2>
+<p>开始之前，我们先还原两个实际工作场景</p>
+<ol>
+<li>当我们在使用<code>v-for</code>时，需要给单元加上<code>key</code></li>
+</ol>
+<pre><code class="language-js">&lt;ul&gt;
+    &lt;li v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<ol>
+<li>用<code>+new Date()</code>生成的时间戳作为<code>key</code>，手动强制触发重新渲染</li>
+</ol>
+<pre><code class="language-js">&lt;Comp :key=&quot;+new Date()&quot; /&gt;
+</code></pre>
+<p>那么这背后的逻辑是什么，<code>key</code>的作用又是什么？</p>
+<p>一句话来讲</p>
+<blockquote>
+<p>key是给每一个vnode的唯一id，也是diff的一种优化策略，可以根据key，更准确， 更快的找到对应的vnode节点</p>
+</blockquote>
+<h3 id="_1">场景背后的逻辑</h3>
+<p>当我们在使用<code>v-for</code>时，需要给单元加上<code>key</code></p>
+<ul>
+<li>
+<p>如果不用key，Vue会采用就地复地原则：最小化element的移动，并且会尝试尽最大程度在同适当的地方对相同类型的element，做patch或者reuse。</p>
+</li>
+<li>
+<p>如果使用了key，Vue会根据keys的顺序记录element，曾经拥有了key的element如果不再出现的话，会被直接remove或者destoryed</p>
+</li>
+</ul>
+<p>用<code>+new Date()</code>生成的时间戳作为<code>key</code>，手动强制触发重新渲染</p>
+<ul>
+<li>当拥有新值的rerender作为key时，拥有了新key的Comp出现了，那么旧key Comp会被移除，新key Comp触发渲染</li>
+</ul>
+<h2 id="keykey">二、设置key与不设置key区别</h2>
+<p>举个例子：</p>
+<p>创建一个实例，2秒后往<code>items</code>数组插入数据</p>
+<pre><code class="language-html">&lt;body&gt;
+  &lt;div id=&quot;demo&quot;&gt;
+    &lt;p v-for=&quot;item in items&quot; :key=&quot;item&quot;&gt;{{item}}&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../../dist/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    // 创建实例
+    const app = new Vue({
+      el: '#demo',
+      data: { items: ['a', 'b', 'c', 'd', 'e'] },
+      mounted () {
+        setTimeout(() =&gt; { 
+          this.items.splice(2, 0, 'f')  // 
+       }, 2000);
+     },
+   });
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p>在不使用<code>key</code>的情况，<code>vue</code>会进行这样的操作：</p>
+<p><img alt="" src="https://static.vue-js.com/c9da6790-3f41-11eb-85f6-6fac77c0c9b3.png" /></p>
+<p>分析下整体流程：</p>
+<ul>
+<li>比较A，A，相同类型的节点，进行<code>patch</code>，但数据相同，不发生<code>dom</code>操作</li>
+<li>比较B，B，相同类型的节点，进行<code>patch</code>，但数据相同，不发生<code>dom</code>操作</li>
+<li>比较C，F，相同类型的节点，进行<code>patch</code>，数据不同，发生<code>dom</code>操作</li>
+<li>比较D，C，相同类型的节点，进行<code>patch</code>，数据不同，发生<code>dom</code>操作</li>
+<li>比较E，D，相同类型的节点，进行<code>patch</code>，数据不同，发生<code>dom</code>操作</li>
+<li>循环结束，将E插入到<code>DOM</code>中</li>
+</ul>
+<p>一共发生了3次更新，1次插入操作</p>
+<p>在使用<code>key</code>的情况：<code>vue</code>会进行这样的操作：</p>
+<ul>
+<li>比较A，A，相同类型的节点，进行<code>patch</code>，但数据相同，不发生<code>dom</code>操作</li>
+<li>比较B，B，相同类型的节点，进行<code>patch</code>，但数据相同，不发生<code>dom</code>操作</li>
+<li>比较C，F，不相同类型的节点</li>
+<li>比较E、E，相同类型的节点，进行<code>patch</code>，但数据相同，不发生<code>dom</code>操作</li>
+<li>比较D、D，相同类型的节点，进行<code>patch</code>，但数据相同，不发生<code>dom</code>操作</li>
+<li>比较C、C，相同类型的节点，进行<code>patch</code>，但数据相同，不发生<code>dom</code>操作</li>
+<li>循环结束，将F插入到C之前</li>
+</ul>
+<p>一共发生了0次更新，1次插入操作</p>
+<p>通过上面两个小例子，可见设置<code>key</code>能够大大减少对页面的<code>DOM</code>操作，提高了<code>diff</code>效率</p>
+<h3 id="keydiff">设置key值一定能提高diff效率吗？</h3>
+<p>其实不然，文档中也明确表示</p>
+<blockquote>
+<p>当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序， 而是简单复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素</p>
+</blockquote>
+<p>这个默认的模式是高效的，但是只适用于不依赖子组件状态或临时 DOM 状态 (例如：表单输入值) 的列表渲染输出</p>
+<p>建议尽可能在使用 <code>v-for</code> 时提供 <code>key</code>，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升</p>
+<h2 id="_2">三、原理分析</h2>
+<p>源码位置：core/vdom/patch.js</p>
+<p>这里判断是否为同一个<code>key</code>，首先判断的是<code>key</code>值是否相等如果没有设置<code>key</code>，那么<code>key</code>为<code>undefined</code>，这时候<code>undefined</code>是恒等于<code>undefined</code></p>
+<pre><code class="language-js">function sameVnode (a, b) {
+    return (
+        a.key === b.key &amp;&amp; (
+            (
+                a.tag === b.tag &amp;&amp;
+                a.isComment === b.isComment &amp;&amp;
+                isDef(a.data) === isDef(b.data) &amp;&amp;
+                sameInputType(a, b)
+            ) || (
+                isTrue(a.isAsyncPlaceholder) &amp;&amp;
+                a.asyncFactory === b.asyncFactory &amp;&amp;
+                isUndef(b.asyncFactory.error)
+            )
+        )
+    )
+}
+</code></pre>
+<p><code>updateChildren</code>方法中会对新旧<code>vnode</code>进行<code>diff</code>，然后将比对出的结果用来更新真实的<code>DOM</code></p>
+<pre><code class="language-js">function updateChildren (parentElm, oldCh, newCh, insertedVnodeQueue, removeOnly) {
+    ...
+    while (oldStartIdx &lt;= oldEndIdx &amp;&amp; newStartIdx &lt;= newEndIdx) {
+        if (isUndef(oldStartVnode)) {
+            ...
+        } else if (isUndef(oldEndVnode)) {
+            ...
+        } else if (sameVnode(oldStartVnode, newStartVnode)) {
+            ...
+        } else if (sameVnode(oldEndVnode, newEndVnode)) {
+            ...
+        } else if (sameVnode(oldStartVnode, newEndVnode)) { // Vnode moved right
+            ...
+        } else if (sameVnode(oldEndVnode, newStartVnode)) { // Vnode moved left
+            ...
+        } else {
+            if (isUndef(oldKeyToIdx)) oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx)
+            idxInOld = isDef(newStartVnode.key)
+                ? oldKeyToIdx[newStartVnode.key]
+                : findIdxInOld(newStartVnode, oldCh, oldStartIdx, oldEndIdx)
+            if (isUndef(idxInOld)) { // New element
+                createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm, false, newCh, newStartIdx)
+            } else {
+                vnodeToMove = oldCh[idxInOld]
+                if (sameVnode(vnodeToMove, newStartVnode)) {
+                    patchVnode(vnodeToMove, newStartVnode, insertedVnodeQueue, newCh, newStartIdx)
+                    oldCh[idxInOld] = undefined
+                    canMove &amp;&amp; nodeOps.insertBefore(parentElm, vnodeToMove.elm, oldStartVnode.elm)
+                } else {
+                    // same key but different element. treat as new element
+                    createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm, false, newCh, newStartIdx)
+                }
+            }
+            newStartVnode = newCh[++newStartIdx]
+        }
+    }
+    ...
+}
+</code></pre>
+<h2 id="_3">参考文献</h2>
+<ul>
+<li>https://juejin.cn/post/6844903826693029895</li>
+<li>https://juejin.cn/post/6844903985397104648</li>
+<li>https://vue3js.cn/docs/zh</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

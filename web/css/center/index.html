@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：元素水平垂直居中的方法有哪些？如果元素不定宽高呢？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u5143\u7d20\u6c34\u5e73\u5782\u76f4\u5c45\u4e2d\u7684\u65b9\u6cd5\u6709\u54ea\u4e9b\uff1f\u5982\u679c\u5143\u7d20\u4e0d\u5b9a\u5bbd\u9ad8\u5462\uff1f";
+        var mkdocs_page_input_path = "web\\css\\center.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：元素水平垂直居中的方法有哪些？如果元素不定宽高呢？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">面试官：元素水平垂直居中的方法有哪些？如果元素不定宽高呢？</h1>
+<p><img alt="" src="https://static.vue-js.com/7b64c8d0-95f9-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_2">一、背景</h2>
+<p>在开发中经常遇到这个问题，即让某个元素的内容在水平和垂直方向上都居中，内容不仅限于文字，可能是图片或其他元素</p>
+<p>居中是一个非常基础但又是非常重要的应用场景，实现居中的方法存在很多，可以将这些方法分成两个大类：</p>
+<ul>
+<li>居中元素（子元素）的宽高已知</li>
+<li>居中元素宽高未知</li>
+</ul>
+<h2 id="_3">二、实现方式</h2>
+<p>实现元素水平垂直居中的方式：</p>
+<ul>
+<li>
+<p>利用定位+margin:auto</p>
+</li>
+<li>
+<p>利用定位+margin:负值</p>
+</li>
+<li>
+<p>利用定位+transform</p>
+</li>
+<li>table布局</li>
+<li>flex布局</li>
+<li>grid布局</li>
+</ul>
+<h3 id="marginauto">利用定位+margin:auto</h3>
+<p>先上代码：</p>
+<pre><code class="language-html">&lt;style&gt;
+    .father{
+        width:500px;
+        height:300px;
+        border:1px solid #0a3b98;
+        position: relative;
+    }
+    .son{
+        width:100px;
+        height:40px;
+        background: #f0a238;
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>父级设置为相对定位，子级绝对定位 ，并且四个定位属性的值都设置了0，那么这时候如果子级没有设置宽高，则会被拉开到和父级一样宽高</p>
+<p>这里子元素设置了宽高，所以宽高会按照我们的设置来显示，但是实际上子级的虚拟占位已经撑满了整个父级，这时候再给它一个<code>margin：auto</code>它就可以上下左右都居中了</p>
+<h3 id="margin">利用定位+margin:负值</h3>
+<p>绝大多数情况下，设置父元素为相对定位， 子元素移动自身50%实现水平垂直居中</p>
+<pre><code class="language-html">&lt;style&gt;
+    .father {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: skyblue;
+    }
+    .son {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left:-50px;
+        margin-top:-50px;
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>整个实现思路如下图所示：</p>
+<p><img alt="" src="https://static.vue-js.com/922dc300-95f9-11eb-ab90-d9ae814b240d.png" /></p>
+<ul>
+<li>初始位置为方块1的位置</li>
+<li>当设置left、top为50%的时候，内部子元素为方块2的位置</li>
+<li>设置margin为负数时，使内部子元素到方块3的位置，即中间位置</li>
+</ul>
+<p>这种方案不要求父元素的高度，也就是即使父元素的高度变化了，仍然可以保持在父元素的垂直居中位置，水平方向上是一样的操作</p>
+<p>但是该方案需要知道子元素自身的宽高，但是我们可以通过下面<code>transform</code>属性进行移动</p>
+<h3 id="transform">利用定位+transform</h3>
+<p>实现代码如下：</p>
+<pre><code class="language-css">&lt;style&gt;
+    .father {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: skyblue;
+    }
+    .son {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p><code>translate(-50%, -50%)</code>将会将元素位移自己宽度和高度的-50%</p>
+<p>这种方法其实和最上面被否定掉的margin负值用法一样，可以说是<code>margin</code>负值的替代方案，并不需要知道自身元素的宽高</p>
+<h3 id="table">table布局</h3>
+<p>设置父元素为<code>display:table-cell</code>，子元素设置 <code>display: inline-block</code>。利用<code>vertical</code>和<code>text-align</code>可以让所有的行内块级元素水平垂直居中</p>
+<pre><code class="language-html">&lt;style&gt;
+    .father {
+        display: table-cell;
+        width: 200px;
+        height: 200px;
+        background: skyblue;
+        vertical-align: middle;
+        text-align: center;
+    }
+    .son {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="flex">flex弹性布局</h3>
+<p>还是看看实现的整体代码：</p>
+<pre><code class="language-html">&lt;style&gt;
+    .father {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        background: skyblue;
+    }
+    .son {
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p><code>css3</code>中了<code>flex</code>布局，可以非常简单实现垂直水平居中</p>
+<p>这里可以简单看看<code>flex</code>布局的关键属性作用：</p>
+<ul>
+<li>
+<p>display: flex时，表示该容器内部的元素将按照flex进行布局</p>
+</li>
+<li>
+<p>align-items: center表示这些元素将相对于本容器水平居中</p>
+</li>
+<li>justify-content: center也是同样的道理垂直居中</li>
+</ul>
+<h3 id="grid">grid网格布局</h3>
+<pre><code class="language-html">&lt;style&gt;
+    .father {
+            display: grid;
+            align-items:center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+
+        }
+        .son {
+            width: 10px;
+            height: 10px;
+            border: 1px solid red
+        }
+&lt;/style&gt;
+&lt;div class=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>这里看到，<code>gird</code>网格布局和<code>flex</code>弹性布局都简单粗暴</p>
+<h3 id="_4">小结</h3>
+<p>上述方法中，不知道元素宽高大小仍能实现水平垂直居中的方法有：</p>
+<ul>
+<li>利用定位+margin:auto</li>
+<li>利用定位+transform</li>
+<li>flex布局</li>
+<li>grid布局</li>
+</ul>
+<h2 id="_5">三、总结</h2>
+<p>根据元素标签的性质，可以分为：</p>
+<ul>
+<li>内联元素居中布局</li>
+<li>块级元素居中布局</li>
+</ul>
+<h3 id="_6">内联元素居中布局</h3>
+<p>水平居中</p>
+<ul>
+<li>行内元素可设置：text-align: center</li>
+<li>flex布局设置父元素：display: flex; justify-content: center</li>
+</ul>
+<p>垂直居中</p>
+<ul>
+<li>单行文本父元素确认高度：height === line-height</li>
+<li>多行文本父元素确认高度：display: table-cell; vertical-align: middle</li>
+</ul>
+<h3 id="_7">块级元素居中布局</h3>
+<p>水平居中</p>
+<ul>
+<li>定宽: margin: 0 auto</li>
+<li>绝对定位+left:50%+margin:负自身一半</li>
+</ul>
+<p>垂直居中</p>
+<ul>
+<li>position: absolute设置left、top、margin-left、margin-top(定高)</li>
+<li>display: table-cell</li>
+<li>transform: translate(x, y)</li>
+<li>flex(不定高，不定宽)</li>
+<li>grid(不定高，不定宽)，兼容性相对比较差</li>
+</ul>
+<h2 id="_8">参考文献</h2>
+<ul>
+<li>https://juejin.cn/post/6844903982960214029#heading-10</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

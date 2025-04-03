@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>正则表达式 - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u6b63\u5219\u8868\u8fbe\u5f0f";
+        var mkdocs_page_input_path = "web\\JavaScript\\regexp.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >JavaScript</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >数据处理</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">正则表达式</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#_2">一、是什么</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">二、匹配规则</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_8">三、匹配方法</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#strreplaceregexp">str.replace(regexp)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_9">四、应用场景</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#_10">参考文献</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">前端基础</li>
+          <li class="breadcrumb-item">JavaScript</li>
+          <li class="breadcrumb-item">数据处理</li>
+      <li class="breadcrumb-item active">正则表达式</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">面试官：说说你对正则表达式的理解？应用场景？</h1>
+<p><img alt="" src="https://static.vue-js.com/55388a40-7f1d-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_2">一、是什么</h2>
+<p>正则表达式是一种用来匹配字符串的强有力的武器</p>
+<p>它的设计思想是用一种描述性的语言定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的</p>
+<p>在 <code>JavaScript</code>中，正则表达式也是对象，构建正则表达式有两种方式：</p>
+<ol>
+<li>字面量创建，其由包含在斜杠之间的模式组成</li>
+</ol>
+<pre><code class="language-js">const re = /\d+/g;
+</code></pre>
+<ol>
+<li>调用<code>RegExp</code>对象的构造函数</li>
+</ol>
+<pre><code class="language-js">const re = new RegExp(&quot;\\d+&quot;,&quot;g&quot;);
+
+const rul = &quot;\\d+&quot;
+const re1 = new RegExp(rul,&quot;g&quot;);
+</code></pre>
+<p>使用构建函数创建，第一个参数可以是一个变量，遇到特殊字符<code>\</code>需要使用<code>\\</code>进行转义</p>
+<h2 id="_3">二、匹配规则</h2>
+<p>常见的校验规则如下：</p>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>转义</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配输入的开始</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配输入的结束</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前一个表达式 0 次或多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面一个表达式 1 次或者多次。等价于 <code>{1,}</code></td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面一个表达式 0 次或者 1 次。等价于<code>{0,1}</code></td>
+</tr>
+<tr>
+<td>.</td>
+<td>默认匹配除换行符之外的任何单个字符</td>
+</tr>
+<tr>
+<td>x(?=y)</td>
+<td>匹配'x'仅仅当'x'后面跟着'y'。这种叫做先行断言</td>
+</tr>
+<tr>
+<td>(?&lt;=y)x</td>
+<td>匹配'x'仅当'x'前面是'y'.这种叫做后行断言</td>
+</tr>
+<tr>
+<td>x(?!y)</td>
+<td>仅仅当'x'后面不跟着'y'时匹配'x'，这被称为正向否定查找</td>
+</tr>
+<tr>
+<td>(?&lt;!<em>y</em>)<em>x</em></td>
+<td>仅仅当'x'前面不是'y'时匹配'x'，这被称为反向否定查找</td>
+</tr>
+<tr>
+<td>x|y</td>
+<td>匹配‘x’或者‘y’</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n 是一个正整数，匹配了前面一个字符刚好出现了 n 次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n是一个正整数，匹配前一个字符至少出现了n次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>n 和 m 都是整数。匹配前面的字符至少n次，最多m次</td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td>一个字符集合。匹配方括号中的任意字符</td>
+</tr>
+<tr>
+<td>[^xyz]</td>
+<td>匹配任何没有包含在方括号中的字符</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配一个词的边界，例如在字母和空格之间</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配一个非单词边界</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一个数字</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配一个非数字字符</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>匹配一个换页符</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>匹配一个回车符</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配一个空白字符，包括空格、制表符、换页符和换行符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配一个非空白字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配一个单字字符（字母、数字或者下划线）</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配一个非单字字符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">正则表达式标记</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">标志</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>g</code></td>
+<td style="text-align: left;">全局搜索。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>i</code></td>
+<td style="text-align: left;">不区分大小写搜索。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>m</code></td>
+<td style="text-align: left;">多行搜索。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>s</code></td>
+<td style="text-align: left;">允许 <code>.</code> 匹配换行符。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>u</code></td>
+<td style="text-align: left;">使用<code>unicode</code>码的模式进行匹配。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>y</code></td>
+<td style="text-align: left;">执行“粘性(<code>sticky</code>)”搜索,匹配从目标字符串的当前位置开始。</td>
+</tr>
+</tbody>
+</table>
+<p>使用方法如下：</p>
+<pre><code class="language-js">var re = /pattern/flags;
+var re = new RegExp(&quot;pattern&quot;, &quot;flags&quot;);
+</code></pre>
+<p>在了解下正则表达式基本的之外，还可以掌握几个正则表达式的特性：</p>
+<h3 id="_5">贪婪模式</h3>
+<p>在了解贪婪模式前，首先举个例子：</p>
+<pre><code class="language-js">const reg = /ab{1,3}c/
+</code></pre>
+<p>在匹配过程中，尝试可能的顺序是从多往少的方向去尝试。首先会尝试<code>bbb</code>，然后再看整个正则是否能匹配。不能匹配时，吐出一个<code>b</code>，即在<code>bb</code>的基础上，再继续尝试，以此重复</p>
+<p>如果多个贪婪量词挨着，则深度优先搜索</p>
+<pre><code class="language-js">const string = &quot;12345&quot;;
+const regx = /(\d{1,3})(\d{1,3})/;
+console.log( string.match(reg) );
+// =&gt; [&quot;12345&quot;, &quot;123&quot;, &quot;45&quot;, index: 0, input: &quot;12345&quot;]
+</code></pre>
+<p>其中，前面的<code>\d{1,3}</code>匹配的是"123"，后面的<code>\d{1,3}</code>匹配的是"45"</p>
+<h3 id="_6">懒惰模式</h3>
+<p>惰性量词就是在贪婪量词后面加个问号。表示尽可能少的匹配</p>
+<pre><code class="language-js">var string = &quot;12345&quot;;
+var regex = /(\d{1,3}?)(\d{1,3})/;
+console.log( string.match(regex) );
+// =&gt; [&quot;1234&quot;, &quot;1&quot;, &quot;234&quot;, index: 0, input: &quot;12345&quot;]
+</code></pre>
+<p>其中<code>\d{1,3}?</code>只匹配到一个字符"1"，而后面的<code>\d{1,3}</code>匹配了"234"</p>
+<h3 id="_7">分组</h3>
+<p>分组主要是用过<code>()</code>进行实现，比如<code>beyond{3}</code>，是匹配<code>d</code>字母3次。而<code>(beyond){3}</code>是匹配<code>beyond</code>三次</p>
+<p>在<code>()</code>内使用<code>|</code>达到或的效果，如<code>(abc | xxx)</code>可以匹配<code>abc</code>或者<code>xxx</code></p>
+<p>反向引用，巧用<code>$</code>分组捕获</p>
+<pre><code class="language-js">let str = &quot;John Smith&quot;;
+
+// 交换名字和姓氏
+console.log(str.replace(/(john) (smith)/i, '$2, $1')) // Smith, John
+</code></pre>
+<h2 id="_8">三、匹配方法</h2>
+<p>正则表达式常被用于某些方法，我们可以分成两类：</p>
+<ul>
+<li>字符串（str）方法：<code>match</code>、<code>matchAll</code>、<code>search</code>、<code>replace</code>、<code>split</code></li>
+<li>正则对象下（regexp）的方法：<code>test</code>、<code>exec</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">exec</td>
+<td style="text-align: left;">一个在字符串中执行查找匹配的RegExp方法，它返回一个数组（未匹配到则返回 null）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">test</td>
+<td style="text-align: left;">一个在字符串中测试是否匹配的RegExp方法，它返回 true 或 false。</td>
+</tr>
+<tr>
+<td style="text-align: left;">match</td>
+<td style="text-align: left;">一个在字符串中执行查找匹配的String方法，它返回一个数组，在未匹配到时会返回 null。</td>
+</tr>
+<tr>
+<td style="text-align: left;">matchAll</td>
+<td style="text-align: left;">一个在字符串中执行查找所有匹配的String方法，它返回一个迭代器（iterator）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">search</td>
+<td style="text-align: left;">一个在字符串中测试匹配的String方法，它返回匹配到的位置索引，或者在失败时返回-1。</td>
+</tr>
+<tr>
+<td style="text-align: left;">replace</td>
+<td style="text-align: left;">一个在字符串中执行查找匹配的String方法，并且使用替换字符串替换掉匹配到的子字符串。</td>
+</tr>
+<tr>
+<td style="text-align: left;">split</td>
+<td style="text-align: left;">一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的 <code>String</code> 方法。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="strmatchregexp">str.match(regexp)</h3>
+<p><code>str.match(regexp)</code> 方法在字符串 <code>str</code> 中找到匹配 <code>regexp</code> 的字符</p>
+<p>如果 <code>regexp</code> 不带有 <code>g</code> 标记，则它以数组的形式返回第一个匹配项，其中包含分组和属性 <code>index</code>（匹配项的位置）、<code>input</code>（输入字符串，等于 <code>str</code>）</p>
+<pre><code class="language-js">let str = &quot;I love JavaScript&quot;;
+
+let result = str.match(/Java(Script)/);
+
+console.log( result[0] );     // JavaScript（完全匹配）
+console.log( result[1] );     // Script（第一个分组）
+console.log( result.length ); // 2
+
+// 其他信息：
+console.log( result.index );  // 7（匹配位置）
+console.log( result.input );  // I love JavaScript（源字符串）
+</code></pre>
+<p>如果 <code>regexp</code> 带有 <code>g</code> 标记，则它将所有匹配项的数组作为字符串返回，而不包含分组和其他详细信息</p>
+<pre><code class="language-js">let str = &quot;I love JavaScript&quot;;
+
+let result = str.match(/Java(Script)/g);
+
+console.log( result[0] ); // JavaScript
+console.log( result.length ); // 1
+</code></pre>
+<p>如果没有匹配项，则无论是否带有标记 <code>g</code> ，都将返回 <code>null</code></p>
+<pre><code class="language-js">let str = &quot;I love JavaScript&quot;;
+
+let result = str.match(/HTML/);
+
+console.log(result); // null
+</code></pre>
+<h3 id="strmatchallregexp">str.matchAll(regexp)</h3>
+<p>返回一个包含所有匹配正则表达式的结果及分组捕获组的迭代器</p>
+<pre><code class="language-js">const regexp = /t(e)(st(\d?))/g;
+const str = 'test1test2';
+
+const array = [...str.matchAll(regexp)];
+
+console.log(array[0]);
+// expected output: Array [&quot;test1&quot;, &quot;e&quot;, &quot;st1&quot;, &quot;1&quot;]
+
+console.log(array[1]);
+// expected output: Array [&quot;test2&quot;, &quot;e&quot;, &quot;st2&quot;, &quot;2&quot;]
+</code></pre>
+<h3 id="strsearchregexp">str.search(regexp)</h3>
+<p>返回第一个匹配项的位置，如果未找到，则返回 <code>-1</code></p>
+<pre><code class="language-js">let str = &quot;A drop of ink may make a million think&quot;;
+
+console.log( str.search( /ink/i ) ); // 10（第一个匹配位置）
+</code></pre>
+<p>这里需要注意的是，<code>search</code> 仅查找第一个匹配项</p>
+<h2 id="strreplaceregexp">str.replace(regexp)</h2>
+<p>替换与正则表达式匹配的子串，并返回替换后的字符串。在不设置全局匹配<code>g</code>的时候，只替换第一个匹配成功的字符串片段</p>
+<pre><code class="language-js">const reg1=/javascript/i;
+const reg2=/javascript/ig;
+console.log('hello Javascript Javascript Javascript'.replace(reg1,'js'));
+//hello js Javascript Javascript
+console.log('hello Javascript Javascript Javascript'.replace(reg2,'js'));
+//hello js js js
+</code></pre>
+<h3 id="strsplitregexp">str.split(regexp)</h3>
+<p>使用正则表达式（或子字符串）作为分隔符来分割字符串</p>
+<pre><code class="language-js">console.log('12, 34, 56'.split(/,\s*/)) // 数组 ['12', '34', '56']
+</code></pre>
+<h3 id="regexpexecstr">regexp.exec(str)</h3>
+<p><code>regexp.exec(str)</code> 方法返回字符串 <code>str</code> 中的 <code>regexp</code> 匹配项，与以前的方法不同，它是在正则表达式而不是字符串上调用的</p>
+<p>根据正则表达式是否带有标志 <code>g</code>，它的行为有所不同</p>
+<p>如果没有 <code>g</code>，那么 <code>regexp.exec(str)</code> 返回的第一个匹配与 <code>str.match(regexp)</code> 完全相同</p>
+<p>如果有标记 <code>g</code>，调用 <code>regexp.exec(str)</code> 会返回第一个匹配项，并将紧随其后的位置保存在属性<code>regexp.lastIndex</code> 中。 下一次同样的调用会从位置 <code>regexp.lastIndex</code> 开始搜索，返回下一个匹配项，并将其后的位置保存在 <code>regexp.lastIndex</code> 中</p>
+<pre><code class="language-js">let str = 'More about JavaScript at https://javascript.info';
+let regexp = /javascript/ig;
+
+let result;
+
+while (result = regexp.exec(str)) {
+  console.log( `Found ${result[0]} at position ${result.index}` );
+  // Found JavaScript at position 11
+  // Found javascript at position 33
+}
+</code></pre>
+<h3 id="regexpteststr">regexp.test(str)</h3>
+<p>查找匹配项，然后返回 <code>true/false</code> 表示是否存在</p>
+<pre><code class="language-js">let str = &quot;I love JavaScript&quot;;
+
+// 这两个测试相同
+console.log( /love/i.test(str) ); // true
+</code></pre>
+<h2 id="_9">四、应用场景</h2>
+<p>通过上面的学习，我们对正则表达式有了一定的了解</p>
+<p>下面再来看看正则表达式一些案例场景：</p>
+<p>验证QQ合法性（5~15位、全是数字、不以0开头）：</p>
+<pre><code class="language-js">const reg = /^[1-9][0-9]{4,14}$/
+const isvalid = patrn.exec(s)
+</code></pre>
+<p>校验用户账号合法性（只能输入5-20个以字母开头、可带数字、“_”、“.”的字串）：</p>
+<pre><code class="language-js">var patrn=/^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/;
+const isvalid = patrn.exec(s)
+</code></pre>
+<p>将<code>url</code>参数解析为对象</p>
+<pre><code class="language-js">const protocol = '(?&lt;protocol&gt;https?:)';
+const host = '(?&lt;host&gt;(?&lt;hostname&gt;[^/#?:]+)(?::(?&lt;port&gt;\\d+))?)';
+const path = '(?&lt;pathname&gt;(?:\\/[^/#?]+)*\\/?)';
+const search = '(?&lt;search&gt;(?:\\?[^#]*)?)';
+const hash = '(?&lt;hash&gt;(?:#.*)?)';
+const reg = new RegExp(`^${protocol}\/\/${host}${path}${search}${hash}$`);
+function execURL(url){
+    const result = reg.exec(url);
+    if(result){
+        result.groups.port = result.groups.port || '';
+        return result.groups;
+    }
+    return {
+        protocol:'',host:'',hostname:'',port:'',
+        pathname:'',search:'',hash:'',
+    };
+}
+
+console.log(execURL('https://localhost:8080/?a=b#xxxx'));
+protocol: &quot;https:&quot;
+host: &quot;localhost:8080&quot;
+hostname: &quot;localhost&quot;
+port: &quot;8080&quot;
+pathname: &quot;/&quot;
+search: &quot;?a=b&quot;
+hash: &quot;#xxxx&quot;
+</code></pre>
+<p>再将上面的<code>search</code>和<code>hash</code>进行解析</p>
+<pre><code class="language-js">function execUrlParams(str){
+    str = str.replace(/^[#?&amp;]/,'');
+    const result = {};
+    if(!str){ //如果正则可能配到空字符串，极有可能造成死循环，判断很重要
+        return result; 
+    }
+    const reg = /(?:^|&amp;)([^&amp;=]*)=?([^&amp;]*?)(?=&amp;|$)/y
+    let exec = reg.exec(str);
+    while(exec){
+        result[exec[1]] = exec[2];
+        exec = reg.exec(str);
+    }
+    return result;
+}
+console.log(execUrlParams('#'));// {}
+console.log(execUrlParams('##'));//{'#':''}
+console.log(execUrlParams('?q=3606&amp;src=srp')); //{q: &quot;3606&quot;, src: &quot;srp&quot;}
+console.log(execUrlParams('test=a=b=c&amp;&amp;==&amp;a='));//{test: &quot;a=b=c&quot;, &quot;&quot;: &quot;=&quot;, a: &quot;&quot;}
+</code></pre>
+<h2 id="_10">参考文献</h2>
+<ul>
+<li>https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../string_api/" class="btn btn-neutral float-left" title="字符串API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../js_data_structure/" class="btn btn-neutral float-right" title="数据结构">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../string_api/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../js_data_structure/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

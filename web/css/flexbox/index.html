@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：说说flexbox（弹性盒布局模型）,以及适用场景？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u8bf4\u8bf4flexbox\uff08\u5f39\u6027\u76d2\u5e03\u5c40\u6a21\u578b\uff09,\u4ee5\u53ca\u9002\u7528\u573a\u666f\uff1f";
+        var mkdocs_page_input_path = "web\\css\\flexbox.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：说说flexbox（弹性盒布局模型）,以及适用场景？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="flexbox">面试官：说说flexbox（弹性盒布局模型）,以及适用场景？</h1>
+<p><img alt="" src="https://static.vue-js.com/ef25b0a0-9837-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_1">一、是什么</h2>
+<p><code>Flexible Box</code> 简称 <code>flex</code>，意为”弹性布局”，可以简便、完整、响应式地实现各种页面布局</p>
+<p>采用Flex布局的元素，称为<code>flex</code>容器<code>container</code></p>
+<p>它的所有子元素自动成为容器成员，称为<code>flex</code>项目<code>item</code></p>
+<p><img alt="" src="https://static.vue-js.com/fbc5f590-9837-11eb-ab90-d9ae814b240d.png" /></p>
+<p>容器中默认存在两条轴，主轴和交叉轴，呈90度关系。项目默认沿主轴排列，通过<code>flex-direction</code>来决定主轴的方向</p>
+<p>每根轴都有起点和终点，这对于元素的对齐非常重要</p>
+<h2 id="_2">二、属性</h2>
+<p>关于<code>flex</code>常用的属性，我们可以划分为容器属性和容器成员属性</p>
+<p>容器属性有：</p>
+<ul>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
+</ul>
+<h3 id="flex-direction">flex-direction</h3>
+<p>决定主轴的方向(即项目的排列方向)</p>
+<pre><code class="language-css">.container {   
+    flex-direction: row | row-reverse | column | column-reverse;  
+} 
+</code></pre>
+<p>属性对应如下：</p>
+<ul>
+<li>row（默认值）：主轴为水平方向，起点在左端</li>
+<li>row-reverse：主轴为水平方向，起点在右端</li>
+<li>column：主轴为垂直方向，起点在上沿。</li>
+<li>column-reverse：主轴为垂直方向，起点在下沿</li>
+</ul>
+<p>如下图所示：</p>
+<p><img alt="" src="https://static.vue-js.com/0c9abc70-9838-11eb-ab90-d9ae814b240d.png" /></p>
+<h3 id="flex-wrap">flex-wrap</h3>
+<p>弹性元素永远沿主轴排列，那么如果主轴排不下，通过<code>flex-wrap</code>决定容器内项目是否可换行</p>
+<pre><code class="language-css">.container {  
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}  
+</code></pre>
+<p>属性对应如下：</p>
+<ul>
+<li>nowrap（默认值）：不换行</li>
+<li>wrap：换行，第一行在下方</li>
+<li>wrap-reverse：换行，第一行在上方</li>
+</ul>
+<p>默认情况是不换行，但这里也不会任由元素直接溢出容器，会涉及到元素的弹性伸缩</p>
+<h3 id="flex-flow">flex-flow</h3>
+<p>是<code>flex-direction</code>属性和<code>flex-wrap</code>属性的简写形式，默认值为<code>row nowrap</code></p>
+<pre><code class="language-css">.box {
+  flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;
+}
+</code></pre>
+<h3 id="justify-content">justify-content</h3>
+<p>定义了项目在主轴上的对齐方式</p>
+<pre><code class="language-css">.box {
+    justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+</code></pre>
+<p>属性对应如下：</p>
+<ul>
+<li>flex-start（默认值）：左对齐</li>
+<li>flex-end：右对齐</li>
+<li>center：居中</li>
+<li>space-between：两端对齐，项目之间的间隔都相等</li>
+<li>space-around：两个项目两侧间隔相等</li>
+</ul>
+<p>效果图如下：</p>
+<p><img alt="" src="https://static.vue-js.com/2d5ca950-9838-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h3 id="align-items">align-items</h3>
+<p>定义项目在交叉轴上如何对齐</p>
+<pre><code class="language-css">.box {
+  align-items: flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre>
+<p>属性对应如下：</p>
+<ul>
+<li>flex-start：交叉轴的起点对齐</li>
+<li>flex-end：交叉轴的终点对齐</li>
+<li>center：交叉轴的中点对齐</li>
+<li>baseline: 项目的第一行文字的基线对齐</li>
+<li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度</li>
+</ul>
+<h3 id="align-content">align-content</h3>
+<p>定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用</p>
+<pre><code class="language-css">.box {
+    align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+</code></pre>
+<p>属性对应如吓：</p>
+<ul>
+<li>flex-start：与交叉轴的起点对齐</li>
+<li>flex-end：与交叉轴的终点对齐</li>
+<li>center：与交叉轴的中点对齐</li>
+<li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布</li>
+<li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍</li>
+<li>stretch（默认值）：轴线占满整个交叉轴</li>
+</ul>
+<p>效果图如下：</p>
+<p><img alt="" src="https://static.vue-js.com/39bcb0f0-9838-11eb-ab90-d9ae814b240d.png" /></p>
+<p>容器成员属性如下：</p>
+<ul>
+<li><code>order</code></li>
+<li><code>flex-grow</code></li>
+<li><code>flex-shrink</code></li>
+<li><code>flex-basis</code></li>
+<li><code>flex</code></li>
+<li><code>align-self</code></li>
+</ul>
+<h3 id="order">order</h3>
+<p>定义项目的排列顺序。数值越小，排列越靠前，默认为0</p>
+<pre><code class="language-css">.item {
+    order: &lt;integer&gt;;
+}
+</code></pre>
+<h3 id="flex-grow">flex-grow</h3>
+<p>上面讲到当容器设为<code>flex-wrap: nowrap;</code>不换行的时候，容器宽度有不够分的情况，弹性元素会根据<code>flex-grow</code>来决定</p>
+<p>定义项目的放大比例（容器宽度&gt;元素总宽度时如何伸展）</p>
+<p>默认为<code>0</code>，即如果存在剩余空间，也不放大</p>
+<pre><code class="language-css">.item {
+    flex-grow: &lt;number&gt;;
+}
+</code></pre>
+<p>如果所有项目的<code>flex-grow</code>属性都为1，则它们将等分剩余空间（如果有的话）</p>
+<p><img alt="" src="https://static.vue-js.com/48c8c5c0-9838-11eb-ab90-d9ae814b240d.png" /></p>
+<p>如果一个项目的<code>flex-grow</code>属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍</p>
+<p><img alt="" src="https://static.vue-js.com/5b822b20-9838-11eb-ab90-d9ae814b240d.png" /></p>
+<p>弹性容器的宽度正好等于元素宽度总和，无多余宽度，此时无论<code>flex-grow</code>是什么值都不会生效</p>
+<h3 id="flex-shrink">flex-shrink</h3>
+<p>定义了项目的缩小比例（容器宽度&lt;元素总宽度时如何收缩），默认为1，即如果空间不足，该项目将缩小</p>
+<pre><code class="language-css">.item {
+    flex-shrink: &lt;number&gt;; /* default 1 */
+}
+</code></pre>
+<p>如果所有项目的<code>flex-shrink</code>属性都为1，当空间不足时，都将等比例缩小</p>
+<p>如果一个项目的<code>flex-shrink</code>属性为0，其他项目都为1，则空间不足时，前者不缩小</p>
+<p><img alt="" src="https://static.vue-js.com/658c5be0-9838-11eb-85f6-6fac77c0c9b3.png" /></p>
+<p>在容器宽度有剩余时，<code>flex-shrink</code>也是不会生效的</p>
+<h3 id="flex-basis">flex-basis</h3>
+<p>设置的是元素在主轴上的初始尺寸，所谓的初始尺寸就是元素在<code>flex-grow</code>和<code>flex-shrink</code>生效前的尺寸</p>
+<p>浏览器根据这个属性，计算主轴是否有多余空间，默认值为<code>auto</code>，即项目的本来大小，如设置了<code>width</code>则元素尺寸由<code>width/height</code>决定（主轴方向），没有设置则由内容决定</p>
+<p><code>css
+.item {
+    flex-basis: &lt;length&gt; | auto; /* default auto */
+}</code></p>
+<p>当设置为0的是，会根据内容撑开</p>
+<p>它可以设为跟<code>width</code>或<code>height</code>属性一样的值（比如350px），则项目将占据固定空间</p>
+<h3 id="flex">flex</h3>
+<p><code>flex</code>属性是<code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code>的简写，默认值为<code>0 1 auto</code>，也是比较难懂的一个复合属性</p>
+<p><code>css
+ .item {
+   flex: none | [ &lt;'flex-grow'&gt; &lt;'flex-shrink'&gt;? || &lt;'flex-basis'&gt; ]
+ }</code></p>
+<p>一些属性有：</p>
+<ul>
+<li>flex: 1 = flex: 1 1 0%</li>
+<li>flex: 2 = flex: 2 1 0%</li>
+<li>flex: auto = flex: 1 1 auto</li>
+<li>flex: none = flex: 0 0 auto，常用于固定尺寸不伸缩</li>
+</ul>
+<p><code>flex:1</code> 和 <code>flex:auto</code> 的区别，可以归结于<code>flex-basis:0</code>和<code>flex-basis:auto</code>的区别</p>
+<p>当设置为0时（绝对弹性元素），此时相当于告诉<code>flex-grow</code>和<code>flex-shrink</code>在伸缩的时候不需要考虑我的尺寸</p>
+<p>当设置为<code>auto</code>时（相对弹性元素），此时则需要在伸缩时将元素尺寸纳入考虑</p>
+<p>注意：建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值</p>
+<h3 id="align-self">align-self</h3>
+<p>允许单个项目有与其他项目不一样的对齐方式，可覆盖<code>align-items</code>属性</p>
+<p>默认值为<code>auto</code>，表示继承父元素的<code>align-items</code>属性，如果没有父元素，则等同于<code>stretch</code></p>
+<pre><code class="language-css">.item {
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre>
+<p>效果图如下：</p>
+<p><img alt="" src="https://static.vue-js.com/6f8304a0-9838-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h2 id="_3">三、应用场景</h2>
+<p>在以前的文章中，我们能够通过<code>flex</code>简单粗暴的实现元素水平垂直方向的居中，以及在两栏三栏自适应布局中通过<code>flex</code>完成，这里就不再展开代码的演示</p>
+<p>包括现在在移动端、小程序这边的开发，都建议使用<code>flex</code>进行布局</p>
+<h2 id="_4">参考文献</h2>
+<ul>
+<li>https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex</li>
+<li>http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

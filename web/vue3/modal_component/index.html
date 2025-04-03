@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：用Vue3.0 写过组件吗？如果想实现一个 Modal你会怎么设计？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1a\u7528Vue3.0 \u5199\u8fc7\u7ec4\u4ef6\u5417\uff1f\u5982\u679c\u60f3\u5b9e\u73b0\u4e00\u4e2a Modal\u4f60\u4f1a\u600e\u4e48\u8bbe\u8ba1\uff1f";
+        var mkdocs_page_input_path = "web\\vue3\\modal_component.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：用Vue3.0 写过组件吗？如果想实现一个 Modal你会怎么设计？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vue30-modal">面试官：用Vue3.0 写过组件吗？如果想实现一个 Modal你会怎么设计？</h1>
+<p><img alt="" src="https://static.vue-js.com/e294c660-6370-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_1">一、组件设计</h2>
+<p>组件就是把图形、非图形的各种逻辑均抽象为一个统一的概念（组件）来实现开发的模式</p>
+<p>现在有一个场景，点击新增与编辑都弹框出来进行填写，功能上大同小异，可能只是标题内容或者是显示的主体内容稍微不同</p>
+<p>这时候就没必要写两个组件，只需要根据传入的参数不同，组件显示不同内容即可</p>
+<p>这样，下次开发相同界面程序时就可以写更少的代码，意义着更高的开发效率，更少的 <code>Bug</code>和更少的程序体积</p>
+<h2 id="_2">二、需求分析</h2>
+<p>实现一个<code>Modal</code>组件，首先确定需要完成的内容：</p>
+<ul>
+<li>
+<p>遮罩层</p>
+</li>
+<li>
+<p>标题内容</p>
+</li>
+<li>主体内容</li>
+<li>确定和取消按钮</li>
+</ul>
+<p>主体内容需要灵活，所以可以是字符串，也可以是一段 <code>html</code> 代码</p>
+<p>特点是它们在当前<code>vue</code>实例之外独立存在，通常挂载于<code>body</code>之上</p>
+<p>除了通过引入<code>import</code>的形式，我们还可通过<code>API</code>的形式进行组件的调用</p>
+<p>还可以包括配置全局样式、国际化、与<code>typeScript</code>结合</p>
+<h2 id="_3">三、实现流程</h2>
+<p>首先看看大致流程：</p>
+<ul>
+<li>目录结构</li>
+<li>组件内容</li>
+<li>实现 API 形式</li>
+<li>
+<p>事件处理</p>
+</li>
+<li>
+<p>其他完善</p>
+</li>
+</ul>
+<h3 id="_4">目录结构</h3>
+<p><code>Modal</code>组件相关的目录结构</p>
+<pre><code>├── plugins
+│   └── modal
+│       ├── Content.tsx // 维护 Modal 的内容，用于 h 函数和 jsx 语法
+│       ├── Modal.vue // 基础组件
+│       ├── config.ts // 全局默认配置
+│       ├── index.ts // 入口
+│       ├── locale // 国际化相关
+│       │   ├── index.ts
+│       │   └── lang
+│       │       ├── en-US.ts
+│       │       ├── zh-CN.ts
+│       │       └── zh-TW.ts
+│       └── modal.type.ts // ts类型声明相关
+</code></pre>
+<p>因为 Modal 会被 <code>app.use(Modal)</code> 调用作为一个插件，所以都放在<code>plugins</code>目录下</p>
+<h3 id="_5">组件内容</h3>
+<p>首先实现<code>modal.vue</code>的主体显示内容大致如下</p>
+<pre><code class="language-html">&lt;Teleport to=&quot;body&quot; :disabled=&quot;!isTeleport&quot;&gt;
+    &lt;div v-if=&quot;modelValue&quot; class=&quot;modal&quot;&gt;
+        &lt;div
+             class=&quot;mask&quot;
+             :style=&quot;style&quot;
+             @click=&quot;maskClose &amp;&amp; !loading &amp;&amp; handleCancel()&quot;
+             &gt;&lt;/div&gt;
+        &lt;div class=&quot;modal__main&quot;&gt;
+            &lt;div class=&quot;modal__title line line--b&quot;&gt;
+                &lt;span&gt;{{ title || t(&quot;r.title&quot;) }}&lt;/span&gt;
+                &lt;span
+                      v-if=&quot;close&quot;
+                      :title=&quot;t('r.close')&quot;
+                      class=&quot;close&quot;
+                      @click=&quot;!loading &amp;&amp; handleCancel()&quot;
+                      &gt;✕&lt;/span
+                    &gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal__content&quot;&gt;
+                &lt;Content v-if=&quot;typeof content === 'function'&quot; :render=&quot;content&quot; /&gt;
+                &lt;slot v-else&gt;
+                    {{ content }}
+                &lt;/slot&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal__btns line line--t&quot;&gt;
+                &lt;button :disabled=&quot;loading&quot; @click=&quot;handleConfirm&quot;&gt;
+                    &lt;span class=&quot;loading&quot; v-if=&quot;loading&quot;&gt; ❍ &lt;/span&gt;{{ t(&quot;r.confirm&quot;) }}
+                &lt;/button&gt;
+                &lt;button @click=&quot;!loading &amp;&amp; handleCancel()&quot;&gt;
+                    {{ t(&quot;r.cancel&quot;) }}
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/Teleport&gt;
+</code></pre>
+<p>最外层上通过Vue3 <code>Teleport</code> 内置组件进行包裹，其相当于传送门，将里面的内容传送至<code>body</code>之上</p>
+<p>并且从<code>DOM</code>结构上来看，把<code>modal</code>该有的内容（遮罩层、标题、内容、底部按钮）都实现了</p>
+<p>关于主体内容</p>
+<pre><code class="language-html">&lt;div class=&quot;modal__content&quot;&gt;
+    &lt;Content v-if=&quot;typeof content==='function'&quot;
+             :render=&quot;content&quot; /&gt;
+    &lt;slot v-else&gt;
+        {{content}}
+    &lt;/slot&gt;
+&lt;/div&gt;
+</code></pre>
+<p>可以看到根据传入<code>content</code>的类型不同，对应显示不同得到内容</p>
+<p>最常见的则是通过调用字符串和默认插槽的形式</p>
+<pre><code class="language-html">// 默认插槽
+&lt;Modal v-model=&quot;show&quot;
+       title=&quot;演示 slot&quot;&gt;
+    &lt;div&gt;hello world~&lt;/div&gt;
+&lt;/Modal&gt;
+
+// 字符串
+&lt;Modal v-model=&quot;show&quot;
+       title=&quot;演示 content&quot;
+       content=&quot;hello world~&quot; /&gt;
+</code></pre>
+<p>通过 API 形式调用<code>Modal</code>组件的时候，<code>content</code>可以使用下面两种</p>
+<ul>
+<li>h 函数</li>
+</ul>
+<pre><code class="language-js">$modal.show({
+  title: '演示 h 函数',
+  content(h) {
+    return h(
+      'div',
+      {
+        style: 'color:red;',
+        onClick: ($event: Event) =&gt; console.log('clicked', $event.target)
+      },
+      'hello world ~'
+    );
+  }
+});
+</code></pre>
+<ul>
+<li>JSX</li>
+</ul>
+<pre><code class="language-js">$modal.show({
+  title: '演示 jsx 语法',
+  content() {
+    return (
+      &lt;div
+        onClick={($event: Event) =&gt; console.log('clicked', $event.target)}
+      &gt;
+        hello world ~
+      &lt;/div&gt;
+    );
+  }
+});
+</code></pre>
+<h3 id="api">实现 API 形式</h3>
+<p>那么组件如何实现<code>API</code>形式调用<code>Modal</code>组件呢？</p>
+<p>在<code>Vue2</code>中，我们可以借助<code>Vue</code>实例以及<code>Vue.extend</code>的方式获得组件实例，然后挂载到<code>body</code>上</p>
+<pre><code class="language-js">import Modal from './Modal.vue';
+const ComponentClass = Vue.extend(Modal);
+const instance = new ComponentClass({ el: document.createElement(&quot;div&quot;) });
+document.body.appendChild(instance.$el);
+</code></pre>
+<p>虽然<code>Vue3</code>移除了<code>Vue.extend</code>方法，但可以通过<code>createVNode</code>实现</p>
+<pre><code class="language-js">import Modal from './Modal.vue';
+const container = document.createElement('div');
+const vnode = createVNode(Modal);
+render(vnode, container);
+const instance = vnode.component;
+document.body.appendChild(container);
+</code></pre>
+<p>在<code>Vue2</code>中，可以通过<code>this</code>的形式调用全局 API</p>
+<pre><code class="language-js">export default {
+    install(vue) {
+       vue.prototype.$create = create
+    }
+}
+</code></pre>
+<p>而在 Vue3 的 <code>setup</code> 中已经没有 <code>this</code>概念了，需要调用<code>app.config.globalProperties</code>挂载到全局</p>
+<pre><code class="language-js">export default {
+    install(app) {
+        app.config.globalProperties.$create = create
+    }
+}
+</code></pre>
+<h3 id="_6">事件处理</h3>
+<p>下面再看看看<code>Modal</code>组件内部是如何处理「确定」「取消」事件的，既然是<code>Vue3</code>，当然采用<code>Compositon API</code> 形式</p>
+<pre><code class="language-js">// Modal.vue
+setup(props, ctx) {
+  let instance = getCurrentInstance(); // 获得当前组件实例
+  onBeforeMount(() =&gt; {
+    instance._hub = {
+      'on-cancel': () =&gt; {},
+      'on-confirm': () =&gt; {}
+    };
+  });
+
+  const handleConfirm = () =&gt; {
+    ctx.emit('on-confirm');
+    instance._hub['on-confirm']();
+  };
+  const handleCancel = () =&gt; {
+    ctx.emit('on-cancel');
+    ctx.emit('update:modelValue', false);
+    instance._hub['on-cancel']();
+  };
+
+  return {
+    handleConfirm,
+    handleCancel
+  };
+}
+</code></pre>
+<p>在上面代码中，可以看得到除了使用传统<code>emit</code>的形式使父组件监听，还可通过<code>_hub</code>属性中添加 <code>on-cancel</code>，<code>on-confirm</code>方法实现在<code>API</code>中进行监听</p>
+<pre><code class="language-js">app.config.globalProperties.$modal = {
+   show({}) {
+     /* 监听 确定、取消 事件 */
+   }
+}
+</code></pre>
+<p>下面再来目睹下<code>_hub</code>是如何实现</p>
+<pre><code class="language-js">// index.ts
+app.config.globalProperties.$modal = {
+    show({
+        /* 其他选项 */
+        onConfirm,
+        onCancel
+    }) {
+        /* ... */
+
+        const { props, _hub } = instance;
+
+        const _closeModal = () =&gt; {
+            props.modelValue = false;
+            container.parentNode!.removeChild(container);
+        };
+        // 往 _hub 新增事件的具体实现
+        Object.assign(_hub, {
+            async 'on-confirm'() {
+            if (onConfirm) {
+                const fn = onConfirm();
+                // 当方法返回为 Promise
+                if (fn &amp;&amp; fn.then) {
+                    try {
+                        props.loading = true;
+                        await fn;
+                        props.loading = false;
+                        _closeModal();
+                    } catch (err) {
+                        // 发生错误时，不关闭弹框
+                        console.error(err);
+                        props.loading = false;
+                    }
+                } else {
+                    _closeModal();
+                }
+            } else {
+                _closeModal();
+            }
+        },
+            'on-cancel'() {
+                onCancel &amp;&amp; onCancel();
+                _closeModal();
+            }
+    });
+}
+};
+</code></pre>
+<h3 id="_7">其他完善</h3>
+<p>关于组件实现国际化、与<code>typsScript</code>结合，大家可以根据自身情况在此基础上进行更改</p>
+<h2 id="_8">参考文献</h2>
+<ul>
+<li>https://segmentfault.com/a/1190000038928664</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

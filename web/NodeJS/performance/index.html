@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：Node性能如何进行监控以及优化？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1aNode\u6027\u80fd\u5982\u4f55\u8fdb\u884c\u76d1\u63a7\u4ee5\u53ca\u4f18\u5316\uff1f";
+        var mkdocs_page_input_path = "web\\NodeJS\\performance.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue/">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：Node性能如何进行监控以及优化？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="node">面试官：Node性能如何进行监控以及优化？</h1>
+<p><img alt="" src="https://static.vue-js.com/bb37dae0-d179-11eb-ab90-d9ae814b240d.png" /></p>
+<h2 id="_1">一、 是什么</h2>
+<p><code>Node</code>作为一门服务端语言，性能方面尤为重要，其衡量指标一般有如下：</p>
+<ul>
+<li>CPU</li>
+<li>内存</li>
+<li>I/O</li>
+<li>网络</li>
+</ul>
+<h3 id="cpu">CPU</h3>
+<p>主要分成了两部分：</p>
+<ul>
+<li>CPU负载：在某个时间段内，占用以及等待CPU的进程总数</li>
+<li>CPU使用率：CPU时间占用状况，等于 1 - 空闲CPU时间(idle time) / CPU总时间</li>
+</ul>
+<p>这两个指标都是用来评估系统当前CPU的繁忙程度的量化指标</p>
+<p><code>Node</code>应用一般不会消耗很多的<code>CPU</code>，如果<code>CPU</code>占用率高，则表明应用存在很多同步操作，导致异步任务回调被阻塞</p>
+<h3 id="_2">内存指标</h3>
+<p>内存是一个非常容易量化的指标。 内存占用率是评判一个系统的内存瓶颈的常见指标。 对于Node来说，内部内存堆栈的使用状态也是一个可以量化的指标</p>
+<pre><code class="language-js">// /app/lib/memory.js
+const os = require('os');
+// 获取当前Node内存堆栈情况
+const { rss, heapUsed, heapTotal } = process.memoryUsage();
+// 获取系统空闲内存
+const sysFree = os.freemem();
+// 获取系统总内存
+const sysTotal = os.totalmem();
+
+module.exports = {
+  memory: () =&gt; {
+    return {
+      sys: 1 - sysFree / sysTotal,  // 系统内存占用率
+      heap: heapUsed / headTotal,   // Node堆内存占用率
+      node: rss / sysTotal,         // Node占用系统内存的比例
+    }
+  }
+}
+</code></pre>
+<ul>
+<li>rss：表示node进程占用的内存总量。</li>
+<li>heapTotal：表示堆内存的总量。</li>
+<li>heapUsed：实际堆内存的使用量。</li>
+<li>external ：外部程序的内存使用量，包含Node核心的C++程序的内存使用量</li>
+</ul>
+<p>在<code>Node</code>中，一个进程的最大内存容量为1.5GB。因此我们需要减少内存泄露</p>
+<h3 id="io">磁盘 I/O</h3>
+<p>硬盘的<code>IO</code> 开销是非常昂贵的，硬盘 IO 花费的 CPU 时钟周期是内存的 164000 倍</p>
+<p>内存 <code>IO</code>比磁盘<code>IO</code> 快非常多，所以使用内存缓存数据是有效的优化方法。常用的工具如 <code>redis</code>、<code>memcached</code>等</p>
+<p>并不是所有数据都需要缓存，访问频率高，生成代价比较高的才考虑是否缓存，也就是说影响你性能瓶颈的考虑去缓存，并且而且缓存还有缓存雪崩、缓存穿透等问题要解决</p>
+<h2 id="_3">二、如何监控</h2>
+<p>关于性能方面的监控，一般情况都需要借助工具来实现</p>
+<p>这里采用<code>Easy-Monitor 2.0</code>，其是轻量级的 <code>Node.js</code> 项目内核性能监控 + 分析工具，在默认模式下，只需要在项目入口文件 <code>require</code> 一次，无需改动任何业务代码即可开启内核级别的性能监控分析</p>
+<p>使用方法如下：</p>
+<p>在你的项目入口文件中按照如下方式引入，当然请传入你的项目名称：</p>
+<pre><code class="language-js">const easyMonitor = require('easy-monitor');
+easyMonitor('你的项目名称');
+</code></pre>
+<p>打开你的浏览器，访问 <code>http://localhost:12333</code> ，即可看到进程界面</p>
+<p>关于定制化开发、通用配置项以及如何动态更新配置项详见官方文档</p>
+<h2 id="_4">三、如何优化</h2>
+<p>关于<code>Node</code>的性能优化的方式有：</p>
+<ul>
+<li>使用最新版本Node.js</li>
+<li>正确使用流 Stream</li>
+<li>代码层面优化</li>
+<li>内存管理优化</li>
+</ul>
+<h3 id="nodejs">使用最新版本Node.js</h3>
+<p>每个版本的性能提升主要来自于两个方面：</p>
+<ul>
+<li>V8 的版本更新</li>
+<li>Node.js 内部代码的更新优化</li>
+</ul>
+<h3 id="stream">正确使用流 Stream</h3>
+<p>在<code>Node</code>中，很多对象都实现了流，对于一个大文件可以通过流的形式发送，不需要将其完全读入内存</p>
+<pre><code class="language-js">const http = require('http');
+const fs = require('fs');
+
+// bad
+http.createServer(function (req, res) {
+    fs.readFile(__dirname + '/data.txt', function (err, data) {
+        res.end(data);
+    });
+});
+
+// good
+http.createServer(function (req, res) {
+    const stream = fs.createReadStream(__dirname + '/data.txt');
+    stream.pipe(res);
+});
+</code></pre>
+<h3 id="_5">代码层面优化</h3>
+<p>合并查询，将多次查询合并一次，减少数据库的查询次数</p>
+<pre><code class="language-js">// bad
+for user_id in userIds 
+     let account = user_account.findOne(user_id)
+
+// good
+const user_account_map = {}   // 注意这个对象将会消耗大量内存。
+user_account.find(user_id in user_ids).forEach(account){
+    user_account_map[account.user_id] =  account
+}
+for user_id in userIds 
+    var account = user_account_map[user_id]
+</code></pre>
+<h3 id="_6">内存管理优化</h3>
+<p>在 V8 中，主要将内存分为新生代和老生代两代：</p>
+<ul>
+<li>新生代：对象的存活时间较短。新生对象或只经过一次垃圾回收的对象</li>
+<li>老生代：对象存活时间较长。经历过一次或多次垃圾回收的对象</li>
+</ul>
+<p>若新生代内存空间不够，直接分配到老生代</p>
+<p>通过减少内存占用，可以提高服务器的性能。如果有内存泄露，也会导致大量的对象存储到老生代中，服务器性能会大大降低</p>
+<p>如下面情况：</p>
+<pre><code class="language-js">const buffer = fs.readFileSync(__dirname + '/source/index.htm');
+
+app.use(
+    mount('/', async (ctx) =&gt; {
+        ctx.status = 200;
+        ctx.type = 'html';
+        ctx.body = buffer;
+        leak.push(fs.readFileSync(__dirname + '/source/index.htm'));
+    })
+);
+
+const leak = [];
+</code></pre>
+<p><code>leak</code>的内存非常大，造成内存泄露，应当避免这样的操作，通过减少内存使用，是提高服务性能的手段之一</p>
+<p>而节省内存最好的方式是使用池，其将频用、可复用对象存储起来，减少创建和销毁操作</p>
+<p>例如有个图片请求接口，每次请求，都需要用到类。若每次都需要重新new这些类，并不是很合适，在大量请求时，频繁创建和销毁这些类，造成内存抖动</p>
+<p>使用对象池的机制，对这种频繁需要创建和销毁的对象保存在一个对象池中。每次用到该对象时，就取对象池空闲的对象，并对它进行初始化操作，从而提高框架的性能</p>
+<h2 id="_7">参考文献</h2>
+<ul>
+<li>https://segmentfault.com/a/1190000039327565</li>
+<li>https://zhuanlan.zhihu.com/p/50055740</li>
+<li>https://segmentfault.com/a/1190000010231628</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

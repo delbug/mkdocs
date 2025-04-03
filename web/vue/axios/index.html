@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>面试官：Vue项目中有封装过axios吗？主要是封装哪方面的？ - 前端技术文档</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u9762\u8bd5\u5b98\uff1aVue\u9879\u76ee\u4e2d\u6709\u5c01\u88c5\u8fc7axios\u5417\uff1f\u4e3b\u8981\u662f\u5c01\u88c5\u54ea\u65b9\u9762\u7684\uff1f";
+        var mkdocs_page_input_path = "web\\vue\\axios.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> 前端技术文档
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">首页</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端基础</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >CSS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../css/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/selector/">选择器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/box/">盒子模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/animation/">动画过渡</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >布局</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/grid/">Grid布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/flex.md">Flex布局</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/position.md">定位布局</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >进阶</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css_performance/">CSS性能</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/sass_less_stylus/">预处理器</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/css3_features/">CSS3新特性</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../css/dp_px_dpr_ppi/">像素单位</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="" href="../../css/variables.md">变量使用</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/media_queries.md">媒体查询</a>
+                </li>
+                <li class="toctree-l3"><a class="" href="../../css/print_styles.md">打印样式</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/">概述</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >基础概念</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/data_type/">数据类型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/type_conversion/">类型转换</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/typeof_instanceof/">typeof和instanceof</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >作用域与闭包</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/scope/">作用域</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/closure/">闭包</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >对象与原型</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/this/">this指向</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/prototype/">原型和原型链</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/inherit/">继承</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/new/">new操作符</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >执行机制</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/context_stack/">执行上下文和执行栈</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_loop/">事件循环</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >DOM与事件</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/Dom/">DOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/BOM/">BOM操作</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_Model/">事件模型</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/event_agent/">事件代理</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >网络通信</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >函数编程</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/functional_programming/">函数式编程</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/function_cache/">函数缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/bind_call_apply/">bind/call/apply</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/debounce_throttle/">防抖和节流</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >数据处理</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/copy/">深浅拷贝</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/array_api/">数组API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/string_api/">字符串API</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/regexp/">正则表达式</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/js_data_structure/">数据结构</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >性能优化</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/tail_recursion/">尾递归优化</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/memory_leak/">内存泄漏</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >应用实践</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/cache/">前端缓存</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/security/">前端安全</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/single_sign/">单点登录</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/loss_accuracy/">精度丢失</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/visible/">可视区域判断</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/pull_up_loading_pull_down_refresh/">上拉加载下拉刷新</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../JavaScript/continue_to_upload/">断点续传</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../typescript/">TypeScript</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../es6/">ES6+</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">前端框架</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../vue3/">Vue3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../">Vue2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../React/">React</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Node.js开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../NodeJS/">Node.js</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">工程化工具</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../webpack/">Webpack</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../git/">Git</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">网络与系统</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../http/">HTTP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux/">Linux</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">算法与设计</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../algorithm/">算法</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../design/">设计模式</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">小程序开发</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../applet/">小程序</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">前端技术文档</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">面试官：Vue项目中有封装过axios吗？主要是封装哪方面的？</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vueaxios">面试官：Vue项目中有封装过axios吗？主要是封装哪方面的？</h1>
+<p><img alt="" src="https://static.vue-js.com/2bf1e460-45a7-11eb-85f6-6fac77c0c9b3.png" /></p>
+<h2 id="axios">一、axios是什么</h2>
+<p><code>axios</code> 是一个轻量的 <code>HTTP</code>客户端</p>
+<p>基于 <code>XMLHttpRequest</code> 服务来执行 <code>HTTP</code> 请求，支持丰富的配置，支持 <code>Promise</code>，支持浏览器端和 <code>Node.js</code> 端。自<code>Vue</code>2.0起，尤大宣布取消对 <code>vue-resource</code> 的官方推荐，转而推荐 <code>axios</code>。现在 <code>axios</code> 已经成为大部分 <code>Vue</code> 开发者的首选</p>
+<h3 id="_1">特性</h3>
+<ul>
+<li>从浏览器中创建 <code>XMLHttpRequests</code></li>
+<li>从 <code>node.js</code> 创建 <code>http</code>请求</li>
+<li>支持 <code>Promise</code> API</li>
+<li>拦截请求和响应</li>
+<li>转换请求数据和响应数据</li>
+<li>取消请求</li>
+<li>自动转换<code>JSON</code> 数据</li>
+<li>客户端支持防御<code>XSRF</code></li>
+</ul>
+<h3 id="_2">基本使用</h3>
+<p>安装</p>
+<pre><code class="language-js">// 项目中安装
+npm install axios --S
+// cdn 引入
+&lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>导入</p>
+<pre><code class="language-js">import axios from 'axios'
+</code></pre>
+<p>发送请求</p>
+<pre><code class="language-js">axios({        
+  url:'xxx',    // 设置请求的地址
+  method:&quot;GET&quot;, // 设置请求方法
+  params:{      // get请求使用params进行参数凭借,如果是post请求用data
+    type: '',
+    page: 1
+  }
+}).then(res =&gt; {  
+  // res为后端返回的数据
+  console.log(res);   
+})
+</code></pre>
+<p>并发请求<code>axios.all([])</code></p>
+<pre><code class="language-js">function getUserAccount() {
+    return axios.get('/user/12345');
+}
+
+function getUserPermissions() {
+    return axios.get('/user/12345/permissions');
+}
+
+axios.all([getUserAccount(), getUserPermissions()])
+    .then(axios.spread(function (res1, res2) { 
+    // res1第一个请求的返回的内容，res2第二个请求返回的内容
+    // 两个请求都执行完成才会执行
+}));
+</code></pre>
+<h2 id="_3">二、为什么要封装</h2>
+<p><code>axios</code> 的 API 很友好，你完全可以很轻松地在项目中直接使用。</p>
+<p>不过随着项目规模增大，如果每发起一次<code>HTTP</code>请求，就要把这些比如设置超时时间、设置请求头、根据项目环境判断使用哪个请求地址、错误处理等等操作，都需要写一遍</p>
+<p>这种重复劳动不仅浪费时间，而且让代码变得冗余不堪，难以维护。为了提高我们的代码质量，我们应该在项目中二次封装一下 <code>axios</code> 再使用</p>
+<p>举个例子：</p>
+<pre><code class="language-js">axios('http://localhost:3000/data', {
+  // 配置代码
+  method: 'GET',
+  timeout: 1000,
+  withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: 'xxx',
+  },
+  transformRequest: [function (data, headers) {
+    return data;
+  }],
+  // 其他请求配置...
+})
+.then((data) =&gt; {
+  // todo: 真正业务逻辑代码
+  console.log(data);
+}, (err) =&gt; {
+  // 错误处理代码  
+  if (err.response.status === 401) {
+  // handle authorization error
+  }
+  if (err.response.status === 403) {
+  // handle server forbidden error
+  }
+  // 其他错误处理.....
+  console.log(err);
+});
+</code></pre>
+<p>如果每个页面都发送类似的请求，都要写一堆的配置与错误处理，就显得过于繁琐了</p>
+<p>这时候我们就需要对<code>axios</code>进行二次封装，让使用更为便利</p>
+<h2 id="_4">三、如何封装</h2>
+<p>封装的同时，你需要和 后端协商好一些约定，请求头，状态码，请求超时时间.......</p>
+<p>设置接口请求前缀：根据开发、测试、生产环境的不同，前缀需要加以区分</p>
+<p>请求头 :  来实现一些具体的业务，必须携带一些参数才可以请求(例如：会员业务)</p>
+<p>状态码:   根据接口返回的不同<code>status</code> ， 来执行不同的业务，这块需要和后端约定好</p>
+<p>请求方法：根据<code>get</code>、<code>post</code>等方法进行一个再次封装，使用起来更为方便</p>
+<p>请求拦截器:  根据请求的请求头设定，来决定哪些请求可以访问</p>
+<p>响应拦截器： 这块就是根据 后端`返回来的状态码判定执行不同业务</p>
+<h3 id="_5">设置接口请求前缀</h3>
+<p>利用<code>node</code>环境变量来作判断，用来区分开发、测试、生产环境</p>
+<pre><code class="language-js">if (process.env.NODE_ENV === 'development') {
+  axios.defaults.baseURL = 'http://dev.xxx.com'
+} else if (process.env.NODE_ENV === 'production') {
+  axios.defaults.baseURL = 'http://prod.xxx.com'
+}
+</code></pre>
+<p>在本地调试的时候，还需要在<code>vue.config.js</code>文件中配置<code>devServer</code>实现代理转发，从而实现跨域</p>
+<pre><code class="language-js">devServer: {
+    proxy: {
+      '/proxyApi': {
+        target: 'http://dev.xxx.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '/proxyApi': ''
+        }
+      }
+    }
+  }
+</code></pre>
+<h3 id="_6">设置请求头与超时时间</h3>
+<p>大部分情况下，请求头都是固定的，只有少部分情况下，会需要一些特殊的请求头，这里将普适性的请求头作为基础配置。当需要特殊请求头时，将特殊请求头作为参数传入，覆盖基础配置</p>
+<pre><code class="language-js">const service = axios.create({
+    ...
+    timeout: 30000,  // 请求 30s 超时
+      headers: {
+        get: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+          // 在开发中，一般还需要单点登录或者其他功能的通用请求头，可以一并配置进来
+        },
+        post: {
+          'Content-Type': 'application/json;charset=utf-8'
+          // 在开发中，一般还需要单点登录或者其他功能的通用请求头，可以一并配置进来
+        }
+  },
+})
+</code></pre>
+<h3 id="_7">封装请求方法</h3>
+<p>先引入封装好的方法，在要调用的接口重新封装成一个方法暴露出去</p>
+<pre><code class="language-js">// get 请求
+export function httpGet({
+  url,
+  params = {}
+}) {
+  return new Promise((resolve, reject) =&gt; {
+    axios.get(url, {
+      params
+    }).then((res) =&gt; {
+      resolve(res.data)
+    }).catch(err =&gt; {
+      reject(err)
+    })
+  })
+}
+
+// post
+// post请求
+export function httpPost({
+  url,
+  data = {},
+  params = {}
+}) {
+  return new Promise((resolve, reject) =&gt; {
+    axios({
+      url,
+      method: 'post',
+      transformRequest: [function (data) {
+        let ret = ''
+        for (let it in data) {
+          ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&amp;'
+        }
+        return ret
+      }],
+      // 发送的数据
+      data,
+      // url参数
+      params
+
+    }).then(res =&gt; {
+      resolve(res.data)
+    })
+  })
+}
+</code></pre>
+<p>把封装的方法放在一个<code>api.js</code>文件中</p>
+<pre><code class="language-js">import { httpGet, httpPost } from './http'
+export const getorglist = (params = {}) =&gt; httpGet({ url: 'apps/api/org/list', params })
+</code></pre>
+<p>页面中就能直接调用</p>
+<pre><code class="language-js">// .vue
+import { getorglist } from '@/assets/js/api'
+
+getorglist({ id: 200 }).then(res =&gt; {
+  console.log(res)
+})
+</code></pre>
+<p>这样可以把<code>api</code>统一管理起来，以后维护修改只需要在<code>api.js</code>文件操作即可</p>
+<h3 id="_8">请求拦截器</h3>
+<p>请求拦截器可以在每个请求里加上token，做了统一处理后维护起来也方便</p>
+<pre><code class="language-js">// 请求拦截器
+axios.interceptors.request.use(
+  config =&gt; {
+    // 每次发送请求之前判断是否存在token
+    // 如果存在，则统一在http请求的header都加上token，这样后台根据token判断你的登录情况，此处token一般是用户完成登录后储存到localstorage里的
+    token &amp;&amp; (config.headers.Authorization = token)
+    return config
+  },
+  error =&gt; {
+    return Promise.error(error)
+  })
+</code></pre>
+<h3 id="_9">响应拦截器</h3>
+<p>响应拦截器可以在接收到响应后先做一层操作，如根据状态码判断登录状态、授权</p>
+<pre><code class="language-js">// 响应拦截器
+axios.interceptors.response.use(response =&gt; {
+  // 如果返回的状态码为200，说明接口请求成功，可以正常拿到数据
+  // 否则的话抛出错误
+  if (response.status === 200) {
+    if (response.data.code === 511) {
+      // 未授权调取授权接口
+    } else if (response.data.code === 510) {
+      // 未登录跳转登录页
+    } else {
+      return Promise.resolve(response)
+    }
+  } else {
+    return Promise.reject(response)
+  }
+}, error =&gt; {
+  // 我们可以在这里对异常状态作统一处理
+  if (error.response.status) {
+    // 处理请求失败的情况
+    // 对不同返回码对相应处理
+    return Promise.reject(error.response)
+  }
+})
+</code></pre>
+<h3 id="_10">小结</h3>
+<ul>
+<li>封装是编程中很有意义的手段，简单的<code>axios</code>封装，就可以让我们可以领略到它的魅力</li>
+<li>封装 <code>axios</code> 没有一个绝对的标准，只要你的封装可以满足你的项目需求，并且用起来方便，那就是一个好的封装方案</li>
+</ul>
+<h2 id="_11">参考文献</h2>
+<ul>
+<li>https://www.html.cn/qa/vue-js/20544.html</li>
+<li>https://juejin.cn/post/6844904033782611976</li>
+<li>https://juejin.cn/post/6844903801451708429</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
