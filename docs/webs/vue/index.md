@@ -1,63 +1,49 @@
-# Vue文档分类
+# Vue文档目录
 
-## 选项式API
-- [响应式原理](reactivity.md)
+## 基础概念
+- [Vue实例创建与配置](new_vue.md)
+- [数据对象](data.md)
+- [数据对象属性添加](data_object_add_attrs.md)
 - [生命周期钩子](lifecycle.md)
+- [条件渲染和列表渲染](if_for.md)
+- [显示/隐藏与条件渲染比较](show_if.md)
+
+## 组件系统
 - [组件通信机制](communication.md)
-
-## 组合式API
-- [setup函数实践](setup.md)
-- [Composition API模式](composition-api.md)
-- [自定义Hooks开发](custom-hooks.md)
-
-## 核心机制
-- [虚拟DOM原理](virtual-dom.md)
-- [模板编译流程](template-compile.md)
-- [Diff算法解析](diff-algorithm.md)
-
-
-## 其他
-## 渲染优化
-- [Diff算法优化](diff.md)
-- [过滤器机制](filter.md)
-
-## 异步处理
-- [异步更新队列](nexttick.md)
-- [事件循环机制](event_loop.md)
-
-## 状态管理
-- [Vuex原理](vuex.md)
-- [响应式数据处理](reactivity.md)
-
-## 组件机制
-- [组件通信](communication.md)
-- [动态组件](dynamic_component.md)
+- [组件插件系统](components_plugin.md)
+- [插槽机制](slot.md)
 - [组件缓存](keepalive.md)
+- [虚拟DOM节点](vnode.md)
 
-## 安全与调试
-- [错误处理](error.md)
-- [权限管理](permission.md)
-- [CORS处理](cors.md)
-
-## 渲染优化
-- [Diff算法](diff.md)
-- [过滤器机制](filter.md)
-
-## 服务端渲染
-- [SSR实现原理](ssr.md)
-- [Nuxt.js实践](nuxt.md)
-
-## 路由管理
-- [Vue Router原理](router.md)
-- [路由守卫](navigation_guard.md)
-
-## 工程化
-- [Vue CLI配置](cli.md)
-- [项目结构规范](structure.md)
-- [代码分割优化](code_splitting.md)
-
-## 进阶特性
+## 高级特性
 - [混入机制](mixin.md)
 - [自定义指令](directive.md)
-- [渲染函数](render_function.md)
-- [过滤器开发](filter.md)
+- [事件修饰符](modifier.md)
+- [响应式数据系统](observable.md)
+- [异步更新队列](nexttick.md)
+
+## 性能优化
+- [首屏加载时间优化](first_page_time.md)
+- [Diff算法优化](diff.md)
+- [key的作用与优化](key.md)
+
+## HTTP请求处理
+- [Axios使用指南](axios.md)
+- [Axios源码解析](axiosCode.md)
+- [跨域处理](cors.md)
+
+## 项目实践
+- [项目结构规范](structure.md)
+- [错误处理机制](error.md)
+- [权限管理](permission.md)
+- [过滤器使用](filter.md)
+- [bind实现原理](bind.md)
+
+## 架构相关
+- [单页应用架构](spa.md)
+- [服务端渲染](ssr.md)
+- [Vue3与Vue2对比](vue3_vue2.md)
+- [Vue框架设计](vue.md)
+
+## 常见问题
+- [404页面处理](404.md)
