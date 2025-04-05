@@ -22,7 +22,7 @@
     
     
       
-        <title>Vue文档分类 - 前端技术体系总导航</title>
+        <title>Vue文档目录 - 前端技术体系总导航</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Vue文档分类
+              Vue文档目录
             
           </span>
         </div>
@@ -2897,27 +2897,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      选项式API
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      组合式API
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      核心机制
+      基础概念
     </span>
   </a>
   
@@ -2926,7 +2908,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      其他
+      组件系统
     </span>
   </a>
   
@@ -2935,7 +2917,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      渲染优化
+      高级特性
     </span>
   </a>
   
@@ -2944,7 +2926,16 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      异步处理
+      性能优化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP请求处理
     </span>
   </a>
   
@@ -2953,7 +2944,7 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      状态管理
+      项目实践
     </span>
   </a>
   
@@ -2962,7 +2953,7 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      组件机制
+      架构相关
     </span>
   </a>
   
@@ -2971,52 +2962,7 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      安全与调试
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      渲染优化
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      服务端渲染
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      路由管理
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      工程化
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      进阶特性
+      常见问题
     </span>
   </a>
   
@@ -3038,80 +2984,62 @@
 
 
 
-<h1 id="vue">Vue文档分类<a class="headerlink" href="#vue" title="Permanent link">&para;</a></h1>
-<h2 id="api">选项式API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h1 id="vue">Vue文档目录<a class="headerlink" href="#vue" title="Permanent link">&para;</a></h1>
+<h2 id="_1">基础概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="reactivity.md">响应式原理</a></li>
+<li><a href="new_vue/">Vue实例创建与配置</a></li>
+<li><a href="data/">数据对象</a></li>
+<li><a href="data_object_add_attrs/">数据对象属性添加</a></li>
 <li><a href="lifecycle/">生命周期钩子</a></li>
+<li><a href="if_for/">条件渲染和列表渲染</a></li>
+<li><a href="show_if/">显示/隐藏与条件渲染比较</a></li>
+</ul>
+<h2 id="_2">组件系统<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
 <li><a href="communication/">组件通信机制</a></li>
-</ul>
-<h2 id="api_1">组合式API<a class="headerlink" href="#api_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="setup.md">setup函数实践</a></li>
-<li><a href="composition-api.md">Composition API模式</a></li>
-<li><a href="custom-hooks.md">自定义Hooks开发</a></li>
-</ul>
-<h2 id="_1">核心机制<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="virtual-dom.md">虚拟DOM原理</a></li>
-<li><a href="template-compile.md">模板编译流程</a></li>
-<li><a href="diff-algorithm.md">Diff算法解析</a></li>
-</ul>
-<h2 id="_2">其他<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h2 id="_3">渲染优化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="diff/">Diff算法优化</a></li>
-<li><a href="filter/">过滤器机制</a></li>
-</ul>
-<h2 id="_4">异步处理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="nexttick/">异步更新队列</a></li>
-<li><a href="event_loop.md">事件循环机制</a></li>
-</ul>
-<h2 id="_5">状态管理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="vuex.md">Vuex原理</a></li>
-<li><a href="reactivity.md">响应式数据处理</a></li>
-</ul>
-<h2 id="_6">组件机制<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="communication/">组件通信</a></li>
-<li><a href="dynamic_component.md">动态组件</a></li>
+<li><a href="components_plugin/">组件插件系统</a></li>
+<li><a href="slot/">插槽机制</a></li>
 <li><a href="keepalive/">组件缓存</a></li>
+<li><a href="vnode/">虚拟DOM节点</a></li>
 </ul>
-<h2 id="_7">安全与调试<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="error/">错误处理</a></li>
-<li><a href="permission/">权限管理</a></li>
-<li><a href="cors/">CORS处理</a></li>
-</ul>
-<h2 id="_8">渲染优化<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="diff/">Diff算法</a></li>
-<li><a href="filter/">过滤器机制</a></li>
-</ul>
-<h2 id="_9">服务端渲染<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="ssr/">SSR实现原理</a></li>
-<li><a href="nuxt.md">Nuxt.js实践</a></li>
-</ul>
-<h2 id="_10">路由管理<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="router.md">Vue Router原理</a></li>
-<li><a href="navigation_guard.md">路由守卫</a></li>
-</ul>
-<h2 id="_11">工程化<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="cli.md">Vue CLI配置</a></li>
-<li><a href="structure/">项目结构规范</a></li>
-<li><a href="code_splitting.md">代码分割优化</a></li>
-</ul>
-<h2 id="_12">进阶特性<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h2 id="_3">高级特性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="mixin/">混入机制</a></li>
 <li><a href="directive/">自定义指令</a></li>
-<li><a href="render_function.md">渲染函数</a></li>
-<li><a href="filter/">过滤器开发</a></li>
+<li><a href="modifier/">事件修饰符</a></li>
+<li><a href="observable/">响应式数据系统</a></li>
+<li><a href="nexttick/">异步更新队列</a></li>
+</ul>
+<h2 id="_4">性能优化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="first_page_time/">首屏加载时间优化</a></li>
+<li><a href="diff/">Diff算法优化</a></li>
+<li><a href="key/">key的作用与优化</a></li>
+</ul>
+<h2 id="http">HTTP请求处理<a class="headerlink" href="#http" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="axios/">Axios使用指南</a></li>
+<li><a href="axiosCode/">Axios源码解析</a></li>
+<li><a href="cors/">跨域处理</a></li>
+</ul>
+<h2 id="_5">项目实践<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="structure/">项目结构规范</a></li>
+<li><a href="error/">错误处理机制</a></li>
+<li><a href="permission/">权限管理</a></li>
+<li><a href="filter/">过滤器使用</a></li>
+<li><a href="bind/">bind实现原理</a></li>
+</ul>
+<h2 id="_6">架构相关<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="spa/">单页应用架构</a></li>
+<li><a href="ssr/">服务端渲染</a></li>
+<li><a href="vue3_vue2/">Vue3与Vue2对比</a></li>
+<li><a href="vue/">Vue框架设计</a></li>
+</ul>
+<h2 id="_7">常见问题<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="404/">404页面处理</a></li>
 </ul>
 
 
