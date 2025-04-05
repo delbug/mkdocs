@@ -1,90 +1,129 @@
-site_name: 前端技术文档
+site_name: 前端技术体系总导航
+site_description: 前端开发技术文档
+
+# Repository
+repo_name: frontend-docs
+
+# Copyright
+copyright: Copyright &copy; 2023
+
+# Configuration
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - announce.dismiss
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - footnotes
+  - attr_list
+  - md_in_html
+  - def_list
+  - tables
+  - toc:
+      permalink: true
+
 nav:
   - 首页: index.md
-  - 前端基础:
-    - CSS:
-      - 概述: web/css/index.md
-      - 基础概念:
-        - 选择器: web/css/selector.md
-        - 盒子模型: web/css/box.md
-        - 动画过渡: web/css/animation.md 
-      - 布局:
-        - Grid布局: web/css/grid.md
-        - Flex布局: web/css/flex.md
-        - 定位布局: web/css/position.md
-      - 进阶:
-        - CSS性能: web/css/css_performance.md
-        - 预处理器: web/css/sass_less_stylus.md
-        - CSS3新特性: web/css/css3_features.md
-        - 像素单位: web/css/dp_px_dpr_ppi.md
-      - 实践:
-        - 变量使用: web/css/variables.md
-        - 媒体查询: web/css/media_queries.md
-        - 打印样式: web/css/print_styles.md
-    - JavaScript:
-      - 概述: web/JavaScript/index.md
-      - 基础概念:
-        - 数据类型: web/JavaScript/data_type.md
-        - 类型转换: web/JavaScript/type_conversion.md
-        - typeof和instanceof: web/JavaScript/typeof_instanceof.md
-      - 作用域与闭包:
-        - 作用域: web/JavaScript/scope.md
-        - 闭包: web/JavaScript/closure.md
-      - 对象与原型:
-        - this指向: web/JavaScript/this.md
-        - 原型和原型链: web/JavaScript/prototype.md
-        - 继承: web/JavaScript/inherit.md
-        - new操作符: web/JavaScript/new.md
-      - 执行机制:
-        - 执行上下文和执行栈: web/JavaScript/context_stack.md
-        - 事件循环: web/JavaScript/event_loop.md
-      - DOM与事件:
-        - DOM操作: web/JavaScript/Dom.md
-        - BOM操作: web/JavaScript/BOM.md
-        - 事件模型: web/JavaScript/event_Model.md
-        - 事件代理: web/JavaScript/event_agent.md
-      - 网络通信:
-        - Ajax: web/JavaScript/ajax.md
-      - 函数编程:
-        - 函数式编程: web/JavaScript/functional_programming.md
-        - 函数缓存: web/JavaScript/function_cache.md
-        - bind/call/apply: web/JavaScript/bind_call_apply.md
-        - 防抖和节流: web/JavaScript/debounce_throttle.md
-      - 数据处理:
-        - 深浅拷贝: web/JavaScript/copy.md
-        - 数组API: web/JavaScript/array_api.md
-        - 字符串API: web/JavaScript/string_api.md
-        - 正则表达式: web/JavaScript/regexp.md
-        - 数据结构: web/JavaScript/js_data_structure.md
-      - 性能优化:
-        - 尾递归优化: web/JavaScript/tail_recursion.md
-        - 内存泄漏: web/JavaScript/memory_leak.md
-      - 应用实践:
-        - 前端缓存: web/JavaScript/cache.md
-        - 前端安全: web/JavaScript/security.md
-        - 单点登录: web/JavaScript/single_sign.md
-        - 精度丢失: web/JavaScript/loss_accuracy.md
-        - 可视区域判断: web/JavaScript/visible.md
-        - 上拉加载下拉刷新: web/JavaScript/pull_up_loading_pull_down_refresh.md
-        - 断点续传: web/JavaScript/continue_to_upload.md
-    - TypeScript: web/typescript/index.md
-    - ES6+: web/es6/index.md
-  - 前端框架:
-    - Vue3: web/vue3/index.md
-    - Vue2: web/vue/index.md
-    - React: web/React/index.md
-  - Node.js开发:
-    - Node.js: web/NodeJS/index.md
-  - 工程化工具:
-    - Webpack: web/webpack/index.md
-    - Git: web/git/index.md
-  - 网络与系统:
-    - HTTP: web/http/index.md
-    - Linux: web/linux/index.md
-  - 算法与设计:
-    - 算法: web/algorithm/index.md
-    - 设计模式: web/design/index.md
-  - 小程序开发:
-    - 小程序: web/applet/index.md
-
-theme: readthedocs
+  - CSS:
+    - webs/css/index.md
+    - 核心概念:
+      - webs/css/box.md
+      - webs/css/BFC.md
+      - webs/css/dp_px_dpr_ppi.md
+      - webs/css/sass_less_stylus.md
+    - 布局系统:
+      - webs/css/flexbox.md
+      - webs/css/grid.md
+      - webs/css/column_layout.md
+      - webs/css/center.md
+    - 视觉呈现:
+      - webs/css/animation.md
+      - webs/css/css3_features.md
+      - webs/css/layout_painting.md
+      - webs/css/visual_scrolling.md
+    - 实用技巧:
+      - webs/css/less_12px.md
+      - webs/css/hide_attributes.md
+      - webs/css/selector.md
+      - webs/css/css_performance.md
+      - webs/css/responsive_layout.md
+  - JavaScript:
+    - webs/JavaScript/index.md
+    - 基础概念:
+      - webs/JavaScript/data_type.md
+      - webs/JavaScript/type_conversion.md
+      - webs/JavaScript/scope.md
+      - webs/JavaScript/this.md
+    - 执行模型:
+      - webs/JavaScript/event_loop.md
+      - webs/JavaScript/event_Model.md
+    - 对象系统:
+      - webs/JavaScript/prototype.md
+      - webs/JavaScript/new.md
+    - 函数编程:
+      - webs/JavaScript/functional_programming.md
+      - webs/JavaScript/function_cache.md
+      - webs/JavaScript/debounce_throttle.md
+      - webs/JavaScript/bind_call_apply.md
+    - 性能优化:
+      - webs/JavaScript/memory_leak.md
+      - webs/JavaScript/visible.md
+      - webs/JavaScript/tail_recursion.md
+  - ES6+:
+    - webs/es6/index.md
+  - TypeScript:
+    - webs/typescript/index.md
+  - Vue:
+    - webs/vue/index.md
+  - Vue3:
+    - webs/vue3/index.md
+  - React:
+    - webs/React/index.md
+  - NodeJS:
+    - webs/NodeJS/index.md
+  - Webpack:
+    - webs/webpack/index.md
+  - HTTP:
+    - webs/http/index.md
+  - Git:
+    - webs/git/index.md
+  - Linux:
+    - webs/linux/index.md
+  - 算法:
+    - webs/algorithm/index.md
+  - 设计模式:
+    - webs/design/index.md
+  - 小程序:
+    - webs/applet/index.md  
