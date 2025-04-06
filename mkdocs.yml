@@ -1,16 +1,18 @@
 site_name: 前端技术体系总导航
 site_description: 前端开发技术文档
-
-# Repository
-repo_name: frontend-docs
+site_author: Frontend Team
 
 # Copyright
-copyright: Copyright &copy; 2023
+copyright: Copyright &copy; 2023 - 2024
 
 # Configuration
 theme:
   name: material
   language: zh
+  icon:
+    logo: material/code-tags
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.png
   features:
     - navigation.tabs
     - navigation.sections
@@ -18,33 +20,66 @@ theme:
     - navigation.indexes
     - navigation.top
     - navigation.footer
+    - navigation.tracking
+    - navigation.instant
+    - navigation.path
+    # - header.autohide
     - search.highlight
     - search.share
     - search.suggest
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
+    - content.tooltips
     - announce.dismiss
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
-      accent: indigo
+      accent: deep purple
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
       accent: indigo
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: 切换到浅色模式
+  font:
+    text: Roboto
+    code: Roboto Mono
 
+# Customization
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/extra.js
+
+# Social links
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/frontend-docs
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/frontend-docs
+
+# Extensions
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - footnotes
   - attr_list
@@ -53,32 +88,48 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+      toc_depth: 3
+
+# Plugins
+plugins:
+  - search
+  - minify:
+      minify_html: true
 
 nav:
   - 首页: index.md
   - CSS:
     - webs/css/index.md
-    - 核心概念:
-      - webs/css/box.md
-      - webs/css/BFC.md
-      - webs/css/dp_px_dpr_ppi.md
-      - webs/css/sass_less_stylus.md
+    - CSS基础:
+      - 基础概念:
+        - webs/css/box.md
+        - webs/css/BFC.md
+        - webs/css/dp_px_dpr_ppi.md
+      - 样式处理:
+        - webs/css/sass_less_stylus.md
+        - webs/css/selector.md
+        - webs/css/css3_features.md
+    - CSS布局:
+      - 视觉效果:
+        - webs/css/animation.md
+        - webs/css/layout_painting.md
+        - webs/css/visual_scrolling.md
     - 布局系统:
-      - webs/css/flexbox.md
-      - webs/css/grid.md
-      - webs/css/column_layout.md
-      - webs/css/center.md
-    - 视觉呈现:
-      - webs/css/animation.md
-      - webs/css/css3_features.md
-      - webs/css/layout_painting.md
-      - webs/css/visual_scrolling.md
-    - 实用技巧:
-      - webs/css/less_12px.md
-      - webs/css/hide_attributes.md
-      - webs/css/selector.md
-      - webs/css/css_performance.md
-      - webs/css/responsive_layout.md
+      - 弹性盒子布局:
+        - webs/css/flexbox.md
+      - 网格布局:
+        - webs/css/grid.md
+      - 多列布局:
+        - webs/css/column_layout.md
+      - 水平垂直居中:
+        - webs/css/center.md
+      - 响应式布局:
+        - webs/css/responsive_layout.md
+    - CSS优化:
+      - 性能优化:
+        - webs/css/css_performance.md
+        - webs/css/less_12px.md
+        - webs/css/hide_attributes.md
   - JavaScript:
     - webs/JavaScript/index.md
     - 基础概念:
@@ -103,7 +154,7 @@ nav:
       - webs/JavaScript/tail_recursion.md
   - ES6+:
     - webs/es6/index.md
-    - 核心特性:
+    - 基础语法:
       - webs/es6/var_let_const.md
       - webs/es6/function.md
       - webs/es6/object.md
@@ -111,9 +162,10 @@ nav:
     - 异步编程:
       - webs/es6/promise.md
       - webs/es6/generator.md
+    - 数据结构:
+      - webs/es6/set_map.md
     - 高级特性:
       - webs/es6/proxy.md
-      - webs/es6/set_map.md
       - webs/es6/decorator.md
       - webs/es6/module.md
   - TypeScript:
@@ -146,45 +198,47 @@ nav:
       - webs/vue/if_for.md
       - webs/vue/show_if.md
     - 组件系统:
-      - webs/vue/communication.md
       - webs/vue/components_plugin.md
+      - webs/vue/communication.md
       - webs/vue/slot.md
-      - webs/vue/keepalive.md
       - webs/vue/vnode.md
-    - 高级特性:
+    - 响应式机制:
+      - webs/vue/observable.md
+      - webs/vue/nexttick.md
+      - webs/vue/keepalive.md
+    - 功能扩展:
       - webs/vue/mixin.md
       - webs/vue/directive.md
       - webs/vue/modifier.md
-      - webs/vue/observable.md
-      - webs/vue/nexttick.md
+      - webs/vue/filter.md
+      - webs/vue/bind.md
     - 性能优化:
       - webs/vue/first_page_time.md
       - webs/vue/diff.md
       - webs/vue/key.md
-    - HTTP请求处理:
+    - 网络与请求:
       - webs/vue/axios.md
       - webs/vue/axiosCode.md
       - webs/vue/cors.md
-    - 项目实践:
+    - 工程实践:
       - webs/vue/structure.md
       - webs/vue/error.md
       - webs/vue/permission.md
-      - webs/vue/filter.md
-      - webs/vue/bind.md
-    - 架构相关:
       - webs/vue/spa.md
       - webs/vue/ssr.md
-      - webs/vue/vue3_vue2.md
       - webs/vue/vue.md
+    - 版本对比:
+      - webs/vue/vue3_vue2.md
   - Vue3:
     - webs/vue3/index.md
-    - 核心特性:
+    - 基础架构:
       - webs/vue3/goal.md
       - webs/vue3/composition.md
       - webs/vue3/proxy.md
-    - 性能与工程化:
+    - 性能优化:
       - webs/vue3/performance.md
       - webs/vue3/treeshaking.md
+    - 组件设计:
       - webs/vue3/modal_component.md
   - React:
     - webs/React/index.md
