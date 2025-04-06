@@ -1,0 +1,106 @@
+/* 自定义CSS样式 */
+
+/* 页面整体样式 */
+:root {
+  --md-text-font: "Roboto", "Noto Sans SC", sans-serif;
+  --md-code-font: "Roboto Mono", "Source Code Pro", monospace;
+}
+
+/* 标题样式优化 */
+.md-typeset h1 {
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+  margin-bottom: 1.5em;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  padding-bottom: 0.3em;
+}
+
+/* 代码块样式优化 */
+.md-typeset pre > code {
+  border-radius: 6px;
+  padding: 1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 表格样式优化 */
+.md-typeset table:not([class]) {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) tr:nth-child(2n) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* 导航栏样式优化 */
+.md-tabs {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 卡片样式 */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-left-width: 4px;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-primary-fg-color--light);
+  border-radius: 4px;
+}
+
+/* 移动端优化 */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+  }
+}
+
+/* 页脚样式 */
+.md-footer {
+  background-color: var(--md-primary-fg-color--dark);
+}
+
+/* 首页特殊样式 */
+.md-typeset .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  margin: 1em 0;
+}
+
+.md-typeset .card {
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.md-typeset .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
